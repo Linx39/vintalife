@@ -1,0 +1,26 @@
+.page {
+  min-width: @min-width;
+  height: 100%;
+  margin: 0 auto;
+
+  font-family: @font-page;
+  font-size: 25px;
+  line-height: 105%;
+  font-weight: 500;
+  vertical-align: middle;
+  color: @color-basic;
+
+  background-color: @color-back-basic;
+}
+
+.page__body {
+  display: flex;
+  flex-direction: column;
+
+  min-height: 100%;
+  margin: 0;
+}
+
+.page__main {
+  flex-grow: 1;
+}

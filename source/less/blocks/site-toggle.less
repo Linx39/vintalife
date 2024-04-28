@@ -1,0 +1,21 @@
+.site-toogle {
+  position: relative;
+  width: 36px;
+  height: 36px;
+
+  &::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+
+    width: 16.5px;
+    height: 16.5px;
+    background-color: @color-basic;
+    border-radius: 2px;
+
+    box-shadow: 19.5px 0 @color-basic,
+    0 19.5px @color-basic,
+    19.5px 19.5px @color-basic;
+  }
+}

@@ -1,0 +1,27 @@
+.social-list {
+  display: flex;
+  column-gap: 20px;
+  row-gap: 10px;
+  flex-wrap: wrap;
+}
+
+.social-list__link {
+  width: 25px;
+  height: 25px;
+
+  background-color: @color-basic;
+  border-radius: 50%;
+
+  @media (min-width: @desktop-width) {
+    background-color: @color-alternative;
+  }
+}
+
+.social-list__link svg {
+  color: @color-alternative;
+  overflow: visible;
+
+  @media (min-width: @desktop-width) {
+    color: @color-basic;
+  }
+}

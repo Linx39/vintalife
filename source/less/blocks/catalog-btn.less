@@ -1,0 +1,40 @@
+.catalog-btn {
+  position: relative;
+  padding-right: 58px;
+
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  color: @color-alternative;
+
+  &::after {
+    position: absolute;
+    content: "";
+    top: 13px;
+    right: 0;
+
+    width: 45px;
+    height: 2px;
+    background-color: @color-alternative;
+  }
+
+  @media (min-width: @desktop-width) {
+    padding-right: 0;
+    color: @color-basic;
+
+    visibility: hidden;
+
+    &::before {
+      content: "Более 1000 фото в каталоге";
+
+      visibility: visible;
+    }
+
+    &::after {
+      background-color: @color-basic;
+      right: 12px;
+
+      visibility: visible;
+    }
+  }
+}
