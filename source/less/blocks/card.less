@@ -1,54 +1,57 @@
 .card {
+  width: 320px;
+
   color: @color-alternative;
-}
-
-.card__link {
-  position: relative;
-
-  width: 100%;
-  min-width: 320px;
-  min-height: 414px;
-
-  background-color: #000000B2;
-  // background-color: #000000;
-  // opacity: .7;
-
-  // transition: opacity .5s;
 
   @media (min-width: @lg-width) {
-    min-width: 460px;
-    min-height: 600px;
-    // width: 100%;
-    // max-width: 460px;
-    // height: auto;
+    width: 460px;
   }
 }
 
-.card__link:hover {
-  // opacity: .8;
+.card__wrapper {
+  position: relative;
 
-  // transition: opacity .5s;
-  background-color: #000000CC;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.card__wrapper:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+  cursor: pointer;
 }
 
 .card__title {
   position: absolute;
   left: 0;
   right: 0;
-
   top: 50%;
+
   transform: translateY(-50%);
 
-  font-size: 28px;
+  font-size: 29px;
   text-align: center;
+
   transition: transform .5s, top .5s;
+
+  @media (min-width: @lg-width) {
+    top: 0;
+    margin-top: 50%;
+
+    font-size: 40px;
+
+    transform: translateY(0);
+  }
 }
 
-.card__link:hover .card__title {
+.card__wrapper:hover .card__title {
   top: 40px;
+  margin-top: 0;
 
   transform: translate(0);
-  transition: transform .5s, top .5s;
+  transition: transform .5s, top .5s, margin .5s;
+
+  @media (min-width: @lg-width) {
+    top: 65px;
+  }
 }
 
 .card__description {
@@ -61,6 +64,7 @@
   display: flex;
   flex-direction: column;
   gap: 5px;
+  align-items: center;
 
   font-family: Montserrat;
   font-size: 25px;
@@ -73,21 +77,22 @@
   transition: opacity .5s;
 }
 
-.card__link:hover .card__description {
+.card__wrapper:hover .card__description {
   opacity: 1;
 
   transition: opacity .5s;
 }
 
-.card__description span {
+.card__link {
   font-size: 16px;
   line-height: 115%;
   font-weight: 700;
+
+  .interactive-styles();
 }
 
 .card__img {
-  position: absolute;
-  inset: 0;
+  position: relative;
   z-index: -1;
 
   background-color: @color-back-special;

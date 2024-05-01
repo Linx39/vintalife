@@ -12,7 +12,7 @@ import webp from 'gulp-webp';
 import svgstore from 'gulp-svgstore';
 import {deleteAsync} from 'del';
 import browser from 'browser-sync';
-// import webpack from 'webpack-stream'
+import webpack from 'webpack-stream'
 
 const SOURCE_FOLDER = 'source';
 const PUBLIC_FOLDER = 'docs';
@@ -42,18 +42,18 @@ export const styles = () => {
 }
 
 // Scripts
-// export const scripts = () => {
-//   return gulp.src(`${SOURCE_FOLDER}/js/*.js`)
-//     .pipe(webpack({
-//       mode: 'development',
-//       devtool: 'source-map',
-//       output: {
-//           filename: 'app.min.js',
-//       }
-//     }))
-//     .pipe(gulp.dest(`${PUBLIC_FOLDER}/js`))
-//     .pipe(browser.stream());
-// }
+export const scripts = () => {
+  return gulp.src(`${SOURCE_FOLDER}/js/*.js`)
+    .pipe(webpack({
+      mode: 'development',
+      devtool: 'source-map',
+      output: {
+          filename: 'app.min.js',
+      }
+    }))
+    .pipe(gulp.dest(`${PUBLIC_FOLDER}/js`))
+    .pipe(browser.stream());
+}
 
 // Images
 // export const optimizeImages = () => {
@@ -95,6 +95,7 @@ export const createSprite = () => {
 export const copy = (done) => {
   gulp.src([
     `${SOURCE_FOLDER}/fonts/*.*`,
+    `${SOURCE_FOLDER}/swiper/*.min.*`
   ], {
     base: `${SOURCE_FOLDER}`
   })
@@ -129,7 +130,7 @@ export const server = (done) => {
 // Watcher
 const watcher = () => {
   gulp.watch(`${SOURCE_FOLDER}/less/**/*.less`, gulp.series(styles));
-  // gulp.watch(`${SOURCE_FOLDER}/js/*.js`, gulp.series(scripts));
+  gulp.watch(`${SOURCE_FOLDER}/js/*.js`, gulp.series(scripts));
   gulp.watch(`${SOURCE_FOLDER}/*.html`, gulp.series(html));
 }
 
@@ -142,7 +143,7 @@ export const build = gulp.series(
   gulp.parallel(
     styles,
     html,
-    // scripts,
+    scripts,
     createSprite,
     createWebp,
   ),
@@ -156,7 +157,7 @@ export default gulp.series(
   gulp.parallel(
     styles,
     html,
-    // scripts,
+    scripts,
     createSprite,
     createWebp,
   ),

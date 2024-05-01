@@ -25,3 +25,23 @@
     color: @color-basic;
   }
 }
+
+.social-list__link:hover,
+.social-list__link:focus-visible {
+  background-color: @color-alternative;
+  outline: none;
+
+  // @media (min-width: @lg-width) {
+  //   background-color: @color-alternative;
+  // }
+}
+
+.social-list__link:hover svg,
+.social-list__link:focus-visible svg {
+  color: @color-special;
+  outline: none;
+
+  @media (min-width: @lg-width) {
+    color: @color-black;
+  }
+}

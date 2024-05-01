@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Авторские кухни Vintalife</title>
+        <link rel="stylesheet" href="./swiper/swiper-bundle.min.css">
         <link rel="stylesheet" href="./css/style.css">
     </head>
     <body class="page__body">
@@ -33,10 +34,12 @@
           </div>
 
           <div class="page-header__bottom main-nav__bottom">
-            <a class="main-nav__catalog-btn catalog-btn">Каталог</a>
+            <a class="main-nav__catalog-btn catalog-btn" href="#">
+              <span>Более 1000 фото в </span><span>каталог</span><span>е</span>
+            </a>
             <ul class="main-nav__social-list social-list">
               <li class="social-list__item">
-                <a class="social-list__link">
+                <a class="social-list__link" href="#">
                   <span class="visually-hidden">Telegram</span>
                   <svg width="25" height="25" aria-hidden="true" focusable="false">
                     <use xlink:href="img/sprite.svg#telegram"></use>
@@ -44,7 +47,7 @@
                 </a>
               </li>
               <li class="social-list__item">
-                <a class="social-list__link">
+                <a class="social-list__link" href="#">
                   <span class="visually-hidden">Whatsapp</span>
                   <svg width="25" height="25" aria-hidden="true" focusable="false">
                     <use xlink:href="img/sprite.svg#whatsapp"></use>
@@ -52,7 +55,7 @@
                 </a>
               </li>
               <li class="social-list__item">
-                <a class="social-list__link">
+                <a class="social-list__link" href="#">
                   <span class="visually-hidden">Viber</span>
                   <svg width="25" height="25" aria-hidden="true" focusable="false">
                     <use xlink:href="img/sprite.svg#viber"></use>
@@ -78,8 +81,8 @@
                 <span class="intro__title-span-2">КУХНИ</span>
                 <span class="intro__title-span-3">В СОЧИ</span>
               </h2>
-              <a class="intro__btn intro__btn--froze app-btn app-btn--basic">Бесплатный замер</a>
-              <a class="intro__btn intro__btn--calculation app-btn app-btn--contrast">Расчет стоимости кухни</a>
+              <a class="intro__btn intro__btn--froze app-btn app-btn--basic" tabindex="0">Бесплатный замер</a>
+              <a class="intro__btn intro__btn--calculation app-btn app-btn--contrast" tabindex="0">Расчет стоимости кухни</a>
             </div>
           </div>
 
@@ -117,132 +120,130 @@
         </section>
 
         <section class="catalog">
-          <div class="catalog__title-container">
-            <h2 class="catalog__title app-title">Каталог кухонь по&nbsp;стилям</h2>
-          </div>
+          <h2 class="catalog__title app-title">Каталог кухонь по&nbsp;стилям</h2>
 
-          <div class="catalog__slider swiper">
-            <div class="catalog__cards swiper-wrapper">
-              <article class="card swiper-slide">
-                <a class="card__link">
-                  <h3 class="card__title app-title">АРТ ДЕКО</h3>
-                  <p class="card__description">
-                    от 49 990 руб.
-                    <span>Перейти в каталог</span>
-                  </p>
-                  <div class="card__img">
-                    <picture>
-                      <source type="image/webp" media="(min-width: 480px)" srcset="img/catalog/catalog-01-460.webp 1x, img/catalog/catalog-01-460@2x.webp 2x">
-                      <source type="image/webp" srcset="img/catalog/catalog-01-320.webp 1x, img/catalog/catalog-01-320@2x.webp 2x">
-                      <source media="(min-width: 480px)" srcset="img/catalog/catalog-01-460.png 1x, img/catalog/catalog-01-460@2x.png 2x">
-                      <img src="img/catalog/catalog-01-320.png" srcset="img/catalog/catalog-01-320@2x.png 2x" alt="Изображение кухни.">
-                    </picture>
+          <div class="catalog__slider-container">
+            <div class="catalog__slider swiper">
+              <div class="catalog__cards swiper-wrapper">
+                <article class="card swiper-slide">
+                  <div class="card__wrapper">
+                    <h3 class="card__title app-title">АРТ ДЕКО</h3>
+                    <p class="card__description">
+                      от 49 990 руб.
+                      <a class="card__link">Перейти в каталог</a>
+                    </p>
+                    <div class="card__img">
+                      <picture>
+                        <source type="image/webp" media="(min-width: 515px)" srcset="img/catalog/catalog-01-460.webp 1x, img/catalog/catalog-01-460@2x.webp 2x">
+                        <source type="image/webp" srcset="img/catalog/catalog-01-320.webp 1x, img/catalog/catalog-01-320@2x.webp 2x">
+                        <source media="(min-width: 515px)" srcset="img/catalog/catalog-01-460.png 1x, img/catalog/catalog-01-460@2x.png 2x">
+                        <img src="img/catalog/catalog-01-320.png" srcset="img/catalog/catalog-01-320@2x.png 2x" alt="Изображение кухни.">
+                      </picture>
+                    </div>
                   </div>
-                </a>
-              </article>
-              <article class="card swiper-slide">
-                <a class="card__link">
-                  <h3 class="card__title app-title">МИНИМАЛИЗМ ХАЙТЕК МОДЕРН</h3>
-                  <p class="card__description">
-                    от 49 990 руб.
-                    <span>Перейти в каталог</span>
-                  </p>
-                  <div class="card__img">
-                    <picture>
-                      <source type="image/webp" media="(min-width: 480px)" srcset="img/catalog/catalog-02-460.webp 1x, img/catalog/catalog-02-460@2x.webp 2x">
-                      <source type="image/webp" srcset="img/catalog/catalog-02-320.webp 1x, img/catalog/catalog-02-320@2x.webp 2x">
-                      <source media="(min-width: 480px)" srcset="img/catalog/catalog-02-460.png 1x, img/catalog/catalog-02-460@2x.png 2x">
-                      <img src="img/catalog/catalog-02-320.png" srcset="img/catalog/catalog-02-320@2x.png 2x" alt="Изображение кухни.">
-                    </picture>
+                </article>
+                <article class="card swiper-slide">
+                  <div class="card__wrapper">
+                    <h3 class="card__title app-title">МИНИМАЛИЗМ<br> ХАЙТЕК<br> МОДЕРН</h3>
+                    <p class="card__description">
+                      от 49 990 руб.
+                      <a class="card__link">Перейти в каталог</a>
+                    </p>
+                    <div class="card__img">
+                      <picture>
+                        <source type="image/webp" media="(min-width: 515px)" srcset="img/catalog/catalog-02-460.webp 1x, img/catalog/catalog-02-460@2x.webp 2x">
+                        <source type="image/webp" srcset="img/catalog/catalog-02-320.webp 1x, img/catalog/catalog-02-320@2x.webp 2x">
+                        <source media="(min-width: 515px)" srcset="img/catalog/catalog-02-460.png 1x, img/catalog/catalog-02-460@2x.png 2x">
+                        <img src="img/catalog/catalog-02-320.png" srcset="img/catalog/catalog-02-320@2x.png 2x" alt="Изображение кухни.">
+                      </picture>
+                    </div>
                   </div>
-                </a>
-              </article>
-              <article class="card swiper-slide">
-                <a class="card__link">
-                  <h3 class="card__title app-title">ЛОФТ ИНДАСТРИАЛ</h3>
-                  <p class="card__description">
-                    от 49 990 руб.
-                    <span>Перейти в каталог</span>
-                  </p>
-                  <div class="card__img">
-                    <picture>
-                      <source type="image/webp" media="(min-width: 480px)" srcset="img/catalog/catalog-03-460.webp 1x, img/catalog/catalog-03-460@2x.webp 2x">
-                      <source type="image/webp" srcset="img/catalog/catalog-03-320.webp 1x, img/catalog/catalog-03-320@2x.webp 2x">
-                      <source media="(min-width: 480px)" srcset="img/catalog/catalog-03-460.png 1x, img/catalog/catalog-03-460@2x.png 2x">
-                      <img src="img/catalog/catalog-03-320.png" srcset="img/catalog/catalog-03-320@2x.png 2x" alt="Изображение кухни.">
-                    </picture>
+                </article>
+                <article class="card swiper-slide">
+                  <div class="card__wrapper">
+                    <h3 class="card__title app-title">ЛОФТ ИНДАСТРИАЛ</h3>
+                    <p class="card__description">
+                      от 49 990 руб.
+                      <a class="card__link">Перейти в каталог</a>
+                    </p>
+                    <div class="card__img">
+                      <picture>
+                        <source type="image/webp" media="(min-width: 515px)" srcset="img/catalog/catalog-03-460.webp 1x, img/catalog/catalog-03-460@2x.webp 2x">
+                        <source type="image/webp" srcset="img/catalog/catalog-03-320.webp 1x, img/catalog/catalog-03-320@2x.webp 2x">
+                        <source media="(min-width: 515px)" srcset="img/catalog/catalog-03-460.png 1x, img/catalog/catalog-03-460@2x.png 2x">
+                        <img src="img/catalog/catalog-03-320.png" srcset="img/catalog/catalog-03-320@2x.png 2x" alt="Изображение кухни.">
+                      </picture>
+                    </div>
                   </div>
-                </a>
-              </article>
-              <article class="card swiper-slide">
-                <a class="card__link">
-                  <h3 class="card__title app-title">НЕОКЛАССИКА</h3>
-                  <p class="card__description">
-                    от 49 990 руб.
-                    <span>Перейти в каталог</span>
-                  </p>
-                  <div class="card__img">
-                    <picture>
-                      <source type="image/webp" media="(min-width: 480px)" srcset="img/catalog/catalog-04-460.webp 1x, img/catalog/catalog-04-460@2x.webp 2x">
-                      <source type="image/webp" srcset="img/catalog/catalog-04-320.webp 1x, img/catalog/catalog-04-320@2x.webp 2x">
-                      <source media="(min-width: 480px)" srcset="img/catalog/catalog-04-460.png 1x, img/catalog/catalog-04-460@2x.png 2x">
-                      <img src="img/catalog/catalog-04-320.png" srcset="img/catalog/catalog-04-320@2x.png 2x" alt="Изображение кухни.">
-                    </picture>
+                </article>
+                <article class="card swiper-slide">
+                  <div class="card__wrapper">
+                    <h3 class="card__title app-title">НЕОКЛАССИКА</h3>
+                    <p class="card__description">
+                      от 49 990 руб.
+                      <a class="card__link">Перейти в каталог</a>
+                    </p>
+                    <div class="card__img">
+                      <picture>
+                        <source type="image/webp" media="(min-width: 515px)" srcset="img/catalog/catalog-04-460.webp 1x, img/catalog/catalog-04-460@2x.webp 2x">
+                        <source type="image/webp" srcset="img/catalog/catalog-04-320.webp 1x, img/catalog/catalog-04-320@2x.webp 2x">
+                        <source media="(min-width: 515px)" srcset="img/catalog/catalog-04-460.png 1x, img/catalog/catalog-04-460@2x.png 2x">
+                        <img src="img/catalog/catalog-04-320.png" srcset="img/catalog/catalog-04-320@2x.png 2x" alt="Изображение кухни.">
+                      </picture>
+                    </div>
                   </div>
-                </a>
-              </article>
-              <article class="card swiper-slide">
-                <a class="card__link">
-                  <h3 class="card__title app-title">ПРОВАНС ШЕБИ ШИК КАНТРИ</h3>
-                  <p class="card__description">
-                    от 49 990 руб.
-                    <span>Перейти в каталог</span>
-                  </p>
-                  <div class="card__img">
-                    <picture>
-                      <source type="image/webp" media="(min-width: 480px)" srcset="img/catalog/catalog-05-460.webp 1x, img/catalog/catalog-05-460@2x.webp 2x">
-                      <source type="image/webp" srcset="img/catalog/catalog-05-320.webp 1x, img/catalog/catalog-05-320@2x.webp 2x">
-                      <source media="(min-width: 480px)" srcset="img/catalog/catalog-05-460.png 1x, img/catalog/catalog-05-460@2x.png 2x">
-                      <img src="img/catalog/catalog-05-320.png" srcset="img/catalog/catalog-05-320@2x.png 2x" alt="Изображение кухни.">
-                    </picture>
+                </article>
+                <article class="card swiper-slide">
+                  <div class="card__wrapper">
+                    <h3 class="card__title app-title">ПРОВАНС ШЕБИ ШИК КАНТРИ</h3>
+                    <p class="card__description">
+                      от 49 990 руб.
+                      <a class="card__link">Перейти в каталог</a>
+                    </p>
+                    <div class="card__img">
+                      <picture>
+                        <source type="image/webp" media="(min-width: 515px)" srcset="img/catalog/catalog-05-460.webp 1x, img/catalog/catalog-05-460@2x.webp 2x">
+                        <source type="image/webp" srcset="img/catalog/catalog-05-320.webp 1x, img/catalog/catalog-05-320@2x.webp 2x">
+                        <source media="(min-width: 515px)" srcset="img/catalog/catalog-05-460.png 1x, img/catalog/catalog-05-460@2x.png 2x">
+                        <img src="img/catalog/catalog-05-320.png" srcset="img/catalog/catalog-05-320@2x.png 2x" alt="Изображение кухни.">
+                      </picture>
+                    </div>
                   </div>
-                </a>
-              </article>
-              <article class="card swiper-slide">
-                <a class="card__link">
-                  <h3 class="card__title app-title">СКАНДИНАВСКИЙ</h3>
-                  <p class="card__description">
-                    от 49 990 руб.
-                    <span>Перейти в каталог</span>
-                  </p>
-                  <div class="card__img">
-                    <picture>
-                      <source type="image/webp" media="(min-width: 480px)" srcset="img/catalog/catalog-06-460.webp 1x, img/catalog/catalog-06-460@2x.webp 2x">
-                      <source type="image/webp" srcset="img/catalog/catalog-06-320.webp 1x, img/catalog/catalog-06-320@2x.webp 2x">
-                      <source media="(min-width: 480px)" srcset="img/catalog/catalog-06-460.png 1x, img/catalog/catalog-06-460@2x.png 2x">
-                      <img src="img/catalog/catalog-06-320.png" srcset="img/catalog/catalog-06-320@2x.png 2x" alt="Изображение кухни.">
-                    </picture>
+                </article>
+                <article class="card swiper-slide">
+                  <div class="card__wrapper">
+                    <h3 class="card__title app-title">СКАНДИНАВСКИЙ</h3>
+                    <p class="card__description">
+                      от 49 990 руб.
+                      <a class="card__link">Перейти в каталог</a>
+                    </p>
+                    <div class="card__img">
+                      <picture>
+                        <source type="image/webp" media="(min-width: 515px)" srcset="img/catalog/catalog-06-460.webp 1x, img/catalog/catalog-06-460@2x.webp 2x">
+                        <source type="image/webp" srcset="img/catalog/catalog-06-320.webp 1x, img/catalog/catalog-06-320@2x.webp 2x">
+                        <source media="(min-width: 515px)" srcset="img/catalog/catalog-06-460.png 1x, img/catalog/catalog-06-460@2x.png 2x">
+                        <img src="img/catalog/catalog-06-320.png" srcset="img/catalog/catalog-06-320@2x.png 2x" alt="Изображение кухни.">
+                      </picture>
+                    </div>
                   </div>
-                </a>
-              </article>
+                </article>
+              </div>
             </div>
-
             <div class="catalog__slider-navigation">
-              <button class="navigation-btn navigation-btn--prev">
+              <button class="catalog__slider-navigation-btn catalog__slider-navigation-btn--prev navigation-btn navigation-btn--prev">
                 <span class="visually-hidden">Предыдущий слайд</span>
               </button>
-              <button class="navigation-btn navigation-btn--next">
+              <button class="catalog__slider-navigation-btn catalog__slider-navigation-btn--next navigation-btn navigation-btn--next">
                 <span class="visually-hidden">Следующий слайд</span>
               </button>
             </div>
-          </div>
-
-          <div class="catalog__btn-container">
-            <button class="catalog__btn app-btn">Показать еще</button>
           </div>
         </section>
       </main>
 
       <footer class="page-footer"></footer>
+
+      <script src="./swiper/swiper-bundle.min.js"></script>
+      <script type="module" src="./js/app.min.js"></script>
     </body>
 </html>
