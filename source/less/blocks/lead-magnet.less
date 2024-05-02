@@ -1,0 +1,89 @@
+.lead-magnet {
+  position: relative;
+  padding-top: 38px;
+  padding-bottom: 39px;
+
+
+  color: @color-alternative;
+  background-color: @color-back-special;
+  background-image: url("../../img/magnet/magnet-320.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+
+  @media (min-width: @lg-width) {
+    padding-top: 48px;
+    padding-bottom: 27px;
+
+    background-image: url("../../img/magnet/magnet-1920.png");
+  }
+
+  &::after {
+    position: absolute;
+    content: "";
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+}
+
+.lead-magnet__wrapper {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  flex-direction: column;
+
+  .wrapper();
+
+  @media (min-width: @sm-width) {
+    justify-content: center;
+  }
+}
+
+.lead-magnet__title {
+  margin-bottom: 4px;
+  text-wrap: balance;
+
+  @media (min-width: @sm-width) {
+    margin-bottom: 11px;
+    text-align: center;
+  }
+}
+
+.lead-magnet__title span {
+  display: none;
+
+  @media (min-width: @lg-width) {
+    display: inline;
+  }
+}
+
+.lead-magnet__description {
+  margin-bottom: 40px;
+
+  font-size: 25px;
+  font-weight: 500;
+  line-height: 105%;
+  color: @color-alternative;
+
+  @media (min-width: @sm-width) {
+    margin-bottom: 40px;
+    text-align: center;
+  }
+}
+
+.lead-magnet__form {
+  align-self: center;
+
+  @media (min-width: @lg-width) {
+  }
+}
+
+.lead-magnet__annotation {
+  color: @color-alternative;
+}

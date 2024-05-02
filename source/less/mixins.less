@@ -11,13 +11,16 @@
 
 .wrapper-padding {
   box-sizing: border-box;
-  padding-right: @mobile-padding;
-  padding-left: @mobile-padding;
+  padding-right: @sm-padding;
+  padding-left: @sm-padding;
+
+  @media (min-width: @lg-width) {
+    padding-right: @lg-padding;
+    padding-left: @lg-padding;
+  }
 
   @media (min-width: @xl-width) {
     max-width: @xxl-width;
-    padding-right: @desktop-padding;
-    padding-left: @desktop-padding;
   }
 }
 
@@ -26,13 +29,13 @@
   .wrapper-padding();
 }
 
-.wrapper-full-width {
+.wrapper-xxxl-width {
   .wrapper;
 
-  @media (min-width: @full-width) {
-    max-width: @full-width;
-    padding-left: @full-padding;
-    padding-right: @full-padding;
+  @media (min-width: @xxxl-width) {
+    max-width: @xxxl-width;
+    padding-left: @xxxl-padding;
+    padding-right: @xxxl-padding;
   }
 }
 
