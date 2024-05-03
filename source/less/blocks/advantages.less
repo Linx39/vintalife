@@ -3,8 +3,11 @@
   padding-top: 38px;
   padding-bottom: 37px;
 
-  @media (min-width: @lg-width) {
+  @media (min-width: @sm-width) {
     .wrapper-padding();
+  }
+
+  @media (min-width: @lg-width) {
     padding-top: 100px;
     padding-bottom: 50px;
   }
@@ -17,42 +20,49 @@
   flex-direction: column;
   row-gap: 30px;
 
+  @media (min-width: @sm-width) {
+    align-items: center;
+  }
+
   @media (min-width: @lg-width) {
     flex-direction: row;
-    justify-content: space-between;
-
-    &::after {
-      position: absolute;
-      content: "";
-      left: 0;
-      right: 0;
-      top: 50%;
-
-      width: 100%;
-      height: 1px;
-
-      background-color: @color-basic;
-      opacity: 0.5;
-    }
+    flex-wrap: wrap;
+    align-items: unset;
   }
 }
 
 .advantages__item {
+  flex-shrink: 0;
+
   display: grid;
+
+  @media (min-width: @sm-width) {
+    width: 460px;
+  }
+
+  @media (min-width: @lg-width) {
+    width: 50%;
+  }
+
+  @media (min-width: @xxl-width) {
+    width: auto;
+  }
 }
 
 .advantages__item-text {
   position: relative;
-  padding: 0 @sm-padding;
+
+  box-sizing: border-box;
+  padding: 0 @min-padding;
   padding-bottom: 15px;
 
   font-size: 25px;
   line-height: 105%;
   font-weight: 500;
 
-  @media (min-width: @lg-width) {
-    padding: 0;
-    padding-bottom: 15px;
+  @media (min-width: @xxl-width) {
+    padding-left: 0;
+    padding-right: 192px;
   }
 
   &::after {
@@ -67,16 +77,12 @@
 
     background-color: @color-basic;
     opacity: 0.5;
-
-    @media (min-width: @lg-width) {
-      display: none;
-    }
   }
 
   &::before {
     position: absolute;
     content: "";
-    left: @sm-padding;
+    left: @min-padding;
     bottom: -3px;
 
     width: 10px;
@@ -85,14 +91,20 @@
     border-radius: 50%;
     background-color: @color-special;
 
-    @media (min-width: @lg-width) {
+    @media (min-width: @xxl-width) {
       left: 0;
     }
   }
 }
 
+.advantages__item:last-of-type .advantages__item-text {
+  @media (min-width: @xxl-width) {
+    padding-right: 0;
+  }
+}
+
 .advantages__item-value {
-  padding: 0 @sm-padding;
+  padding: 0 @min-padding;
   padding-top: 15px;
 
   font-size: 16px;
