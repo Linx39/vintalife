@@ -4,7 +4,8 @@
 
   font-size: 16px;
   font-weight: 700;
-  color: @color-alternative;
+  line-height: 105%;
+  color: @color-basic;
 
   &::after {
     position: absolute;
@@ -14,14 +15,14 @@
 
     width: 45px;
     height: 2px;
-    background-color: @color-alternative;
+    background-color: @color-basic;
   }
 
   @media (min-width: @lg-width) {
-    color: @color-basic;
+    color: @color-contrast;
 
     &::after {
-      background-color: @color-basic;
+      background-color: @color-contrast;
     }
   }
 
@@ -30,7 +31,7 @@
     .interactive-styles();
 
     &::after {
-      background-color: @color-contrast;
+      background-color: @color-bright;
     }
   }
 }

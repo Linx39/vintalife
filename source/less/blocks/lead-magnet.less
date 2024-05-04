@@ -1,12 +1,17 @@
 .lead-magnet {
   position: relative;
   padding-top: 38px;
-  padding-bottom: 39px;
+  padding-bottom: 38px;
 
+  color: @color-basic;
+  background-color: @color-back-dark;
 
-  color: @color-alternative;
-  background-color: @color-back-special;
-  background-image: url("../../img/magnet/magnet-320.png");
+  background-image: image-set(
+    url("../img/magnet/magnet-mobile.webp") type("image/webp") 1x,
+    url("../img/magnet/magnet-mobile@2x.webp") type("image/webp") 2x,
+    url("../img/magnet/magnet-mobile.png") type("image/png") 1x,
+    url("../img/magnet/magnet-mobile@2x.png") type("image/png") 2x,
+  );
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -16,10 +21,15 @@
     padding-top: 48px;
     padding-bottom: 27px;
 
-    background-image: url("../../img/magnet/magnet-1920.png");
+    background-image: image-set(
+      url("../img/magnet/magnet-desktop.webp") type("image/webp") 1x,
+      url("../img/magnet/magnet-desktop@2x.webp") type("image/webp") 2x,
+      url("../img/magnet/magnet-desktop.png") type("image/png") 1x,
+      url("../img/magnet/magnet-desktop@2x.png") type("image/png") 2x,
+    );
   }
 
-  &::after {
+  &::before {
     position: absolute;
     content: "";
     inset: 0;
@@ -27,7 +37,7 @@
     width: 100%;
     height: 100%;
 
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(@color-dark, 0.5);
   }
 }
 
@@ -41,7 +51,7 @@
   .wrapper();
 
   @media (min-width: @sm-width) {
-    justify-content: center;
+    align-items: center;
   }
 }
 
@@ -66,10 +76,7 @@
 .lead-magnet__description {
   margin-bottom: 40px;
 
-  font-size: 25px;
-  font-weight: 500;
-  line-height: 105%;
-  color: @color-alternative;
+  color: @color-basic;
 
   @media (min-width: @sm-width) {
     margin-bottom: 40px;
@@ -78,12 +85,12 @@
 }
 
 .lead-magnet__form {
-  align-self: center;
+  // align-self: center;
 
   @media (min-width: @lg-width) {
   }
 }
 
 .lead-magnet__annotation {
-  color: @color-alternative;
+  color: @color-basic;
 }

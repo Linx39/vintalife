@@ -2,7 +2,7 @@
   flex-shrink: 0;
   width: 320px;
 
-  color: @color-alternative;
+  color: @color-basic;
 
   @media (min-width: @lg-width) {
     width: 460px;
@@ -12,11 +12,11 @@
 .card__wrapper {
   position: relative;
 
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(@color-dark, 0.5);
 }
 
 .card__wrapper:hover {
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(@color-dark, 0.7);
   cursor: pointer;
 }
 
@@ -68,10 +68,6 @@
   gap: 5px;
   align-items: center;
 
-  font-family: Montserrat;
-  font-size: 25px;
-  font-weight: 500;
-  line-height: 105%;
   text-align: center;
 
   opacity: 0;
@@ -97,7 +93,7 @@
   position: relative;
   z-index: -1;
 
-  background-color: @color-back-special;
+  background-color: @color-back-dark;
 }
 
 .card__img img {

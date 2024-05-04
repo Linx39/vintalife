@@ -70,7 +70,7 @@
 
   justify-self: stretch;
 
-  background-color: @color-basic;
+  background-color: @color-contrast;
 
   @media (min-width: @lg-width) {
     grid-row: 2 / 3;
@@ -99,7 +99,7 @@
   }
 }
 
-.page-header__column-right {
+.page-header__img-container {
   display: none;
 
   @media (min-width: @xl-width) {
@@ -110,7 +110,12 @@
     width: 100%;
     max-width: 730px;
 
-    background-image: url("../../img/header/header-730.png");
+    background-image: image-set(
+    url("../img/header/header-back.webp") type("image/webp") 1x,
+    url("../img/header/header-back@2x.webp") type("image/webp") 2x,
+    url("../img/header/header-back.png") type("image/png") 1x,
+    url("../img/header/header-back@2x.png") type("image/png") 2x,
+    );
     background-repeat: no-repeat;
     background-size: cover;
     background-position: left top;

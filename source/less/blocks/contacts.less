@@ -1,0 +1,128 @@
+.contacts {
+  .wrapper();
+  padding-top: 38px;
+  padding-bottom: 40px;
+
+  @media (min-width: @md-width) {
+    display: grid;
+    justify-items: center;
+  }
+
+  @media (min-width: @xl-width) {
+    display: grid;
+    grid-template-columns: 1fr 681px;
+    grid-template-rows: min-content 1fr;
+    column-gap: 30px;
+    row-gap: 40px;
+    justify-items: start;
+
+    padding-top: 50px;
+    padding-bottom: 110px;
+  }
+}
+
+.contacts__top {
+  margin-bottom: 20px;
+
+  @media (min-width: @xl-width) {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+
+    margin-bottom: 0;
+    padding-top: 44px;
+  }
+}
+
+.contacts__title {
+  margin-bottom: 10px;
+
+  @media (min-width: @md-width) {
+    text-align: center;
+  }
+
+  @media (min-width: @xl-width) {
+    text-align: left;
+  }
+}
+
+.contacts__title span {
+  display: block;
+  margin-top: -5px;
+  font-size: 33px;
+
+  @media (min-width: @sm-width){
+    margin-top: 0;
+    font-size: 40px;
+  }
+}
+
+.contacts__description {
+  @media (min-width: @md-width) {
+    text-align: center;
+    text-wrap: balance;
+  }
+
+  @media (min-width: @xl-width) {
+    text-align: left;
+  }
+}
+
+.contacts__map {
+  margin-bottom: 20px;
+
+  @media (min-width: @md-width) {
+    width: 640px;
+  }
+
+  @media (min-width: @xl-width) {
+    grid-column: 2 / -1;
+    grid-row: 1 / -1;
+
+    width: auto;
+    margin-bottom: 0;
+  }
+}
+
+.contacts__map img {
+  width: 100%;
+}
+
+.contacts__bottom {
+  @media (min-width: @xl-width) {
+    grid-column: 1 / 2;
+    grid-row: 2 / -1;
+
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 34px;
+  }
+}
+
+.contacts__list {
+  margin-bottom: 19px;
+
+  @media (min-width: @xl-width) {
+    margin-bottom: 40px;
+  }
+}
+
+.contacts__btn {
+  margin-bottom: 10px;
+
+  @media (min-width: @xl-width) {
+    margin-bottom: 13px;
+  }
+}
+
+.contacts__anotation {
+  display: none;
+
+  @media (min-width: @xl-width) {
+    flex-grow: 1;
+    display: block;
+  }
+}
+
+.contacts__slogan {
+  text-wrap: balance;
+}

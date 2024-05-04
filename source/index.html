@@ -13,7 +13,7 @@
 
         <div class="page-header__wrapper main-nav">
           <div class="page-header__top main-nav__top">
-            <a class="page-header__logo main-nav__logo logo"><img src="./img/logo.svg" width="172" height="41" alt="Логотип компании"></a>
+            <a class="page-header__logo main-nav__logo logo"><img src="./img/logo-dark.svg" width="172" height="41" alt="Логотип компании"></a>
 
             <div class="page-header__toogles main-nav__toogles">
               <button class="main-nav__theme-toggle theme-toggle" type="button">
@@ -28,9 +28,9 @@
             </div>
           </div>
 
-          <div class="page-header__middle main-nav__middle">
-            <a class="main-nav__phone phone" href="tel:+79628877751">+7 (962) 88-777-51</a>
-            <a class="main-nav__call-btn app-btn" href="#">Заказать обратный звонок</a>
+          <div class="page-header__middle main-nav__middle connection">
+            <a class="connection phone" href="tel:+79628877751">+7 (962) 88-777-51</a>
+            <a class="connection__call-btn app-btn app-btn--light" href="#">Заказать обратный звонок</a>
           </div>
 
           <div class="page-header__bottom main-nav__bottom">
@@ -67,10 +67,10 @@
 
           <div class="page-header__img">
             <picture>
-              <source type="image/webp" media="(min-width: 480px)" srcset="img/header/header-470.webp 1x, img/header/header-470@2x.webp 2x">
-              <source type="image/webp" srcset="img/header/header-375.webp 1x, img/header/header-375@2x.webp 2x">
-              <source media="(min-width: 480px)" srcset="img/header/header-470.png 1x, img/header/header-470@2x.png 2x">
-              <img src="img/header/header-375.png" srcset="img/header/header-375@2x.png 2x" alt="Изображение кухни.">
+              <source type="image/webp" media="(min-width: 1010px)" srcset="img/header/header-desktop.webp 1x, img/header/header-desktop@2x.webp 2x">
+              <source type="image/webp" srcset="img/header/header-mobile.webp 1x, img/header/header-mobile@2x.webp 2x">
+              <source media="(min-width: 1010px)" srcset="img/header/header-desktop.png 1x, img/header/header-desktop@2x.png 2x">
+              <img src="img/header/header-mobile.png" srcset="img/header/header-mobile@2x.png 2x" alt="Изображение кухни.">
             </picture>
           </div>
 
@@ -81,146 +81,146 @@
                 <span class="intro__title-span-2">КУХНИ</span>
                 <span class="intro__title-span-3">В СОЧИ</span>
               </h2>
-              <a class="intro__btn intro__btn--froze app-btn app-btn--basic" tabindex="0">Бесплатный замер</a>
-              <a class="intro__btn intro__btn--calculation app-btn app-btn--contrast" tabindex="0">Расчет стоимости кухни</a>
+              <a class="intro__btn intro__btn--froze app-btn app-btn--contrast" tabindex="0">Бесплатный замер</a>
+              <a class="intro__btn intro__btn--calculation app-btn app-btn--bright" tabindex="0">Расчет стоимости кухни</a>
             </div>
           </div>
 
-          <div class="page-header__column-right"></div>
+          <div class="page-header__img-container"></div>
         </div>
       </header>
 
       <main class="page__main page-main">
-        <section class="advantages">
+        <section class="advantages" id="advantages">
           <h2 class="visually-hidden">Преимущества</h2>
           <ul class="advantages__list">
             <li class="advantages__item">
-              <span class="advantages__item-text">Гарантия</span>
-              <span class="advantages__item-value">5 лет</span>
+              <span class="advantages__item-name font-basic">Гарантия</span>
+              <span class="advantages__item-value font-small">5 лет</span>
             </li>
             <li class="advantages__item">
-              <span class="advantages__item-text">Сроки работ</span>
-              <span class="advantages__item-value">5 дней</span>
+              <span class="advantages__item-name font-basic">Сроки работ</span>
+              <span class="advantages__item-value font-small">5 дней</span>
             </li>
             <li class="advantages__item">
-              <span class="advantages__item-text">Замер и дизайн</span>
-              <span class="advantages__item-value">бесплатно</span>
+              <span class="advantages__item-name font-basic">Замер и дизайн</span>
+              <span class="advantages__item-value font-small">бесплатно</span>
             </li>
             <li class="advantages__item">
-              <span class="advantages__item-text">Доставка</span>
-              <span class="advantages__item-value">бесплатно</span>
+              <span class="advantages__item-name font-basic">Доставка</span>
+              <span class="advantages__item-value font-small">бесплатно</span>
             </li>
             <li class="advantages__item">
-              <span class="advantages__item-text">Монтаж</span>
-              <span class="advantages__item-value">бесплатно</span>
+              <span class="advantages__item-name font-basic">Монтаж</span>
+              <span class="advantages__item-value font-small">бесплатно</span>
             </li>
           </ul>
         </section>
 
-        <section class="catalog">
-          <h2 class="catalog__title app-title">Каталог кухонь по&nbsp;стилям</h2>
+        <section class="catalog" id="catalog">
+          <h2 class="catalog__title font-title">Каталог кухонь по&nbsp;стилям</h2>
 
           <div class="catalog__slider-container">
             <div class="catalog__slider swiper">
               <div class="catalog__cards swiper-wrapper">
                 <article class="card swiper-slide">
                   <div class="card__wrapper">
-                    <h3 class="card__title app-title">АРТ ДЕКО</h3>
-                    <p class="card__description">
+                    <h3 class="card__title font-title">АРТ ДЕКО</h3>
+                    <p class="card__description font-basic">
                       от 49 990 руб.
                       <a class="card__link">Перейти в каталог</a>
                     </p>
                     <div class="card__img">
                       <picture>
-                        <source type="image/webp" media="(min-width: 515px)" srcset="img/catalog/catalog-01-460.webp 1x, img/catalog/catalog-01-460@2x.webp 2x">
-                        <source type="image/webp" srcset="img/catalog/catalog-01-320.webp 1x, img/catalog/catalog-01-320@2x.webp 2x">
-                        <source media="(min-width: 515px)" srcset="img/catalog/catalog-01-460.png 1x, img/catalog/catalog-01-460@2x.png 2x">
-                        <img src="img/catalog/catalog-01-320.png" srcset="img/catalog/catalog-01-320@2x.png 2x" alt="Изображение кухни в стиле АРТ ДЕКО.">
+                        <source type="image/webp" media="(min-width: 1010px)" srcset="img/catalog/catalog-01-desktop.webp 1x, img/catalog/catalog-01-desktop@2x.webp 2x">
+                        <source type="image/webp" srcset="img/catalog/catalog-01-mobile.webp 1x, img/catalog/catalog-01-mobile@2x.webp 2x">
+                        <source media="(min-width: 1010px)" srcset="img/catalog/catalog-01-desktop.png 1x, img/catalog/catalog-01-desktop@2x.png 2x">
+                        <img src="img/catalog/catalog-01-mobile.png" srcset="img/catalog/catalog-01-mobile@2x.png 2x" alt="Изображение кухни в стиле АРТ ДЕКО.">
                       </picture>
                     </div>
                   </div>
                 </article>
                 <article class="card swiper-slide">
                   <div class="card__wrapper">
-                    <h3 class="card__title app-title">МИНИМАЛИЗМ ХАЙТЕК МОДЕРН</h3>
-                    <p class="card__description">
+                    <h3 class="card__title font-title">МИНИМАЛИЗМ ХАЙТЕК МОДЕРН</h3>
+                    <p class="card__description font-basic">
                       от 49 990 руб.
                       <a class="card__link">Перейти в каталог</a>
                     </p>
                     <div class="card__img">
                       <picture>
-                        <source type="image/webp" media="(min-width: 515px)" srcset="img/catalog/catalog-02-460.webp 1x, img/catalog/catalog-02-460@2x.webp 2x">
-                        <source type="image/webp" srcset="img/catalog/catalog-02-320.webp 1x, img/catalog/catalog-02-320@2x.webp 2x">
-                        <source media="(min-width: 515px)" srcset="img/catalog/catalog-02-460.png 1x, img/catalog/catalog-02-460@2x.png 2x">
-                        <img src="img/catalog/catalog-02-320.png" srcset="img/catalog/catalog-02-320@2x.png 2x" alt="Изображение кухни в стиле МИНИМАЛИЗМ ХАЙТЕК МОДЕРН.">
+                        <source type="image/webp" media="(min-width: 1010px)" srcset="img/catalog/catalog-02-desktop.webp 1x, img/catalog/catalog-02-desktop@2x.webp 2x">
+                        <source type="image/webp" srcset="img/catalog/catalog-02-mobile.webp 1x, img/catalog/catalog-02-mobile@2x.webp 2x">
+                        <source media="(min-width: 1010px)" srcset="img/catalog/catalog-02-desktop.png 1x, img/catalog/catalog-02-desktop@2x.png 2x">
+                        <img src="img/catalog/catalog-02-mobile.png" srcset="img/catalog/catalog-02-mobile@2x.png 2x" alt="Изображение кухни в стиле МИНИМАЛИЗМ ХАЙТЕК МОДЕРН.">
                       </picture>
                     </div>
                   </div>
                 </article>
                 <article class="card swiper-slide">
                   <div class="card__wrapper">
-                    <h3 class="card__title app-title">ЛОФТ ИНДАСТРИАЛ</h3>
-                    <p class="card__description">
+                    <h3 class="card__title font-title">ЛОФТ ИНДАСТРИАЛ</h3>
+                    <p class="card__description font-basic">
                       от 49 990 руб.
                       <a class="card__link">Перейти в каталог</a>
                     </p>
                     <div class="card__img">
                       <picture>
-                        <source type="image/webp" media="(min-width: 515px)" srcset="img/catalog/catalog-03-460.webp 1x, img/catalog/catalog-03-460@2x.webp 2x">
-                        <source type="image/webp" srcset="img/catalog/catalog-03-320.webp 1x, img/catalog/catalog-03-320@2x.webp 2x">
-                        <source media="(min-width: 515px)" srcset="img/catalog/catalog-03-460.png 1x, img/catalog/catalog-03-460@2x.png 2x">
-                        <img src="img/catalog/catalog-03-320.png" srcset="img/catalog/catalog-03-320@2x.png 2x" alt="Изображение кухни в стиле ЛОФТ ИНДАСТРИАЛ.">
+                        <source type="image/webp" media="(min-width: 1010px)" srcset="img/catalog/catalog-03-desktop.webp 1x, img/catalog/catalog-03-desktop@2x.webp 2x">
+                        <source type="image/webp" srcset="img/catalog/catalog-03-mobile.webp 1x, img/catalog/catalog-03-mobile@2x.webp 2x">
+                        <source media="(min-width: 1010px)" srcset="img/catalog/catalog-03-desktop.png 1x, img/catalog/catalog-03-desktop@2x.png 2x">
+                        <img src="img/catalog/catalog-03-mobile.png" srcset="img/catalog/catalog-03-mobile@2x.png 2x" alt="Изображение кухни в стиле ЛОФТ ИНДАСТРИАЛ.">
                       </picture>
                     </div>
                   </div>
                 </article>
                 <article class="card swiper-slide">
                   <div class="card__wrapper">
-                    <h3 class="card__title app-title">НЕОКЛАССИКА</h3>
-                    <p class="card__description">
+                    <h3 class="card__title font-title">НЕОКЛАССИКА</h3>
+                    <p class="card__description font-basic">
                       от 49 990 руб.
                       <a class="card__link">Перейти в каталог</a>
                     </p>
                     <div class="card__img">
                       <picture>
-                        <source type="image/webp" media="(min-width: 515px)" srcset="img/catalog/catalog-04-460.webp 1x, img/catalog/catalog-04-460@2x.webp 2x">
-                        <source type="image/webp" srcset="img/catalog/catalog-04-320.webp 1x, img/catalog/catalog-04-320@2x.webp 2x">
-                        <source media="(min-width: 515px)" srcset="img/catalog/catalog-04-460.png 1x, img/catalog/catalog-04-460@2x.png 2x">
-                        <img src="img/catalog/catalog-04-320.png" srcset="img/catalog/catalog-04-320@2x.png 2x" alt="Изображение кухни в стиле НЕОКЛАССИКА.">
+                        <source type="image/webp" media="(min-width: 1010px)" srcset="img/catalog/catalog-04-desktop.webp 1x, img/catalog/catalog-04-desktop@2x.webp 2x">
+                        <source type="image/webp" srcset="img/catalog/catalog-04-mobile.webp 1x, img/catalog/catalog-04-mobile@2x.webp 2x">
+                        <source media="(min-width: 1010px)" srcset="img/catalog/catalog-04-desktop.png 1x, img/catalog/catalog-04-desktop@2x.png 2x">
+                        <img src="img/catalog/catalog-04-mobile.png" srcset="img/catalog/catalog-04-mobile@2x.png 2x" alt="Изображение кухни в стиле НЕОКЛАССИКА.">
                       </picture>
                     </div>
                   </div>
                 </article>
                 <article class="card swiper-slide">
                   <div class="card__wrapper">
-                    <h3 class="card__title app-title">ПРОВАНС ШЕБИ ШИК КАНТРИ</h3>
-                    <p class="card__description">
+                    <h3 class="card__title font-title">ПРОВАНС ШЕБИ ШИК КАНТРИ</h3>
+                    <p class="card__description font-basic">
                       от 49 990 руб.
                       <a class="card__link">Перейти в каталог</a>
                     </p>
                     <div class="card__img">
                       <picture>
-                        <source type="image/webp" media="(min-width: 515px)" srcset="img/catalog/catalog-05-460.webp 1x, img/catalog/catalog-05-460@2x.webp 2x">
-                        <source type="image/webp" srcset="img/catalog/catalog-05-320.webp 1x, img/catalog/catalog-05-320@2x.webp 2x">
-                        <source media="(min-width: 515px)" srcset="img/catalog/catalog-05-460.png 1x, img/catalog/catalog-05-460@2x.png 2x">
-                        <img src="img/catalog/catalog-05-320.png" srcset="img/catalog/catalog-05-320@2x.png 2x" alt="Изображение кухни в стиле ПРОВАНС ШЕБИ ШИК КАНТРИ.">
+                        <source type="image/webp" media="(min-width: 1010px)" srcset="img/catalog/catalog-05-desktop.webp 1x, img/catalog/catalog-05-desktop@2x.webp 2x">
+                        <source type="image/webp" srcset="img/catalog/catalog-05-mobile.webp 1x, img/catalog/catalog-05-mobile@2x.webp 2x">
+                        <source media="(min-width: 1010px)" srcset="img/catalog/catalog-05-desktop.png 1x, img/catalog/catalog-05-desktop@2x.png 2x">
+                        <img src="img/catalog/catalog-05-mobile.png" srcset="img/catalog/catalog-05-mobile@2x.png 2x" alt="Изображение кухни в стиле ПРОВАНС ШЕБИ ШИК КАНТРИ.">
                       </picture>
                     </div>
                   </div>
                 </article>
                 <article class="card swiper-slide">
                   <div class="card__wrapper">
-                    <h3 class="card__title app-title">СКАНДИНАВСКИЙ</h3>
-                    <p class="card__description">
+                    <h3 class="card__title font-title">СКАНДИНАВСКИЙ</h3>
+                    <p class="card__description font-basic">
                       от 49 990 руб.
                       <a class="card__link">Перейти в каталог</a>
                     </p>
                     <div class="card__img">
                       <picture>
-                        <source type="image/webp" media="(min-width: 515px)" srcset="img/catalog/catalog-06-460.webp 1x, img/catalog/catalog-06-460@2x.webp 2x">
-                        <source type="image/webp" srcset="img/catalog/catalog-06-320.webp 1x, img/catalog/catalog-06-320@2x.webp 2x">
-                        <source media="(min-width: 515px)" srcset="img/catalog/catalog-06-460.png 1x, img/catalog/catalog-06-460@2x.png 2x">
-                        <img src="img/catalog/catalog-06-320.png" srcset="img/catalog/catalog-06-320@2x.png 2x" alt="Изображение кухни в стиле СКАНДИНАВСКИЙ.">
+                        <source type="image/webp" media="(min-width: 1010px)" srcset="img/catalog/catalog-06-desktop.webp 1x, img/catalog/catalog-06-desktop@2x.webp 2x">
+                        <source type="image/webp" srcset="img/catalog/catalog-06-mobile.webp 1x, img/catalog/catalog-06-mobile@2x.webp 2x">
+                        <source media="(min-width: 1010px)" srcset="img/catalog/catalog-06-desktop.png 1x, img/catalog/catalog-06-desktop@2x.png 2x">
+                        <img src="img/catalog/catalog-06-mobile.png" srcset="img/catalog/catalog-06-mobile@2x.png 2x" alt="Изображение кухни в стиле СКАНДИНАВСКИЙ.">
                       </picture>
                     </div>
                   </div>
@@ -240,10 +240,10 @@
 
         <section class="lead-magnet">
           <div class="lead-magnet__wrapper">
-            <h2 class="lead-magnet__title app-title">закажите бесплатный замер<span> и дизайн</span></h2>
-            <p class="lead-magnet__description">Оставьте заявку и мы вам перезвоним</p>
+            <h2 class="lead-magnet__title font-title">закажите бесплатный замер<span> и дизайн</span></h2>
+            <p class="lead-magnet__description font-basic">Оставьте заявку и мы вам перезвоним</p>
 
-            <form class="lead-magnet__form app-form" method="post" action="#">
+            <form class="lead-magnet__form app-form app-form--column font-small" method="post" action="#">
               <label class="app-form__label" for="name">
                 <input class="app-form__input" type="text" id="name" placeholder="Имя" required>
               </label>
@@ -252,7 +252,7 @@
               </label>
 
               <div class="app-form__submit">
-                <button class="app-form__submit-btn app-btn app-btn--submit" type="submit">Отправить заявку</button>
+                <button class="app-form__submit-btn app-btn app-btn--special" type="submit">Отправить заявку</button>
                 <span class="lead-magnet__annotation app-form__submit-annotation">
                   Нажимая на кнопку вы даете согласие на обработку данных
                 </span>
@@ -261,8 +261,8 @@
           </div>
         </section>
 
-        <section class="brands">
-          <h2 class="brands__title app-title">работаем с лучшими</h2>
+        <section class="brands" id="brands">
+          <h2 class="brands__title font-title">работаем с&nbsp;лучшими</h2>
           <ul class="brands__list">
             <li class="brands__list-item">
               <picture>
@@ -303,9 +303,141 @@
           </ul>
         </section>
 
+        <section class="credit" id="credit">
+          <div class="credit__top">
+            <h2 class="credit__title font-title">рассрочка и кредит</span></h2>
+            <p class="credit__description font-basic">
+              <span class="credit__description-mobile">Оставьте заявку и мы вам перезвоним</span>
+              <span class="credit__description-desktop">
+                Узнайте сейчас, как преобрести кухню
+                своей мечты в кредит, заполнив форму:
+              </span>
+            </p>
+
+            <form class="credit__form app-form font-small" method="post" action="#">
+              <label class="app-form__label" for="name">
+                <input class="app-form__input app-form__input--border" type="text" id="name" placeholder="Имя" required>
+              </label>
+              <label class="app-form__label" for="phone">
+                <input class="app-form__input app-form__input--border" type="tel" id="phone" placeholder="Ваш телефон" required>
+              </label>
+
+              <div class="app-form__submit">
+                <button class="app-form__submit-btn app-btn app-btn--special" type="submit">Отправить заявку</button>
+                <span class="credit__annotation app-form__submit-annotation">
+                  Нажимая на кнопку вы даете согласие на обработку данных
+                </span>
+              </div>
+            </form>
+          </div>
+
+          <div class="credit__img-container">
+            <div class="credit__img-container__left-top"></div>
+            <div class="credit__img-container__left-bottom"></div>
+            <div class="credit__img-container__right"></div>
+          </div>
+
+          <div class="credit__bottom">
+            <p class="credit__slogan font-special">Да, у нас - выгодно и без переплат</p>
+          </div>
+        </section>
+
+        <section class="contacts" id="contacts">
+          <div class="contacts__top">
+            <h2 class="contacts__title font-title">Посетите наше <span>производство</span></h2>
+            <p class="contacts__description font-basic">
+              И узнайте, как мы делаем кухни немецкого&nbsp;качества по&nbsp;лучшей в Сочи цене
+            </p>
+          </div>
+          <div class="contacts__map">
+            <picture>
+              <source type="image/webp" media="(min-width: 1010px)" srcset="img/map/map-desktop.webp 1x, img/map/map-desktop@2x.webp 2x">
+              <source type="image/webp" srcset="img/map/map-mobile.webp 1x, img/map/map-mobile@2x.webp 2x">
+              <source media="(min-width: 1010px)" srcset="img/map/map-desktop.png 1x, img/map/map-desktop@2x.png 2x">
+              <img src="img/map/map-mobile.png" srcset="img/map/map-mobile@2x.png 2x" alt="Изображение кухни в стиле АРТ ДЕКО.">
+            </picture>
+          </div>
+          <div class="contacts__bottom">
+            <ul class="contacts__list contacts-list">
+              <li class="contacts-list__item">
+                <span class="contacts-list__item-name font-basic">Адрес:</span>
+                <span class="contacts-list__item-value font-small">Лавровая 13А</span>
+              </li>
+              <li class="contacts-list__item">
+                <span class="contacts-list__item-name font-basic">Телефон:</span>
+                <span class="contacts-list__item-value font-small">+7 (962) 88-777-51</span>
+              </li>
+              <li class="contacts-list__item">
+                <span class="contacts-list__item-name font-basic">Режим работы:</span>
+                <span class="contacts-list__item-value font-small">Пн-Вс с 9:00 до 21:00</span>
+              </li>
+            </ul>
+            <a class="contacts__btn contacts__btn--froze app-btn app-btn--contrast">Бесплатный замер</a>
+            <p class="contacts__anotation font-small">Звонки и заявки с сайта принимаются без выходных</p>
+            <p class="contacts__slogan font-special">Скажите, что пришли с&nbsp;сайта и получите скидку 20%</p>
+          </div>
+        </section>
       </main>
 
-      <footer class="page-footer"></footer>
+      <footer class="page-footer">
+        <div class="page-footer__wrapper">
+          <div class="page-footer__top">
+            <a class="page-footer__logo logo"><img src="./img/logo-light.svg" width="172" height="41" alt="Логотип компании"></a>
+
+            <ul class="page-footer__site-list site-list site-list--transform">
+              <li class="site-list__item">
+                <a class="site-list__link" href="#advantages">Преимущества</a>
+              </li>
+              <li class="site-list__item">
+                <a class="site-list__link" href="#catalog">Каталог</a>
+              </li>
+              <li class="site-list__item">
+                <a class="site-list__link" href="#brands">Партнеры</a>
+              </li>
+              <li class="site-list__item">
+                <a class="site-list__link" href="#credit">Рассрочка</a>
+              </li>
+              <li class="site-list__item">
+                <a class="site-list__link" href="#contacts">Контакты</a>
+              </li>
+            </ul>
+
+            <ul class="page-footer__social-list social-list">
+              <li class="social-list__item">
+                <a class="social-list__link" href="#">
+                  <span class="visually-hidden">Telegram</span>
+                  <svg width="25" height="25" aria-hidden="true" focusable="false">
+                    <use xlink:href="img/sprite.svg#telegram"></use>
+                  </svg>
+                </a>
+              </li>
+              <li class="social-list__item">
+                <a class="social-list__link" href="#">
+                  <span class="visually-hidden">Whatsapp</span>
+                  <svg width="25" height="25" aria-hidden="true" focusable="false">
+                    <use xlink:href="img/sprite.svg#whatsapp"></use>
+                  </svg>
+                </a>
+              </li>
+              <li class="social-list__item">
+                <a class="social-list__link" href="#">
+                  <span class="visually-hidden">Viber</span>
+                  <svg width="25" height="25" aria-hidden="true" focusable="false">
+                    <use xlink:href="img/sprite.svg#viber"></use>
+                  </svg>
+                </a>
+              </li>
+            </ul>
+
+            <div class="page-footer__connection connection">
+              <a class="connection__phone phone" href="tel:+79628877751">+7 (962) 88-777-51</a>
+              <a class="connection__call-btn app-btn app-btn--dark" href="#">Заказать обратный звонок</a>
+            </div>
+          </div>
+
+          <p class="page-footer__copyright copyright">Все права защищены © 2022</p>
+        </div>
+      </footer>
 
       <script src="./swiper/swiper-bundle.min.js"></script>
       <script type="module" src="./js/app.min.js"></script>

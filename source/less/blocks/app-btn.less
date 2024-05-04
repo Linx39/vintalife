@@ -11,65 +11,79 @@
   line-height: 122%;
   font-weight: 700;
   text-align: center;
-  color: @color-special;
 
-  background-color: transparent;
-  border: 2px solid @color-special;
-
-  &:hover,
   &:focus-within {
-    color: @color-alternative;
-    background-color: @color-special;
-    border-color: @color-basic;
     outline: none;
   }
 
   &:active {
-    color: @color-alternative;
-    background-color: @color-black;
-    border-color: @color-black;
+    color: @color-basic;
+    background-color: @color-dark;
+    border-color: @color-dark;
   }
 
-  &--basic {
-    color: @color-alternative;
+  &--light {
+    color: @color-special;
+
     background-color: @color-basic;
-    border-color: @color-basic;
+    border: 2px solid @color-special;
+
+    &:hover,
+    &:focus-within {
+      color: @color-basic;
+      background-color: @color-bright;
+      border: @color-bright;
+      outline: none;
+    }
+  }
+
+  &--dark {
+    color: @color-basic;
+
+    background-color: @color-contrast;
+    border: 2px solid @color-basic;
+  }
+
+  &--contrast {
+    color: @color-basic;
+
+    background-color: @color-contrast;
+    border: none;
+
+    &:hover,
+    &:focus-within {
+      background-color: @color-bright;
+    }
+  }
+
+  &--bright {
+    font-size: 16px;
+    line-height: 122%;
+    color: @color-basic;
+
+    background-color: @color-bright;
+    border: none;
 
     &:hover,
     &:focus-within {
       background-color: @color-contrast;
-      border-color: @color-contrast;
     }
   }
 
-  &--contrast {
-    font-size: 16px;
-    color: @color-alternative;
-    background-color: @color-contrast;
-    border-color: @color-contrast;
-
-    &:hover,
-    &:focus-within {
-      background-color: @color-basic;
-      border-color: @color-basic;
-    }
-  }
-
-  &--submit {
+  &--special {
     width: 100%;
     min-height: 60px;
 
     font-size: 16px;
     line-height: 105%;
-    color: @color-alternative;
+    color: @color-basic;
 
     background-color: @color-special;
-    border-color: @color-special;
+    border: none;
 
     &:hover,
     &:focus-within {
-      background-color: @color-black;
-      border-color: @color-black;
+      background-color: @color-dark;
     }
   }
 }

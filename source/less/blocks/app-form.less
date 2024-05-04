@@ -7,23 +7,22 @@
 
   border: none;
 
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 105%;
-  color: @color-basic;
+  color: @color-contrast;
 
-  @media (min-width: @xl-width) {
-    flex-direction: row;
-    column-gap: 30px;
-    row-gap: 30px;
-    flex-wrap: wrap;
-    justify-content: center;
+  &--column {
+    @media (min-width: @xl-width) {
+      flex-direction: row;
+      column-gap: 30px;
+      row-gap: 30px;
+      flex-wrap: wrap;
+      justify-content: center;
 
-    max-width: unset;
-  }
+      max-width: unset;
+    }
 
-  @media (min-width: @xxl-width) {
-    column-gap: 60px;
+    @media (min-width: @xxl-width) {
+      column-gap: 60px;
+    }
   }
 }
 
@@ -39,6 +38,19 @@
     margin-bottom: 20px;
   }
 
+  @media (min-width: @xl-width) {
+    &:not(:last-of-type) {
+      margin-bottom: 22px;
+    }
+
+    &:last-of-type {
+      margin-bottom: 25px;
+    }
+  }
+
+}
+
+.app-form--column .app-form__label {
   @media (min-width: @xl-width) {
     &:not(:last-of-type) {
       margin-bottom: 0;
@@ -61,12 +73,20 @@
   padding: 10px 30px;
 
   font: inherit;
-  background-color: @color-alternative;
+  background-color: @color-basic;
   border: none;
 
-  &:hover,
   &:focus-visible {
-    outline: 1px solid @color-special;
+    outline: none;
+  }
+
+  &--border {
+    border: 1px solid rgba(@color-contrast, .5);
+
+    &:hover,
+    &:focus-visible {
+      border: 1px solid @color-special;
+    }
   }
 }
 

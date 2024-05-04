@@ -48,28 +48,9 @@
 }
 
 .main-nav__middle {
-  display: flex;
-  flex-direction: column;
-  gap: 9px;
-  align-items: center;
-  flex-wrap: wrap;
-
   padding: 20px 0 40px;
 
   @media (min-width: @lg-width) {
-    flex-direction: row;
-    column-gap: 15px;
-    row-gap: 5px;
-
     padding: 25px 0 48px;
-  }
-}
-
-.main-nav__phone {
-  order: 1;
-  flex-shrink: 0;
-
-  @media (min-width: @lg-width) {
-    order: unset;
   }
 }

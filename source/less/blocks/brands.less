@@ -3,19 +3,28 @@
   flex-direction: column;
 
   .wrapper();
-  padding-top: 40px;
+  padding-top: 38px;
   padding-bottom: 40px;
 
   @media (min-width: @sm-width) {
     align-items: center;
   }
+
+  @media (min-width: @xxl-width) {
+    padding-top: 98px;
+    padding-bottom: 49px;
+  }
 }
 
 .brands__title {
-  margin-bottom: 32px;
+  margin-bottom: 34px;
 
   @media (min-width: @sm-width) {
     text-align: center;
+  }
+
+  @media (min-width: @xxl-width) {
+    margin-bottom: 41px;
   }
 }
 
@@ -67,7 +76,7 @@
   }
 
   &:nth-of-type(2n) {
-    background-color: @color-grey-2;
+    background-color: @color-back-light;
   }
 
   &:hover {
@@ -75,4 +84,4 @@
   }
 }
 
-@border: 1px solid rgba(45, 45, 45, 0.5);
+@border: 1px solid rgba(@color-contrast, 0.5);
