@@ -42,6 +42,14 @@
 
     background-color: @color-contrast;
     border: 2px solid @color-basic;
+
+    &:hover,
+    &:focus-within {
+      color: @color-basic;
+      background-color: @color-bright;
+      border: @color-bright;
+      outline: none;
+    }
   }
 
   &--contrast {

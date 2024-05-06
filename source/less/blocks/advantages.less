@@ -14,11 +14,10 @@
 }
 
 .advantages__list {
-  position: relative;
-
   display: flex;
   flex-direction: column;
   row-gap: 30px;
+  justify-content: center;
 
   @media (min-width: @sm-width) {
     align-items: center;
@@ -27,7 +26,6 @@
   @media (min-width: @lg-width) {
     flex-direction: row;
     flex-wrap: wrap;
-    align-items: unset;
   }
 }
 
@@ -41,7 +39,7 @@
   }
 
   @media (min-width: @lg-width) {
-    width: 50%;
+    width: 33%;
   }
 
   @media (min-width: @xxl-width) {
@@ -58,7 +56,7 @@
 
   @media (min-width: @xxl-width) {
     padding-left: 0;
-    padding-right: 192px;
+    padding-right: 192.5px;
   }
 
   &::after {

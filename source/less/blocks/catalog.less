@@ -14,7 +14,7 @@
 }
 
 .catalog__title {
-  .wrapper-xxxl-width();
+  .wrapper();
   margin-bottom: 22px;
 
   @media (min-width: @lg-width) {
@@ -31,8 +31,13 @@
 
 .catalog__slider {
   margin: 0;
+  margin-bottom: 10px;
 
   overflow: hidden;
+
+  @media (min-width: @xxxl-width) {
+    margin-bottom: 0;
+  }
 }
 
 .catalog__cards {
@@ -40,29 +45,22 @@
 }
 
 .catalog__slider-navigation {
-  position: absolute;
-  bottom: 35%;
-  left: 0;
-  right: 0;
-  z-index: 10;
-
   box-sizing: border-box;
   display: flex;
   justify-content: space-between;
   width: 100%;
 
-  padding-left: 8px;
-  padding-right: 8px;
-
-  transform: translateY(50%);
-
-  @media (min-width: @lg-width) {
-    bottom: 50%;
-  }
-
   @media (min-width: @xxxl-width) {
+    position: absolute;
+    bottom: 50%;
+    left: 0;
+    right: 0;
+    z-index: -1;
+
     max-width: @xxxl-width;
     padding-left: 14px;
     padding-right: 14px;
+
+    transform: translateY(50%);
   }
 }
