@@ -58,17 +58,17 @@
   }
 }
 
-.cross-icon(@color) {
+.cross-icon(@color, @height) {
   position: relative;
 
   &::before,
   &::after {
     position: absolute;
-    top: 6px;
-    right: 12px;
+    top: 0;
+    left: calc((@height - 2px) / 2);
 
     width: 2px;
-    height: 24px;
+    height: @height;
     margin: 0 auto;
 
     background-color: @color;

@@ -3,11 +3,11 @@
 
   @media (min-width: @lg-width) {
     display: grid;
-    grid-template-columns: minmax(min-content, 1010px) auto;
+    grid-template-columns: minmax(min-content, @lg-width) auto;
   }
 
   @media (min-width: @xxl-width) {
-    grid-template-columns: 1fr minmax(min-content, 1010px) 450px 1fr;
+    grid-template-columns: 1fr minmax(min-content, @lg-width) calc(@xxl-width - @lg-width) 1fr;
   }
 }
 
