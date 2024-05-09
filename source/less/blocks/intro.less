@@ -3,9 +3,13 @@
   justify-content: center;
   align-items: center;
 
-  // .wrapper-padding();
   padding-top: 50px;
   padding-bottom: 21px;
+
+  @media (min-width: @md-width) {
+    padding-top: 70px;
+    padding-bottom: 41px;
+  }
 
   @media (min-width: @lg-width) {
     display: block;
@@ -23,6 +27,12 @@
   align-items: center;
 
   background: #00000080;
+
+  @media (min-width: @md-width) {
+    width: 480px;
+    padding-top: 119px;
+    padding-bottom: 119px;
+  }
 
   @media (min-width: @lg-width) {
     align-items: start;
@@ -43,6 +53,12 @@
   font-weight: 400;
   word-spacing: -0.2em;
   color: @color-basic;
+
+  @media (min-width: @md-width) {
+    margin-bottom: 57px;
+
+    font-size: 60px;
+  }
 
   @media (min-width: @lg-width) {
     margin-bottom: 12px;
