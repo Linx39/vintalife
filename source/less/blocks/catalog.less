@@ -31,7 +31,7 @@
 
 .catalog__slider {
   margin: 0;
-  margin-bottom: 10px;
+  // margin-bottom: 10px;
 
   overflow: hidden;
 
@@ -45,10 +45,17 @@
 }
 
 .catalog__slider-navigation {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+
   box-sizing: border-box;
   display: flex;
   justify-content: space-between;
   width: 100%;
+
 
   @media (min-width: @xxxl-width) {
     position: absolute;
