@@ -1,7 +1,7 @@
 .lead-magnet {
   position: relative;
   padding-top: 38px;
-  padding-bottom: 38px;
+  padding-bottom: 39px;
 
   color: @color-basic;
   background-color: @color-back-dark;
@@ -16,6 +16,16 @@
   background-size: cover;
   background-position: center;
 
+  &::before {
+    position: absolute;
+    content: "";
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(@color-dark, 0.5);
+  }
 
   @media (min-width: @lg-width) {
     padding-top: 48px;
@@ -27,17 +37,6 @@
       url("../img/magnet/magnet-desktop.png") type("image/png") 1x,
       url("../img/magnet/magnet-desktop@2x.png") type("image/png") 2x,
     );
-  }
-
-  &::before {
-    position: absolute;
-    content: "";
-    inset: 0;
-
-    width: 100%;
-    height: 100%;
-
-    background-color: rgba(@color-dark, 0.5);
   }
 }
 
@@ -57,18 +56,20 @@
 
 .lead-magnet__title {
   margin-bottom: 4px;
-  text-wrap: balance;
 
   @media (min-width: @sm-width) {
-    margin-bottom: 11px;
     text-align: center;
+  }
+
+  @media (min-width: @xl-width) {
+    margin-bottom: 11px;
   }
 }
 
 .lead-magnet__title span {
   display: none;
 
-  @media (min-width: @lg-width) {
+  @media (min-width: @xl-width) {
     display: inline;
   }
 }
@@ -79,15 +80,11 @@
   color: @color-basic;
 
   @media (min-width: @sm-width) {
-    margin-bottom: 40px;
     text-align: center;
   }
-}
 
-.lead-magnet__form {
-  // align-self: center;
-
-  @media (min-width: @lg-width) {
+  @media (min-width: @xl-width) {
+    margin-bottom: 40px;
   }
 }
 

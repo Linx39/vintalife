@@ -23,12 +23,17 @@
 
   @media (min-width: @lg-width) {
     flex-direction: row;
-    column-gap: 50px;
+    column-gap: 70px;
     row-gap: 25px;
     flex-wrap: wrap;
     justify-content: space-between;
 
     margin-bottom: 49px;
+  }
+
+  @media (min-width: @xxl-width) {
+    flex-wrap: nowrap;
+    column-gap: 86px;
   }
 }
 
@@ -38,7 +43,6 @@
 
   @media (min-width: @lg-width) {
     margin-bottom: 0;
-    margin-right: 36px;
   }
 }
 
@@ -47,12 +51,16 @@
 
   @media (min-width: @lg-width) {
     order: 1;
+
+    // max-width: 810px;
     margin-bottom: 0;
   }
 
   @media (min-width: @xxl-width) {
     order: unset;
+
     margin-right: auto;
+
   }
 }
 
