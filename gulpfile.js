@@ -1,6 +1,6 @@
 import gulp from 'gulp';
 import plumber from 'gulp-plumber';
-// import sourcemap from 'gulp-sourcemaps';
+import sourcemap from 'gulp-sourcemaps';
 import less from 'gulp-less';
 import postcss from 'gulp-postcss';
 import autoprefixer from 'autoprefixer';
@@ -29,7 +29,7 @@ export const html = () => {
 export const styles = () => {
   return gulp.src(`${SOURCE_FOLDER}/less/style.less`, { sourcemaps: true })
     .pipe(plumber())
-    // .pipe(sourcemap.init())
+    .pipe(sourcemap.init())
     .pipe(less())
     .pipe(postcss([
       autoprefixer(),

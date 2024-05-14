@@ -4,7 +4,7 @@
   height: 40px;
 
   border-radius: 50%;
-  background-color: @color-special;
+  background-color: var(--color-btn-basic);
 
   @media (min-width: @lg-width) {
     width: 60px;
@@ -29,18 +29,14 @@
   &--prev::before {
     left: 20%;
 
-    border-right-color: @color-basic;
+    border-right-color: var(--color-back-basic);
   }
 
   &--next::before {
     right: 20%;
 
-    border-left-color: @color-basic;
+    border-left-color: var(--color-back-basic);
   }
 
-  &:hover,
-  &:focus-visible {
-    background-color: @color-contrast;
-    outline: none;
-  }
+  .interactive-styles-custom();
 }

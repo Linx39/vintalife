@@ -16,65 +16,59 @@
     outline: none;
   }
 
-  &:active {
-    color: @color-basic;
-    background-color: @color-dark;
-    border-color: @color-dark;
-  }
+  &--transparent {
+    color: var(--color-btn-basic);
 
-  &--light {
-    color: @color-special;
-
-    background-color: @color-basic;
-    border: 2px solid @color-special;
+    background-color: transparent;
+    border: 2px solid currentColor;
 
     &:hover,
     &:focus-within {
-      color: @color-basic;
-      background-color: @color-bright;
-      border-color: @color-bright;
+      color: var(--color-back-basic);
+      background-color: var(--color-bright);
+      border-color: var(--color-bright);
       outline: none;
     }
   }
 
   &--dark {
-    color: @color-basic;
+    color: var(--color-back-basic);
 
-    background-color: @color-contrast;
-    border: 2px solid @color-basic;
+    background-color: var(--color-font-basic);
+    border: 2px solid var(--color-back-basic);
 
     &:hover,
     &:focus-within {
-      color: @color-basic;
-      background-color: @color-bright;
-      border-color: @color-bright;
+      color: var(--color-back-basic);
+      background-color: var(--color-bright);
+      border-color: var(--color-bright);
       outline: none;
     }
   }
 
   &--contrast {
-    color: @color-basic;
+    color: var(--color-font-light);
 
-    background-color: @color-contrast;
+    background-color: var(--color-back-dark);
     border: none;
 
     &:hover,
     &:focus-within {
-      background-color: @color-bright;
+      background-color: var(--color-special);
     }
   }
 
   &--bright {
     font-size: 16px;
     line-height: 122%;
-    color: @color-basic;
+    color: var(--color-font-light);
 
-    background-color: @color-bright;
+    background-color: var(--color-bright);
     border: none;
 
     &:hover,
     &:focus-within {
-      background-color: @color-contrast;
+      background-color: var(--color-back-dark);
     }
   }
 
@@ -84,14 +78,20 @@
 
     font-size: 16px;
     line-height: 105%;
-    color: @color-basic;
+    color: var(--color-font-light);
 
-    background-color: @color-special;
+    background-color: var(--color-special);
     border: none;
 
     &:hover,
     &:focus-within {
-      background-color: @color-dark;
+      background-color: var(--color-black);
     }
+  }
+
+  &:active {
+    color: var(--color-back-basic);
+    background-color: var(--color-black);
+    border-color: var(--color-black);
   }
 }

@@ -12,9 +12,7 @@
         <h1 class="visually-hidden">Авторские кухни Vintalife</h1>
 
         <div class="page-header__nav main-nav">
-          <div class="main-nav__logo-container">
-            <a class="logo"><img src="./img/logo-dark.svg" width="172" height="41" alt="Логотип компании"></a>
-          </div>
+          <a class="main-nav__logo logo"><img src="./img/logo-dark.svg" width="172" height="41" alt="Логотип компании"></a>
 
           <div class="main-nav__toogles">
             <button class="main-nav__theme-toggle theme-toggle" type="button">
@@ -23,13 +21,13 @@
                 <use xlink:href="img/sprite.svg#moon"></use>
               </svg>
             </button>
-            <button class="main-nav__menu-open-btn menu-open-btn" type="button">
+            <button class="main-nav__menu-open-btn burger-btn" type="button">
               <span class="visually-hidden">Открыть меню</span>
             </button>
           </div>
 
           <div class="main-nav__site-menu">
-            <button class="main-nav__menu-close-btn menu-close-btn"><span class="visually-hidden">Закрыть меню</span></button>
+            <button class="main-nav__menu-close-btn cross-btn"><span class="visually-hidden">Закрыть меню</span></button>
             <ul class="main-nav__site-list site-list">
               <li class="site-list__item">
                 <a class="site-list__link" href="#advantages">Преимущества</a>
@@ -51,7 +49,7 @@
 
           <div class="main-nav__connection connection">
             <a class="connection__phone phone" href="tel:+79628877751">+7 (962) 88-777-51</a>
-            <a class="connection__call-btn app-btn app-btn--light" href="#">Заказать обратный звонок</a>
+            <a class="connection__call-btn app-btn app-btn--transparent" href="#">Заказать обратный звонок</a>
           </div>
 
           <div class="main-nav__intro intro">
@@ -61,8 +59,8 @@
                 <span class="intro__title-span-2">КУХНИ</span>
                 <span class="intro__title-span-3">В СОЧИ</span>
               </h2>
-              <a class="intro__btn intro__btn--froze app-btn app-btn--contrast" tabindex="0">Бесплатный замер</a>
-              <a class="intro__btn intro__btn--calculation app-btn app-btn--bright" tabindex="0">Расчет стоимости кухни</a>
+              <a class="intro__btn intro__btn--froze app-btn app-btn--contrast" href="#">Бесплатный замер</a>
+              <a class="intro__btn intro__btn--calculation app-btn app-btn--bright" href="#">Расчет стоимости кухни</a>
             </div>
           </div>
 
@@ -263,7 +261,7 @@
 
               <div class="app-form__submit">
                 <button class="app-form__submit-btn app-btn app-btn--special" type="submit">Отправить заявку</button>
-                <span class="lead-magnet__annotation app-form__submit-annotation">
+                <span class="app-form__submit-annotation">
                   Нажимая на кнопку вы даете согласие на обработку данных
                 </span>
               </div>

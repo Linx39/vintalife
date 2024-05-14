@@ -5,7 +5,7 @@
   font-size: 16px;
   font-weight: 700;
   line-height: 105%;
-  color: @color-basic;
+  color: var(--color-font-light);
 
   &::after {
     position: absolute;
@@ -15,15 +15,15 @@
 
     width: 45px;
     height: 2px;
-    background-color: @color-basic;
+    background-color: currentColor;
   }
 
   @media (min-width: @lg-width) {
-    color: @color-contrast;
+    color: var(--color-font-basic);
 
-    &::after {
-      background-color: @color-contrast;
-    }
+    // &::after {
+    //   background-color: var(--color-font-basic);
+    // }
   }
 
   &:hover,
@@ -31,7 +31,7 @@
     .interactive-styles();
 
     &::after {
-      background-color: @color-bright;
+      background-color: var(--color-bright);
     }
   }
 }

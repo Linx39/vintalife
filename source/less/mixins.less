@@ -32,19 +32,15 @@
 .interactive-styles {
   &:hover,
   &:focus-visible {
-    color: @color-bright;
+    color: var(--color-bright);
     outline: none;
   }
 }
 
 .interactive-styles-custom {
-  &:hover {
-    color: @color-bright;
-  }
-
   &:focus-visible {
-    outline: 1px solid @color-contrast;
-    outline-offset: 1px;
+    outline: 1px solid currentColor;
+    outline-offset: 2px;
   }
 }
 
