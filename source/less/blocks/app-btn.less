@@ -12,49 +12,38 @@
   font-weight: 700;
   text-align: center;
 
-  &:focus-within {
-    outline: none;
-  }
-
   &--transparent {
-    color: var(--color-btn-basic);
-
     background-color: transparent;
     border: 2px solid currentColor;
 
     &:hover,
     &:focus-within {
-      color: var(--color-back-basic);
+      color: var(--color-font-light);
       background-color: var(--color-bright);
       border-color: var(--color-bright);
       outline: none;
     }
-  }
 
-  &--dark {
-    color: var(--color-back-basic);
-
-    background-color: var(--color-font-basic);
-    border: 2px solid var(--color-back-basic);
-
-    &:hover,
-    &:focus-within {
-      color: var(--color-back-basic);
-      background-color: var(--color-bright);
-      border-color: var(--color-bright);
-      outline: none;
+    &:active {
+      color: var(--color-font-light);
+      background-color: var(--color-ultra-back);
+      border-color: var(--color-ultra-back);
     }
   }
 
   &--contrast {
     color: var(--color-font-light);
-
     background-color: var(--color-back-dark);
-    border: none;
 
     &:hover,
     &:focus-within {
       background-color: var(--color-special);
+      outline: none;
+    }
+
+    &:active {
+      color: var(--color-font-light);
+      background-color: var(--color-ultra-back);
     }
   }
 
@@ -62,13 +51,17 @@
     font-size: 16px;
     line-height: 122%;
     color: var(--color-font-light);
-
     background-color: var(--color-bright);
-    border: none;
 
     &:hover,
     &:focus-within {
       background-color: var(--color-back-dark);
+      outline: none;
+    }
+
+    &:active {
+      color: var(--color-font-light);
+      background-color: var(--color-ultra-back);
     }
   }
 
@@ -79,19 +72,16 @@
     font-size: 16px;
     line-height: 105%;
     color: var(--color-font-light);
-
     background-color: var(--color-special);
-    border: none;
 
     &:hover,
     &:focus-within {
-      background-color: var(--color-black);
+      background-color: var(--color-ultra-back);
+      outline: none;
     }
-  }
 
-  &:active {
-    color: var(--color-back-basic);
-    background-color: var(--color-black);
-    border-color: var(--color-black);
+    &:active {
+      background-color: var(--color-ultra-back);
+    }
   }
 }
