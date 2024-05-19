@@ -14,7 +14,9 @@
 
   &--dark {
     color: var(--color-font-light);
+  }
 
+  &--transform {
     @media (min-width: @xl-width) {
       align-items: center;
       text-align: center;
@@ -31,16 +33,18 @@
 }
 
 .feedback__description {
-  @media (min-width: @xl-width) {
-    // margin-bottom: 20px;
-  }
+  text-wrap: balance;
 }
 
 .feedback__anotation {
   padding-top: 9px;
 }
 
-.feedback--dark .feedback__description {
+.feedback__anotation b {
+  font-weight: 700;
+}
+
+.feedback--transform .feedback__description {
   margin-bottom: 0;
 }
 
@@ -50,6 +54,7 @@
   align-items: center;
 
   width: 100%;
+  max-width: 460px;
   padding-top: 20px;
 
   border: none;
@@ -77,9 +82,11 @@
   }
 }
 
-.feedback__label {
+.feedback__group {
   width: 100%;
   max-width: 460px;
+
+  border: none;
 
   &:not(:last-of-type) {
     margin-bottom: 10px;
@@ -87,6 +94,10 @@
 
   &:last-of-type {
     margin-bottom: 20px;
+  }
+
+  &--with-control:last-of-type {
+    margin-bottom: 9px;
   }
 
   @media (min-width: @xl-width) {
@@ -97,10 +108,14 @@
     &:last-of-type {
       margin-bottom: 25px;
     }
+
+    &--with-control:last-of-type {
+      margin-bottom: 14px;
+    }
   }
 }
 
-.feedback--transform .feedback__label {
+.feedback--transform .feedback__group {
   @media (min-width: @xl-width) {
     &:not(:last-of-type),
     &:last-of-type {
@@ -140,9 +155,51 @@
   opacity: .5;
 }
 
-.feedback__submit {
+.feedback__submit-group {
   width: 100%;
   max-width: 460px;
+}
+
+.feedback--transform .feedback__submit-group {
+  @media (min-width: @xl-width) {
+    padding-top: 0;
+  }
+}
+
+.feedback__control {
+  align-self: start;
+
+  display: flex;
+  gap: 10px;
+  align-items: center;
+
+  padding-top: 9px;
+}
+
+.feedback__control-input {
+  display: none;
+}
+
+.feedback__control-mark {
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-sizing: border-box;
+  width: 16px;
+  height: 16px;
+
+  border: 1px solid currentColor;
+}
+
+.feedback__control-mark svg {
+  display: none;
+}
+
+.feedback__control-input:checked + .feedback__control-mark svg {
+  display: block;
 }
 
 .feedback__submit-btn {
