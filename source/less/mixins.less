@@ -43,30 +43,3 @@
     outline-offset: 2px;
   }
 }
-
-.cross-icon(@color, @height) {
-  position: relative;
-
-  &::before,
-  &::after {
-    position: absolute;
-    top: 0;
-    left: calc((@height - 2px) / 2);
-
-    width: 2px;
-    height: @height;
-    margin: 0 auto;
-
-    background-color: @color;
-
-    content: "";
-  }
-
-  &::before {
-    transform: rotate(45deg);
-  }
-
-  &::after {
-    transform: rotate(-45deg);
-  }
-}

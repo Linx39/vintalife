@@ -1,18 +1,48 @@
+import {isEscEvent} from "./utils.js";
+import { activateBlur, deactivateBlur, isOnBlurClick } from "./blur.js";
+
 const SITE_MENU_OPENED_CLASS = 'main-nav__site-menu--opened'
 
 const mainNav = document.querySelector('.main-nav');
 const siteMenu = mainNav.querySelector('.main-nav__site-menu');
-const menuOpenBtn = mainNav.querySelector('.main-nav__menu-open-btn');
-const menuCloseBtn = mainNav.querySelector('.main-nav__menu-close-btn');
+const openBtn = mainNav.querySelector('.main-nav__menu-open-btn');
+const closeBtn = mainNav.querySelector('.main-nav__menu-close-btn');
 
-menuOpenBtn.addEventListener('click', () => {
+const openSiteMenu = () => {
+  siteMenu.classList.add(SITE_MENU_OPENED_CLASS);
+  activateBlur();
+  document.addEventListener(`keydown`, onEscKeydown);
+  document.addEventListener('click', onDocumentClick);
+}
+
+const closeSiteMenu = () => {
+  siteMenu.classList.remove(SITE_MENU_OPENED_CLASS);
+  deactivateBlur();
+  document.removeEventListener('keydown', onEscKeydown);
+  document.removeEventListener('click', onDocumentClick);
+}
+
+openBtn.addEventListener('click', () => {
   if (!siteMenu.classList.contains(SITE_MENU_OPENED_CLASS)) {
-    siteMenu.classList.add(SITE_MENU_OPENED_CLASS);
+    openSiteMenu();
   }
 })
 
-menuCloseBtn.addEventListener('click', () => {
+closeBtn.addEventListener('click', () => {
   if (siteMenu.classList.contains(SITE_MENU_OPENED_CLASS)) {
-    siteMenu.classList.remove(SITE_MENU_OPENED_CLASS);
+    closeSiteMenu();
   }
 })
+
+const onEscKeydown = (evt) => {
+  if (isEscEvent(evt)) {
+    evt.preventDefault();
+    closeSiteMenu();
+  }
+}
+
+const onDocumentClick = (evt) => {
+  if (isOnBlurClick(evt)) {
+    closeSiteMenu();
+  }
+}

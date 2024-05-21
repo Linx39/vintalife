@@ -1,10 +1,32 @@
 .cross-btn {
+  position: relative;
   width: @size;
   height: @size;
 
-  .cross-icon(var(--color-font-light), @size);
+  &::before,
+  &::after {
+    position: absolute;
+    top: 0;
+    left: calc((@size - 2px) / 2);
+
+    width: 2px;
+    height: @size;
+    margin: 0 auto;
+
+    background-color: currentColor;
+
+    content: "";
+  }
+
+  &::before {
+    transform: rotate(45deg);
+  }
+
+  &::after {
+    transform: rotate(-45deg);
+  }
 
   .interactive-styles-custom();
 }
 
-@size: 24px;
+@size: 30px;
