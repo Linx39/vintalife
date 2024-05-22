@@ -1,4 +1,6 @@
 .cross-btn {
+  @size: 30px;
+
   position: relative;
   width: @size;
   height: @size;
@@ -26,7 +28,20 @@
     transform: rotate(-45deg);
   }
 
+  &--adaptive {
+    @media (min-width: @xl-width) {
+      @size: 48px;
+      width: @size;
+      height: @size;
+
+      &::before,
+      &::after {
+        left: calc((@size - 2px) / 2);
+
+        height: @size;
+      }
+    }
+  }
+
   .interactive-styles-custom();
 }
-
-@size: 30px;

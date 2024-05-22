@@ -1,5 +1,5 @@
 import {isEscEvent} from "./utils.js";
-import { activateBlur, deactivateBlur, isOnBlurClick } from "./blur.js";
+import { activateBlur, deactivateBlur, isOnBlurClick, hideScroll, showScroll } from "./blur.js";
 
 const SITE_MENU_OPENED_CLASS = 'main-nav__site-menu--opened'
 
@@ -11,6 +11,7 @@ const closeBtn = mainNav.querySelector('.main-nav__menu-close-btn');
 const openSiteMenu = () => {
   siteMenu.classList.add(SITE_MENU_OPENED_CLASS);
   activateBlur();
+  hideScroll();
   document.addEventListener(`keydown`, onEscKeydown);
   document.addEventListener('click', onDocumentClick);
 }
@@ -18,6 +19,7 @@ const openSiteMenu = () => {
 const closeSiteMenu = () => {
   siteMenu.classList.remove(SITE_MENU_OPENED_CLASS);
   deactivateBlur();
+  showScroll();
   document.removeEventListener('keydown', onEscKeydown);
   document.removeEventListener('click', onDocumentClick);
 }
