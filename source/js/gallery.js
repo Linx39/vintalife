@@ -10,7 +10,7 @@ const closeBtn = gallery.querySelector('.gallery__close-btn');
 
 cards.forEach(card => {
   card.addEventListener('click', (evt) => {
-    const href = evt.currentTarget.getAttribute('href');
+    const href = card.querySelector('.card__link').getAttribute('href');
     const product = gallery.querySelector(href);
 
     const openGallery = (product) => {

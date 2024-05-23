@@ -9,13 +9,17 @@
 }
 
 .product__title {
-  .wrapper-padding();
   margin-bottom: 22px;
+  padding: 0 10px;
 
+  .font-title();
+  font-size: 29px;
   text-align: center;
 
   @media (min-width: @xl-width) {
     margin-bottom: 41px;
+
+    font-size: 40px;
   }
 }
 
@@ -67,7 +71,6 @@
 }
 
 .product__feedback {
-  .wrapper();
   padding-top: 20px;
   padding-bottom: 20px;
 
@@ -75,4 +78,13 @@
     padding-top: 48px;
     padding-bottom: 27px;
   }
+}
+
+.product__feedback-head {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.product__feedback-form {
+  .wrapper-padding();
 }

@@ -1,45 +1,9 @@
 .cross-btn {
-  @size: 30px;
-
-  position: relative;
-  width: @size;
-  height: @size;
-
-  &::before,
-  &::after {
-    position: absolute;
-    top: 0;
-    left: calc((@size - 2px) / 2);
-
-    width: 2px;
-    height: @size;
-    margin: 0 auto;
-
-    background-color: currentColor;
-
-    content: "";
-  }
-
-  &::before {
-    transform: rotate(45deg);
-  }
-
-  &::after {
-    transform: rotate(-45deg);
-  }
+  .cross-icon(30px);
 
   &--adaptive {
     @media (min-width: @xl-width) {
-      @size: 48px;
-      width: @size;
-      height: @size;
-
-      &::before,
-      &::after {
-        left: calc((@size - 2px) / 2);
-
-        height: @size;
-      }
+      .cross-icon(48px);
     }
   }
 

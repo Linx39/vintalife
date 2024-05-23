@@ -29,6 +29,44 @@
   .wrapper-padding();
 }
 
+.font-title {
+  font-family: SovMod;
+  font-size: 40px;
+  line-height: 105%;
+  font-weight: 400;
+  text-transform: uppercase;
+  text-wrap: balance;
+}
+
+.font-basic {
+  font-size: 25px;
+  font-weight: 500;
+  line-height: 105%;
+  text-wrap: balance;
+}
+
+.font-small {
+  font-size: 16px;
+  line-height: 105%;
+  font-weight: 400;
+}
+
+.font-special {
+  font-family: "Monotype Corsiva";
+  font-size: 18px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 105%;
+  letter-spacing: 0.11em;
+  text-wrap: balance;
+
+  opacity: .5;
+
+  @media (min-width: @xl-width) {
+    font-size: 25px;
+  }
+}
+
 .interactive-styles {
   &:hover,
   &:focus-visible {
@@ -41,5 +79,34 @@
   &:focus-visible {
     outline: 1px solid currentColor;
     outline-offset: 2px;
+  }
+}
+
+.cross-icon(@size) {
+  position: relative;
+
+  width: @size;
+  height: @size;
+
+  &::before,
+  &::after {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: calc((@size - 2px) / 2);
+
+    width: 2px;
+    height: @size;
+    margin: 0 auto;
+
+    background-color: currentColor;
+  }
+
+  &::before {
+    transform: rotate(45deg);
+  }
+
+  &::after {
+    transform: rotate(-45deg);
   }
 }

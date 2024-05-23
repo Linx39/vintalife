@@ -5,15 +5,36 @@
 .gallery__wrapper {
   position: relative;
 
-  box-sizing: border-box;
-  .wrapper-width();
+  width: 360px;
+  min-width: 360px;
+  margin: auto;
   padding-top: 90px;
   padding-bottom: 40px;
 
   background-color: var(--color-back-basic);
 
+  @media (min-width: @sm-width) {
+    width: 480px;
+  }
+
+  @media (min-width: @md-width) {
+    width: 640px;
+  }
+
+  @media (min-width: @lg-width) {
+    width: 840px;
+  }
+
+  @media (min-width: @lg-width) {
+    width: 840px;
+  }
+
   @media (min-width: @xl-width) {
-    max-width: 1500px;
+    width: 1200px;
+  }
+
+  @media (min-width: @xl-width) {
+    // max-width: 1500px;
   }
 }
 
