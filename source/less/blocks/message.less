@@ -1,0 +1,29 @@
+.message {
+  position: relative;
+  
+  box-sizing: border-box;
+  width: 360px;
+  margin: auto;
+  padding: 80px 10px;
+
+  background-color: var(--color-back-basic);
+
+  @media (min-width: @md-width) {
+    width: 480px;
+  }
+
+  @media (min-width: @xl-width) {
+    width: 900px;
+  }
+}
+
+.message__close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+
+  @media (min-width: @xl-width) {
+    top: 50px;
+    right: 50px;
+  }
+}
