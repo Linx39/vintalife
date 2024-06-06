@@ -7,27 +7,32 @@ const CALL_OPENED_CLASS = 'call--opened';
 const call = document.querySelector('.call');
 const callBtns = document.querySelectorAll('.call-btn');
 const closeBtn = call.querySelector('.call__close-btn');
+const form = call.querySelector('.feedback__form');
+
+const openCall = () => {
+  call.classList.add(MODAL_CLASS);
+  activateBlur();
+  document.addEventListener(`keydown`, onEscKeydown);
+}
+
+const closeCall = () => {
+  if(call) {
+    call.classList.remove(MODAL_CLASS);
+    deactivateBlur();
+    document.removeEventListener('keydown', onEscKeydown);
+    form.reset();
+  }
+}
+
+const onEscKeydown = (evt) => {
+  if (isEscEvent(evt)) {
+    evt.preventDefault();
+    closeCall();
+  }
+}
 
 callBtns.forEach(btn => {
   btn.addEventListener('click', (evt) => {
-    const openCall = () => {
-      call.classList.add(MODAL_CLASS);
-      activateBlur();
-      document.addEventListener(`keydown`, onEscKeydown);
-    }
-
-    const closeCall = () => {
-      call.classList.remove(MODAL_CLASS);
-      deactivateBlur();
-      document.removeEventListener('keydown', onEscKeydown);
-    }
-
-    const onEscKeydown = (evt) => {
-      if (isEscEvent(evt)) {
-        evt.preventDefault();
-        closeCall();
-      }
-    }
 
     evt.preventDefault();
     openCall();
@@ -38,3 +43,4 @@ callBtns.forEach(btn => {
   })
 })
 
+export {closeCall};

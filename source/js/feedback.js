@@ -1,60 +1,52 @@
-import { isEscEvent } from "./utils.js";
-import { activateBlur, deactivateBlur, hideScroll, showScroll } from "./blur.js";
+import { openResponseSuccess, openResponseError } from "./response.js";
+import { closeCall } from "./call-btn.js";
 
-const MODAL_CLASS = 'modal';
+const PHONE_MASK = /^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/;
+const VALIDITY_MESSAGE_PHONE = `Введите корректный номер телефона.`;
 
 const feedbackForms = document.querySelectorAll('.feedback__form');
-const responseSuccess = document.querySelector('#success').content.querySelector('.response');
-const responseError = document.querySelector('#error').content.querySelector('.response');
 
 feedbackForms.forEach(form => {
-  const inputs = form.querySelectorAll('.feedback__input');
-  const submitBtn = form.querySelector('.feedback__submit-btn');
+  const inputName = form.querySelector('.feedback__input--name');
+  const inputPhone = form.querySelector('.feedback__input--phone');
+  const submitBtn = form.querySelector('.feedback__submit-btn')
 
-  let isFormValid = true;
-  let response = responseSuccess;
-  if(!isFormValid) {
-    response = responseError;
-  }
+  // inputName.addEventListener(`input`, (evt) => {
+  //   evt.preventDefault();
+  // })
 
-  const closeBtn = response.querySelector('.response__close-btn');
-  const responsBtn = response.querySelector('.response-btn');
+  inputPhone.addEventListener(`input`, () => {
+    if (PHONE_MASK.test(inputPhone.value) || inputPhone.value === "") {
+      inputPhone.setCustomValidity(``);
+    } else {
+      inputPhone.setCustomValidity(VALIDITY_MESSAGE_PHONE);
+    }
+
+    inputPhone.reportValidity();
+  })
+
+  submitBtn.addEventListener('click', () => {
+    if(inputName.value === '' && inputPhone.value === '') {
+      openResponseError();
+    }
+  })
 
   form.addEventListener('submit', (evt) => {
-    const openResponse = () => {
-      document.body.append(response);
-      response.classList.add(MODAL_CLASS);
-      activateBlur();
-      document.addEventListener(`keydown`, onEscKeydown);
-    }
+    const isInputNameValid = inputName.value !== '';
+    const isInputPnoneValid = PHONE_MASK.test(inputPhone.value);
 
-    const closeResponse = () => {
-      response.classList.remove(MODAL_CLASS);
-      deactivateBlur();
-      document.removeEventListener('keydown', onEscKeydown);
-      response.remove();
-      if (isFormValid) {
-        form.reset();
-      }
-    }
-
-    const onEscKeydown = (evt) => {
-      if (isEscEvent(evt)) {
-        evt.preventDefault();
-        closeResponse();
-      }
-    }
+    const isFormValid = isInputNameValid && isInputPnoneValid;
 
     evt.preventDefault();
-    openResponse();
 
-    closeBtn.addEventListener('click', () => {
-      closeResponse();
-    })
+    if(!isFormValid) {
+      openResponseError();
+      return;
+    }
 
-    responsBtn.addEventListener('click', () => {
-      closeResponse();
-    })
+    openResponseSuccess();
+    form.reset();
+    closeCall();
   })
 })
 
