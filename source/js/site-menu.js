@@ -1,5 +1,5 @@
-import {isEscEvent} from "./utils.js";
-import { activateBlur, deactivateBlur, isOnBlurClick, hideScroll, showScroll } from "./blur.js";
+import {handleEscKeyDown} from "./utils.js";
+import { activateBlur, deactivateBlur, handleOnBlurClick } from "./blur.js";
 
 const SITE_MENU_OPENED_CLASS = 'main-nav__site-menu--opened'
 
@@ -11,16 +11,14 @@ const closeBtn = mainNav.querySelector('.main-nav__menu-close-btn');
 const openSiteMenu = () => {
   siteMenu.classList.add(SITE_MENU_OPENED_CLASS);
   activateBlur();
-  hideScroll();
-  document.addEventListener(`keydown`, onEscKeydown);
+  document.addEventListener(`keydown`, onEscKeyDown);
   document.addEventListener('click', onDocumentClick);
 }
 
 const closeSiteMenu = () => {
   siteMenu.classList.remove(SITE_MENU_OPENED_CLASS);
   deactivateBlur();
-  showScroll();
-  document.removeEventListener('keydown', onEscKeydown);
+  document.removeEventListener('keydown', onEscKeyDown);
   document.removeEventListener('click', onDocumentClick);
 }
 
@@ -36,15 +34,6 @@ closeBtn.addEventListener('click', () => {
   }
 })
 
-const onEscKeydown = (evt) => {
-  if (isEscEvent(evt)) {
-    evt.preventDefault();
-    closeSiteMenu();
-  }
-}
+const onEscKeyDown = (evt) => handleEscKeyDown(evt, closeSiteMenu);
 
-const onDocumentClick = (evt) => {
-  if (isOnBlurClick(evt)) {
-    closeSiteMenu();
-  }
-}
+const onDocumentClick = (evt) => handleOnBlurClick(evt, closeSiteMenu);

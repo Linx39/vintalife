@@ -1,5 +1,5 @@
-import { isEscEvent } from "./utils.js";
-import { activateBlur, deactivateBlur, hideScroll, showScroll } from "./blur.js";
+import { handleEscKeyDown } from "./utils.js";
+import { activateBlur, deactivateBlur } from "./blur.js";
 
 const MODAL_CLASS = 'modal';
 const PRODUCT_ACTIVE_CLASS = 'product--active';
@@ -17,24 +17,17 @@ cards.forEach(card => {
       gallery.classList.add(MODAL_CLASS);
       product.classList.add(PRODUCT_ACTIVE_CLASS);
       activateBlur();
-      hideScroll();
-      document.addEventListener(`keydown`, onEscKeydown);
+      document.addEventListener(`keydown`, onEscKeyDown);
     }
 
     const closeGallery = (product) => {
       gallery.classList.remove(MODAL_CLASS);
       product.classList.remove(PRODUCT_ACTIVE_CLASS);
       deactivateBlur();
-      showScroll();
-      document.removeEventListener('keydown', onEscKeydown);
+      document.removeEventListener('keydown', onEscKeyDown);
     }
 
-    const onEscKeydown = (evt) => {
-      if (isEscEvent(evt)) {
-        evt.preventDefault();
-        closeGallery(product);
-      }
-    }
+    const onEscKeyDown = (evt) => handleEscKeyDown(evt, () => closeGallery(product));
 
     evt.preventDefault();
     openGallery(product);

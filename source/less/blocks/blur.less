@@ -1,5 +1,6 @@
 .blur {
   position: relative;
+  overflow: hidden;
 
   &::before {
     position: absolute;
@@ -17,9 +18,5 @@
     background-color: var(--color-blur);
     overflow: hidden;
     pointer-events: all;
-  }
-
-  &--hide-scroll {
-    overflow: hidden;
   }
 }

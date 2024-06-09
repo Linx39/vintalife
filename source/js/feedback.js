@@ -25,8 +25,9 @@ feedbackForms.forEach(form => {
     inputPhone.reportValidity();
   })
 
-  submitBtn.addEventListener('click', () => {
+  submitBtn.addEventListener('click', (evt) => {
     if(inputName.value === '' && inputPhone.value === '') {
+      evt.preventDefault();
       openResponseError();
     }
   })
@@ -46,7 +47,6 @@ feedbackForms.forEach(form => {
 
     openResponseSuccess();
     form.reset();
-    closeCall();
+    // closeCall();
   })
 })
-

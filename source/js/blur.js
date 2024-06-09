@@ -1,34 +1,36 @@
 const BLUR_CLASS = 'blur';
-const BLUR_HIDE_SCROLL_CLASS = 'blur--hide-scroll'
 
 const body = document.querySelector('.page__body');
+const scrollWidth = window.innerWidth - document.documentElement.clientWidth;
 
-export const hideScroll = () => {
-  const scrollWidth = window.innerWidth - document.documentElement.clientWidth;
-
-  if (!body.classList.contains(BLUR_HIDE_SCROLL_CLASS)) {
-    body.classList.add(BLUR_HIDE_SCROLL_CLASS);
-    body.style.marginRight = `${scrollWidth}px`;
-  }
+const hideScroll = () => {
+  body.style.marginRight = `${scrollWidth}px`;
 }
 
-export const showScroll = () => {
-  if (body.classList.contains(BLUR_HIDE_SCROLL_CLASS)) {
-    body.classList.remove(BLUR_HIDE_SCROLL_CLASS);
-    body.removeAttribute('style');
-  }
+const showScroll = () => {
+  body.removeAttribute('style');
 }
 
-export const activateBlur = () => {
+const activateBlur = () => {
   if (!body.classList.contains(BLUR_CLASS)) {
     body.classList.add(BLUR_CLASS);
+    hideScroll();
   }
 }
 
-export const deactivateBlur = () => {
+const deactivateBlur = () => {
   if (body.classList.contains(BLUR_CLASS)) {
     body.classList.remove(BLUR_CLASS);
+    showScroll();
   }
 }
 
-export const isOnBlurClick = (evt) => evt.target.classList.contains(BLUR_CLASS);
+const isOnBlurClick = (evt) => evt.target.classList.contains(BLUR_CLASS);
+
+const handleOnBlurClick = (evt, cb) => {
+  if (isOnBlurClick(evt)) {
+    cb();
+  }
+}
+
+export {activateBlur, deactivateBlur, handleOnBlurClick};
