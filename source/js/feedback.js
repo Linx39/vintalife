@@ -11,10 +11,6 @@ feedbackForms.forEach(form => {
   const inputPhone = form.querySelector('.feedback__input--phone');
   const submitBtn = form.querySelector('.feedback__submit-btn')
 
-  // inputName.addEventListener(`input`, (evt) => {
-  //   evt.preventDefault();
-  // })
-
   inputPhone.addEventListener(`input`, () => {
     if (PHONE_MASK.test(inputPhone.value) || inputPhone.value === "") {
       inputPhone.setCustomValidity(``);

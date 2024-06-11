@@ -1,7 +1,6 @@
 import { handleEscKeyDown } from "./utils.js";
-import { activateBlur, deactivateBlur } from "./blur.js";
+import { activateModal, deactivateModal, handleOutModalClick } from "./modal.js";
 
-const MODAL_CLASS = 'modal';
 const PRODUCT_ACTIVE_CLASS = 'product--active';
 
 const cards = document.querySelectorAll('.card');
@@ -14,20 +13,21 @@ cards.forEach(card => {
     const product = gallery.querySelector(href);
 
     const openGallery = (product) => {
-      gallery.classList.add(MODAL_CLASS);
       product.classList.add(PRODUCT_ACTIVE_CLASS);
-      activateBlur();
+      activateModal(gallery);
       document.addEventListener(`keydown`, onEscKeyDown);
+      document.addEventListener('click', onDocumentClick);
     }
 
     const closeGallery = (product) => {
-      gallery.classList.remove(MODAL_CLASS);
       product.classList.remove(PRODUCT_ACTIVE_CLASS);
-      deactivateBlur();
+      deactivateModal(gallery);
       document.removeEventListener('keydown', onEscKeyDown);
+      document.removeEventListener('click', onDocumentClick);
     }
 
     const onEscKeyDown = (evt) => handleEscKeyDown(evt, () => closeGallery(product));
+    const onDocumentClick = (evt) => handleOutModalClick(evt, gallery, () => closeGallery(product));
 
     evt.preventDefault();
     openGallery(product);

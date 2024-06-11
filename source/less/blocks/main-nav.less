@@ -50,6 +50,10 @@
 }
 
 .main-nav__site-menu {
+  display: none;
+}
+
+.main-nav__site-menu-wrapper {
   position: absolute;
   top: 0;
   right: 0;
@@ -58,13 +62,13 @@
   padding: 53px 37px;
   background-color: var(--color-special);
 
-  transition: transform .5s;
-  transform: translateY(-110%);
+  // transition: transform .5s;
+  // transform: translateY(-110%);
 
-  &--opened {
-    transition: transform .5s;
-    transform: translateY(0);
-  }
+  // &--opened {
+  //   transition: transform .5s;
+  //   transform: translateY(0);
+  // }
 }
 
 .main-nav__menu-close-btn {

@@ -1,51 +1,35 @@
-import { handleEscKeyDown } from "./utils.js";
-import { activateBlur, deactivateBlur, handleOnBlurClick } from "./blur.js";
+import { handleModal } from "./modal.js";
 import { closeCall } from "./call-btn.js";
-
-const MODAL_CLASS = 'modal';
 
 const responseSuccess = document.querySelector('#success').content.querySelector('.response');
 const responseError = document.querySelector('#error').content.querySelector('.response');
 
-const handleOpenResponse = (response) => {
-  const openResponse = (response) => {
-    document.body.append(response);
-    response.classList.add(MODAL_CLASS);
-    activateBlur();
-    onResponseCloseBtnClick(response);
-    document.addEventListener(`keydown`, onEscKeyDown);
-  }
+const openResponse = (response) => {
+  // const closeResponse = (response) => {
+  //   deactivateModal(response);
+  //   document.removeEventListener('keydown', onEscKeyDown);
+  //   document.removeEventListener('click', onDocumentClick);
+  //   response.remove();
 
-  const closeResponse = (response) => {
-    response.classList.remove(MODAL_CLASS);
-    deactivateBlur();
-    document.removeEventListener('keydown', onEscKeyDown);
-    response.remove();
+  //   if (response === responseSuccess) {
+  //     closeCall();
+  //   }
+  // }
 
-    if (response === responseSuccess) {
-      closeCall();
-    }
-  }
+  const handleOpenResponse = () => document.body.append(response);
+  const handleCloseResponse = () => response.remove();
 
-  const onEscKeyDown = (evt) => handleEscKeyDown(evt, () => closeResponse(response));
+  const closeBtns = response.querySelectorAll('.response__close-btn, .response-btn');
 
-  const onResponseCloseBtnClick = (response) => {
-    const closeBtns = response.querySelectorAll('.response__close-btn, .response-btn');
-
-    closeBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        closeResponse(response);
-      })
-    })
-  }
-
-  openResponse(response);
+  handleModal(response, closeBtns, handleCloseResponse, handleOpenResponse);
 }
 
-export const openResponseSuccess = () => {
-  handleOpenResponse(responseSuccess);
+const openResponseSuccess = () => {
+  openResponse(responseSuccess);
 }
 
-export const openResponseError = () => {
-  handleOpenResponse(responseError);
+const openResponseError = () => {
+  openResponse(responseError);
 }
+
+export {openResponseError, openResponseSuccess};
