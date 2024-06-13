@@ -9,7 +9,7 @@ const resetForm = () => form.reset();
 
 callBtns.forEach(btn => {
   btn.addEventListener('click', () => {
-    handleModal(call, closeBtns, resetForm);
+    handleModal(call, closeBtns, null, resetForm);
   })
 })
 

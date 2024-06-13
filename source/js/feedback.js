@@ -29,18 +29,7 @@ feedbackForms.forEach(form => {
   })
 
   form.addEventListener('submit', (evt) => {
-    const isInputNameValid = inputName.value !== '';
-    const isInputPnoneValid = PHONE_MASK.test(inputPhone.value);
-
-    const isFormValid = isInputNameValid && isInputPnoneValid;
-
     evt.preventDefault();
-
-    if(!isFormValid) {
-      openResponseError();
-      return;
-    }
-
     openResponseSuccess();
     form.reset();
     // closeCall();

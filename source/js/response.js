@@ -21,7 +21,7 @@ const openResponse = (response) => {
 
   const closeBtns = response.querySelectorAll('.response__close-btn, .response-btn');
 
-  handleModal(response, closeBtns, handleCloseResponse, handleOpenResponse);
+  handleModal(response, closeBtns, handleOpenResponse, handleCloseResponse);
 }
 
 const openResponseSuccess = () => {
