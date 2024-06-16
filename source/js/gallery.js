@@ -1,4 +1,4 @@
-import { handleModal } from "./modal.js";
+import { controlModal } from "./modal.js";
 
 const PRODUCT_ACTIVE_CLASS = 'product--active';
 
@@ -15,6 +15,8 @@ cards.forEach(card => {
     const handleOpenGallery = () => product.classList.add(PRODUCT_ACTIVE_CLASS);
     const handleCloseGallery = () => product.classList.remove(PRODUCT_ACTIVE_CLASS);
 
-    handleModal(gallery, closeBtns, handleOpenGallery, handleCloseGallery);
+    const {handleModal: handleGallery} = controlModal(gallery, closeBtns, handleOpenGallery, handleCloseGallery);
+
+    handleGallery();
   })
 })

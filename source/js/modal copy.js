@@ -4,22 +4,19 @@ const MODAL_CLASS = 'modal';
 
 const body = document.querySelector('.page__body');
 
-const getModalElementsCount = () => document.querySelectorAll(`.${MODAL_CLASS}`).length;
-
-const controlModal = (element, closeBtns, onOpenModal, onCloseModal) => {
+const handleModal = (element, closeBtns, onOpenModal, onCloseModal) => {
   const openModal = () => {
     const documentWidth = document.documentElement.clientWidth;
     const scrollYWidth = window.innerWidth - documentWidth;
 
     if (!element.classList.contains(MODAL_CLASS)) {
       body.style.overflowY = 'hidden';
-
-      if (getModalElementsCount() === 0) {
+      if (scrollYWidth !== 0) {
         body.style.marginRight = `${scrollYWidth}px`;
       }
 
+      // element.style.width = `${documentWidth}px`;
       element.classList.add(MODAL_CLASS);
-
       document.addEventListener(`keydown`, onEscKeyDown);
       document.addEventListener('click', onDocumentClick);
       if (onOpenModal) {
@@ -30,13 +27,13 @@ const controlModal = (element, closeBtns, onOpenModal, onCloseModal) => {
 
   const closeModal = () => {
     if (element.classList.contains(MODAL_CLASS)) {
-      if (getModalElementsCount() === 1) {
+      const modalElements = document.querySelectorAll(`.${MODAL_CLASS}`);
+      if (modalElements.length === 1) {
         body.removeAttribute('style');
       }
 
       element.removeAttribute('style');
       element.classList.remove(MODAL_CLASS);
-
       document.removeEventListener('keydown', onEscKeyDown);
       document.removeEventListener('click', onDocumentClick);
       if (onCloseModal) {
@@ -47,7 +44,6 @@ const controlModal = (element, closeBtns, onOpenModal, onCloseModal) => {
 
   const onEscKeyDown = (evt) => {
     if (isEscEvent(evt)) {
-      console.log(evt);
       evt.preventDefault();
       closeModal();
     }
@@ -61,18 +57,13 @@ const controlModal = (element, closeBtns, onOpenModal, onCloseModal) => {
     }
   };
 
-  const handleModal = () => {
-    openModal();
+  openModal();
 
-    closeBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        closeModal();;
-      })
+  closeBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      closeModal();;
     })
-
-  }
-
-  return {openModal, closeModal, handleModal}
+  })
 }
 
-export {controlModal};
+export {handleModal};

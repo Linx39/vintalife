@@ -13,4 +13,22 @@
 .call__feedback-form {
   padding-left: 10px;
   padding-right: 10px;
+
+  @media (min-width: @xl-width) {
+  padding-left: 0;
+  padding-right: 0;
+  }
+}
+
+.call__feedback-description {
+  @media (min-width: @xl-width) {
+    .font-title();
+  }
+}
+
+.call__feedback-anotation {
+  @media (min-width: @xl-width) {
+    padding-top: 11px;
+    .font-basic();
+  }
 }

@@ -6,6 +6,8 @@ const VALIDITY_MESSAGE_PHONE = `Введите корректный номер �
 
 const feedbackForms = document.querySelectorAll('.feedback__form');
 
+const resetForm = (form) => form.reset();
+
 feedbackForms.forEach(form => {
   const inputName = form.querySelector('.feedback__input--name');
   const inputPhone = form.querySelector('.feedback__input--phone');
@@ -31,7 +33,8 @@ feedbackForms.forEach(form => {
   form.addEventListener('submit', (evt) => {
     evt.preventDefault();
     openResponseSuccess();
-    form.reset();
-    // closeCall();
+    closeCall();
   })
 })
+
+export {resetForm}

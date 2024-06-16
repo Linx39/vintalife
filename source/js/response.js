@@ -1,27 +1,17 @@
-import { handleModal } from "./modal.js";
-import { closeCall } from "./call-btn.js";
+import { controlModal } from "./modal.js";
 
 const responseSuccess = document.querySelector('#success').content.querySelector('.response');
 const responseError = document.querySelector('#error').content.querySelector('.response');
 
 const openResponse = (response) => {
-  // const closeResponse = (response) => {
-  //   deactivateModal(response);
-  //   document.removeEventListener('keydown', onEscKeyDown);
-  //   document.removeEventListener('click', onDocumentClick);
-  //   response.remove();
-
-  //   if (response === responseSuccess) {
-  //     closeCall();
-  //   }
-  // }
+  const closeBtns = response.querySelectorAll('.response__close-btn, .response-btn');
 
   const handleOpenResponse = () => document.body.append(response);
   const handleCloseResponse = () => response.remove();
 
-  const closeBtns = response.querySelectorAll('.response__close-btn, .response-btn');
+  const {handleModal: handleResponse} = controlModal(response, closeBtns, handleOpenResponse, handleCloseResponse);
 
-  handleModal(response, closeBtns, handleOpenResponse, handleCloseResponse);
+  handleResponse();
 }
 
 const openResponseSuccess = () => {

@@ -3,7 +3,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 124px;
+  padding-top: 122px;
 
   &::before {
     position: absolute;
@@ -12,6 +12,7 @@
     right: 0;
     top: 12px;
 
+    box-sizing: border-box;
     width: 92px;
     height: 92px;
     margin: 0 auto;
@@ -21,6 +22,10 @@
 
     background-position: center;
     background-repeat: no-repeat;
+  }
+
+  @media (min-width: @xl-width) {
+    padding-top: 131px;
   }
 }
 
@@ -41,5 +46,9 @@
 
   .font-basic();
   text-align: center;
+
+  @media (min-width: @xl-width) {
+    margin-bottom: 25px;
+  }
 }
 
