@@ -1,6 +1,9 @@
 .catalog {
   position: relative;
+  .wrapper-width();
+}
 
+.catalog__wrapper {
   display: flex;
   flex-direction: column;
 
@@ -16,7 +19,7 @@
 .catalog__title {
   .wrapper();
   margin-bottom: 22px;
-  
+
   .font-title();
 
   @media (min-width: @lg-width) {

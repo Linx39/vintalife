@@ -1,7 +1,5 @@
 .lead-magnet {
   position: relative;
-  padding-top: 38px;
-  padding-bottom: 39px;
 
   color: var(--color-font-light);
   background-color: var(--color-back-img);
@@ -28,9 +26,6 @@
   }
 
   @media (min-width: @lg-width) {
-    padding-top: 48px;
-    padding-bottom: 27px;
-
     background-image: image-set(
       url("../img/magnet/magnet-desktop.webp") type("image/webp") 1x,
       url("../img/magnet/magnet-desktop@2x.webp") type("image/webp") 2x,
@@ -40,11 +35,20 @@
   }
 }
 
+.lead-magnet__wrapper {
+  .wrapper();
+  padding-top: 38px;
+  padding-bottom: 39px;
+
+  @media (min-width: @lg-width) {
+    padding-top: 48px;
+    padding-bottom: 27px;
+  }
+}
+
 .lead-magnet__feedback {
   position: relative;
   z-index: 1;
-
-  .wrapper();
 }
 
 .lead-magnet__feedback-title span {

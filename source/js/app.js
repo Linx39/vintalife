@@ -5,3 +5,4 @@ import './gallery.js';
 import './call-btn.js';
 import './response.js';
 import './feedback.js';
+import './decor.js';
