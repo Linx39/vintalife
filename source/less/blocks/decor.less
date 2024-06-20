@@ -1,10 +1,10 @@
-.decor__ {
+.decor {
   position: absolute;
   content: "";
   z-index: -10;
 
   width: 100%;
-  height: 100%;
+  // height: 100%;
 
   overflow: hidden;
 
@@ -52,10 +52,51 @@
   }
 }
 
+.decor--main-nav {
+  // bottom: -190px;
+  // left: 0;
+
+  // height: 486px;
+
+  // .wrapper-width();
+
+  // &::before {
+  //   top: 0;
+  //   left: -71px;
+
+  //   width: 414px;
+  //   height: 400px;
+
+  //   background-size: 414px 400px;
+
+  //   transform: rotate(101.5deg);
+  // }
+
+  @media (min-width: @xl-width) {
+    right: 0;
+    top: 56px;
+
+    height: 688px;
+
+    &::before {
+      top: 20px;
+      right: -169px;
+
+      width: 478px;
+      height: 535px;
+
+      background-size: 478px 535px;
+
+      transform: rotate(-121.5deg);
+    }
+  }
+}
 
 .decor--advantages {
-  bottom: -271px;
+  top: -291px;
   left: 0;
+
+  height: 562px;
 
   &::before {
     bottom: 0;
@@ -70,7 +111,10 @@
   }
 
   @media (min-width: @xl-width) {
-    bottom: -335px;
+    top: unset;
+    bottom: -110px;
+
+    height: 688px;
 
     &::before {
       bottom: 0;
@@ -85,8 +129,10 @@
 }
 
 .decor--catalog {
-  bottom: 27px;
+  bottom: 87px;
   left: 0;
+
+  height: 292px;
 
   .wrapper-width();
 
@@ -104,9 +150,11 @@
 
   @media (min-width: @xl-width) {
     .decor-02();
-    top: unset;
+
     right: 0;
     top: 45px;
+
+    height: 564px;
 
     &::before {
       top: 0;
@@ -124,15 +172,17 @@
   }
 }
 
-.decor--credit {
-  top: -128px;
+.decor--brands {
+  bottom: -290px;
   left: 0;
+
+  height: 418px;
 
   .wrapper-width();
 
   &::before {
     top: 0;
-    left: 140px;
+    left: 141px;
 
     width: 414px;
     height: 400px;
@@ -145,13 +195,51 @@
   @media (min-width: @xl-width) {
     left: unset;
     right: 0;
-    top: -310px;
+    top: 244px;
+
+    height: 692px;
 
     &::before {
       top: 0;
       left: unset;
-      bottom: unset;
-      right: -199px;
+      right: -99px;
+
+      width: 483px;
+      height: 535px;
+
+      background-size: 483px 535px;
+
+      transform: rotate(-121.5deg);
+    }
+  }
+}
+
+.decor--credit {
+  bottom: -190px;
+  left: 0;
+
+  height: 486px;
+
+  .wrapper-width();
+
+  &::before {
+    top: 0;
+    left: -71px;
+
+    width: 414px;
+    height: 400px;
+
+    background-size: 414px 400px;
+
+    transform: rotate(101.5deg);
+  }
+
+  @media (min-width: @xl-width) {
+    top: -310px;
+
+    &::before {
+      top: 0;
+      left: -199px;
 
       width: 483px;
       height: 535px;
