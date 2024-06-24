@@ -4,7 +4,6 @@
   z-index: -10;
 
   width: 100%;
-  // height: 100%;
 
   overflow: hidden;
 
@@ -53,26 +52,7 @@
 }
 
 .decor--main-nav {
-  // bottom: -190px;
-  // left: 0;
-
-  // height: 486px;
-
-  // .wrapper-width();
-
-  // &::before {
-  //   top: 0;
-  //   left: -71px;
-
-  //   width: 414px;
-  //   height: 400px;
-
-  //   background-size: 414px 400px;
-
-  //   transform: rotate(101.5deg);
-  // }
-
-  @media (min-width: @xl-width) {
+  @media (min-width: @lg-width) {
     right: 0;
     top: 56px;
 
@@ -100,7 +80,7 @@
 
   &::before {
     bottom: 0;
-    left: 105px;
+    right: -144px;
 
     width: 414px;
     height: 400px;
@@ -110,7 +90,7 @@
     transform: rotate(-121.5deg);
   }
 
-  @media (min-width: @xl-width) {
+  @media (min-width: @lg-width) {
     top: unset;
     bottom: -110px;
 
@@ -148,26 +128,26 @@
     transform: rotate(-121.5deg);
   }
 
-  @media (min-width: @xl-width) {
-    .decor-02();
+  @media (min-width: @lg-width) {
+    // .decor-02();
 
     right: 0;
-    top: 45px;
+    top: 28px;
 
     height: 564px;
 
     &::before {
-      top: 0;
+      top: 20px;
       left: unset;
       bottom: unset;
-      right: -124px;
+      right: -118px;
 
       width: 406px;
       height: 416px;
 
       background-size: 406px 416px;
 
-      transform: rotate(-58.5deg);
+      transform: rotate(121.5deg);
     }
   }
 }
@@ -182,7 +162,7 @@
 
   &::before {
     top: 0;
-    left: 141px;
+    right: -180px;
 
     width: 414px;
     height: 400px;
@@ -192,17 +172,17 @@
     transform: rotate(2.5deg);
   }
 
-  @media (min-width: @xl-width) {
+  @media (min-width: @lg-width) {
     left: unset;
     right: 0;
-    top: 244px;
+    top: 240px;
 
     height: 692px;
 
     &::before {
-      top: 0;
+      top: 20px;
       left: unset;
-      right: -99px;
+      right: -85px;
 
       width: 483px;
       height: 535px;
@@ -234,19 +214,43 @@
     transform: rotate(101.5deg);
   }
 
-  @media (min-width: @xl-width) {
-    top: -310px;
+  @media (min-width: @lg-width) {
+    top: 346px;
+
+    height: 538px;
 
     &::before {
-      top: 0;
-      left: -199px;
+      top: -20px;
+      left: 10px;
 
-      width: 483px;
-      height: 535px;
+      width: 515px;
+      height: 576px;
 
-      background-size: 483px 535px;
+      background-size: 515px 576px;
 
-      transform: rotate(-121.5deg);
+      transform: rotate(87.7deg);
     }
   }
 }
+
+.decor--contacts {
+  @media (min-width: @lg-width) {
+    bottom: 0px;
+
+    .wrapper-width();
+    height: 688px;
+
+    &::before {
+      top: 313px;
+      right: -131px;
+
+      width: 544px;
+      height: 608px;
+
+      background-size: 544px 608px;
+
+      transform: rotate(170.8deg);
+    }
+  }
+}
+
