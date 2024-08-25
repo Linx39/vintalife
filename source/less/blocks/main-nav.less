@@ -8,17 +8,17 @@
   align-items: center;
 
   @media (min-width: @sm-width) {
-    grid-template-columns: @sm-padding auto auto @sm-padding;
+    grid-template-columns: @xs-padding auto auto @xs-padding;
   }
 
   @media (min-width: @lg-width) {
-    grid-template-columns: @sm-padding 260px minmax(min-content, 460px) 230px @sm-padding;
+    grid-template-columns: @lg-padding 260px minmax(min-content, 460px) 230px @lg-padding;
     grid-template-rows: minmax(min-content, 135px) min-content minmax(min-content, 134px);
 
   }
 
   @media (min-width: @xxl-width) {
-    grid-template-columns: 1fr 260px minmax(min-content, 460px) 230px @sm-padding;
+    grid-template-columns: 1fr 260px minmax(min-content, 460px) 230px @xs-padding;
   }
 }
 

@@ -1,10 +1,10 @@
 .page-header{
   .wrapper-width();
 
-  @media (min-width: @lg-width) {
-    display: grid;
-    grid-template-columns: minmax(min-content, @lg-width) auto;
-  }
+  // @media (min-width: @lg-width) {
+  //   display: grid;
+  //   grid-template-columns: minmax(min-content, @lg-width) auto;
+  // }
 
   @media (min-width: @xxl-width) {
     grid-template-columns: 1fr minmax(min-content, @lg-width) calc(@xxl-width - @lg-width) 1fr;
@@ -12,10 +12,10 @@
 }
 
 .page-header__nav {
-  @media (min-width: @lg-width) {
-    grid-column: 1 / 2;
-    grid-row: 1 / -1;
-  }
+  // @media (min-width: @lg-width) {
+  //   grid-column: 1 / 2;
+  //   grid-row: 1 / -1;
+  // }
 
   @media (min-width: @xxl-width) {
     grid-column: 1 / 3;
@@ -26,27 +26,27 @@
 .page-header__img-container {
   display: none;
 
-  @media (min-width: @lg-width) {
-    grid-column: -2 / -1;
-    grid-row: 1 / -1;
+  // @media (min-width: @lg-width) {
+  //   grid-column: -2 / -1;
+  //   grid-row: 1 / -1;
 
-    display: block;
-    width: 100%;
-    max-width: 730px;
+  //   display: block;
+  //   width: 100%;
+  //   max-width: 730px;
 
-    background-image: image-set(
-    url("../img/header/header-back.webp") type("image/webp") 1x,
-    url("../img/header/header-back@2x.webp") type("image/webp") 2x,
-    url("../img/header/header-back.png") type("image/png") 1x,
-    url("../img/header/header-back@2x.png") type("image/png") 2x,
-    );
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: left top;
-  }
+  //   background-image: image-set(
+  //   url("../img/header/header-back.webp") type("image/webp") 1x,
+  //   url("../img/header/header-back@2x.webp") type("image/webp") 2x,
+  //   url("../img/header/header-back.png") type("image/png") 1x,
+  //   url("../img/header/header-back@2x.png") type("image/png") 2x,
+  //   );
+  //   background-repeat: no-repeat;
+  //   background-size: cover;
+  //   background-position: left top;
+  // }
 
-  @media (min-width: @xxl-width) {
-    grid-column: 3 / 5;
-    grid-row: 1 / -1;
-  }
+  // @media (min-width: @xxl-width) {
+  //   grid-column: 3 / 5;
+  //   grid-row: 1 / -1;
+  // }
 }

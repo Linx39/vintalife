@@ -14,15 +14,22 @@
   padding-right: @xs-padding;
   padding-left: @xs-padding;
 
-  @media (min-width: @sm-width) {
-    padding-right: @sm-padding;
-    padding-left: @sm-padding;
+  @media (min-width: @lg-width) {
+    padding-right: @lg-padding;
+    padding-left: @lg-padding;
   }
 
   @media (min-width: @xl-width) {
-    max-width: @xxl-width;
-    margin-right: auto;
-    margin-left: auto;
+    padding-right: @xl-padding;
+    padding-left: @xl-padding;
+  }
+
+  @media (min-width: @xxl-width) {
+    max-width: @max-content;
+    // margin-right: auto;
+    // margin-left: auto;
+    padding-right: @xxl-padding;
+    padding-left: @xxl-padding;
   }
 }
 
