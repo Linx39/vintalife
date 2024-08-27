@@ -6,9 +6,12 @@
     grid-template-columns: minmax(min-content, 1010px) auto;
   }
 
+  @media (min-width: @xl-width) {
+    grid-template-columns: 1060px auto;
+  }
+
   @media (min-width: @xxl-width) {
-    // grid-template-columns: 1fr minmax(min-content, 1090px) calc(@max-content - 1090px) 1fr;
-    grid-template-columns: 1fr 1090px minmax(calc(@xxl-width - 1090px), calc(@max-content - 1090px)) 1fr;
+    grid-template-columns: 1fr 1090px minmax(auto, calc(@max-content - 1090px)) 1fr;
   }
 }
 
@@ -32,7 +35,8 @@
     grid-row: 1 / -1;
 
     display: block;
-    // width: 100%;
+    width: 100%;
+    height: 100%;
     // max-width: 730px;
 
     background-image: image-set(
