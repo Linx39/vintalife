@@ -5,8 +5,9 @@
   align-items: center;
   flex-wrap: wrap;
 
-  @media (min-width: @lg-width) {
+  @media (min-width: @md-width) {
     flex-direction: row;
+    justify-content: center;
     column-gap: 15px;
     row-gap: 5px;
   }
@@ -16,7 +17,7 @@
   order: 1;
   flex-shrink: 0;
 
-  @media (min-width: @lg-width) {
+  @media (min-width: @md-width) {
     order: unset;
   }
 }

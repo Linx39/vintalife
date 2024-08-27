@@ -6,7 +6,7 @@ import postcss from 'gulp-postcss';
 import autoprefixer from 'autoprefixer';
 import csso from 'postcss-csso';
 import rename from 'gulp-rename';
-// import htmlmin from 'gulp-htmlmin';
+import htmlmin from 'gulp-htmlmin';
 // import imagemin from 'gulp-imagemin';
 import webp from 'gulp-webp';
 import svgstore from 'gulp-svgstore';
@@ -35,8 +35,8 @@ export const styles = () => {
       autoprefixer(),
       csso()
     ]))
-    // .pipe(rename('style.min.css'))
-    // .pipe(sourcemap.write('.'))
+    .pipe(rename('style.min.css'))
+    .pipe(sourcemap.write('.'))
     .pipe(gulp.dest(`${PUBLIC_FOLDER}/css`))
     .pipe(browser.stream());
 }
