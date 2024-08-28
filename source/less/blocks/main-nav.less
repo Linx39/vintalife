@@ -8,7 +8,12 @@
   align-items: center;
 
   @media (min-width: @lg-width) {
-    grid-template-columns: @lg-padding 260px minmax(min-content, 500px) 190px 30px;
+    grid-template-columns: @xs-padding 260px minmax(min-content, 500px) 190px 30px;
+    grid-template-rows: minmax(min-content, 110px) min-content minmax(min-content, 110px);
+  }
+
+  @media (min-width: @xl-width) {
+    grid-template-columns: @xl-padding 260px minmax(min-content, 500px) 190px 30px;
     grid-template-rows: minmax(min-content, 110px) min-content minmax(min-content, 110px);
   }
 

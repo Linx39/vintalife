@@ -1,21 +1,20 @@
 .advantages {
   position: relative;
   .wrapper-width();
-}
 
-.advantages__wrapper {
   padding-top: 38px;
   padding-bottom: 37px;
 
-  @media (min-width: @sm-width) {
-    .wrapper-padding();
-  }
-
-  @media (min-width: @lg-width) {
+  @media (min-width: @xl-width) {
     padding-top: 100px;
     padding-bottom: 50px;
   }
+}
 
+.advantages__wrapper {
+  @media (min-width: @sm-width) {
+    .wrapper-padding();
+  }
 }
 
 .advantages__list {
