@@ -13,15 +13,18 @@
   clip: rect(0 0 0 0);
 }
 
-h1,
-h2,
-h3,
-h4,
-p,
-fieldset,
-ul {
+* {
   margin: 0;
   padding: 0;
+  border: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+*,
+:after,
+:before {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
 }
 
 img {
@@ -32,6 +35,12 @@ img {
 
 ul {
   list-style-type: none;
+  -webkit-padding-start: 0;
+  padding-inline-start: 0;
+}
+
+input::-ms-clear {
+  display: none;
 }
 
 a,
