@@ -1,11 +1,8 @@
 export const Width = {
-  MIN: 375,
-  MAX: 1920,
-
-  SM: 520,
-  MD: 720,
-  LG: 1010,
-  XL: 1260,
-  XXL: 1560,
-  XXXL: 1720,
+  XS: 470,
+  SM: 576,
+  MD: 768,
+  LG: 992,
+  XL: 1200,
+  XXL: 1400,
 }

@@ -6,6 +6,9 @@
   border-radius: 50%;
   background-color: var(--color-btn-basic);
 
+  opacity: 1;
+  transition: opacity .5s;
+
   @media (min-width: @lg-width) {
     width: 60px;
     height: 60px;
@@ -27,24 +30,29 @@
   }
 
   &--prev::before {
-    left: 20%;
+    left: 15%;
 
     border-right-color: var(--color-back-basic);
   }
 
   &--next::before {
-    right: 20%;
+    right: 15%;
 
     border-left-color: var(--color-back-basic);
   }
 
   &--up::before {
-    top: 20%;
+    top: 15%;
     left: 50%;
 
     transform: translateX(-50%);
 
     border-bottom-color: var(--color-back-basic);
+  }
+
+  &--disabled {
+    opacity: .1;
+    cursor: default
   }
 
   .interactive-styles-custom();

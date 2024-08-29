@@ -53,7 +53,7 @@
               <img src="img/header/header-mobile.png" srcset="img/header/header-mobile@2x.png 2x" alt="Изображение кухни.">
             </picture>
           </div>
-          
+
           <a class="main-nav__catalog-btn catalog-btn" href="#catalog">
             <span>Более 1000 фото в </span><span>каталог</span><span>е</span>
           </a>
@@ -141,14 +141,14 @@
           </div>
         </section>
 
-        <section class="catalog catalog--no-js" id="catalog">
+        <section class="catalog" id="catalog">
           <div class="catalog__wrapper">
             <h2 class="catalog__title">Каталог кухонь по&nbsp;стилям</h2>
 
             <div class="catalog__slider-container">
               <div class="catalog__slider swiper">
                 <div class="catalog__cards swiper-wrapper">
-                  <article class="card swiper-slide">
+                  <div class="card swiper-slide">
                     <h3 class="card__title">АРТ ДЕКО</h3>
                     <p class="card__description">
                       от 49 990 руб.
@@ -162,8 +162,8 @@
                         <img src="img/catalog/catalog-01-mobile.png" srcset="img/catalog/catalog-01-mobile@2x.png 2x" alt="Изображение кухни в стиле АРТ ДЕКО.">
                       </picture>
                     </div>
-                  </article>
-                  <article class="card swiper-slide">
+                  </div>
+                  <div class="card swiper-slide">
                     <h3 class="card__title">МИНИМАЛИЗМ ХАЙТЕК МОДЕРН</h3>
                     <p class="card__description">
                       от 49 990 руб.
@@ -177,8 +177,8 @@
                         <img src="img/catalog/catalog-02-mobile.png" srcset="img/catalog/catalog-02-mobile@2x.png 2x" alt="Изображение кухни в стиле МИНИМАЛИЗМ ХАЙТЕК МОДЕРН.">
                       </picture>
                     </div>
-                  </article>
-                  <article class="card swiper-slide">
+                  </div>
+                  <div class="card swiper-slide">
                     <h3 class="card__title">ЛОФТ ИНДАСТРИАЛ</h3>
                     <p class="card__description">
                       от 49 990 руб.
@@ -192,8 +192,8 @@
                         <img src="img/catalog/catalog-03-mobile.png" srcset="img/catalog/catalog-03-mobile@2x.png 2x" alt="Изображение кухни в стиле ЛОФТ ИНДАСТРИАЛ.">
                       </picture>
                     </div>
-                  </article>
-                  <article class="card swiper-slide">
+                  </div>
+                  <div class="card swiper-slide">
                     <h3 class="card__title">НЕОКЛАССИКА</h3>
                     <p class="card__description">
                       от 49 990 руб.
@@ -207,8 +207,8 @@
                         <img src="img/catalog/catalog-04-mobile.png" srcset="img/catalog/catalog-04-mobile@2x.png 2x" alt="Изображение кухни в стиле НЕОКЛАССИКА.">
                       </picture>
                     </div>
-                  </article>
-                  <article class="card swiper-slide">
+                  </div>
+                  <div class="card swiper-slide">
                     <h3 class="card__title">ПРОВАНС ШЕБИ ШИК КАНТРИ</h3>
                     <p class="card__description">
                       от 49 990 руб.
@@ -222,8 +222,8 @@
                         <img src="img/catalog/catalog-05-mobile.png" srcset="img/catalog/catalog-05-mobile@2x.png 2x" alt="Изображение кухни в стиле ПРОВАНС ШЕБИ ШИК КАНТРИ.">
                       </picture>
                     </div>
-                  </article>
-                  <article class="card swiper-slide">
+                  </div>
+                  <div class="card swiper-slide">
                     <h3 class="card__title">СКАНДИНАВСКИЙ</h3>
                     <p class="card__description">
                       от 49 990 руб.
@@ -237,17 +237,15 @@
                         <img src="img/catalog/catalog-06-mobile.png" srcset="img/catalog/catalog-06-mobile@2x.png 2x" alt="Изображение кухни в стиле СКАНДИНАВСКИЙ.">
                       </picture>
                     </div>
-                  </article>
+                  </div>
                 </div>
               </div>
-              <div class="catalog__slider-navigation">
-                <button class="catalog__slider-navigation-btn catalog__slider-navigation-btn--prev navigation-btn navigation-btn--prev">
-                  <span class="visually-hidden">Предыдущий слайд</span>
-                </button>
-                <button class="catalog__slider-navigation-btn catalog__slider-navigation-btn--next navigation-btn navigation-btn--next">
-                  <span class="visually-hidden">Следующий слайд</span>
-                </button>
-              </div>
+              <button class="catalog__slider-navigation-btn catalog__slider-navigation-btn--prev navigation-btn navigation-btn--prev">
+                <span class="visually-hidden">Предыдущий слайд</span>
+              </button>
+              <button class="catalog__slider-navigation-btn catalog__slider-navigation-btn--next navigation-btn navigation-btn--next">
+                <span class="visually-hidden">Следующий слайд</span>
+              </button>
             </div>
           </div>
         </section>
@@ -256,7 +254,7 @@
           <div class="gallery__wrapper">
             <h2 class="visually-hidden">Галлерея</h2>
             <button class="gallery__close-btn cross-btn cross-btn--adaptive"><span class="visually-hidden">Закрыть меню</span></button>
-            <article class="product" id="product-01">
+            <div class="product" id="product-01">
               <h3 class="product__title">АРТ ДЕКО</h3>
 
               <div class="product__images-container product__images-container--top">
@@ -404,8 +402,8 @@
                   </div>
                 </form>
               </div>
-            </article>
-            <article class="product" id="product-02">
+            </div>
+            <div class="product" id="product-02">
               <h3 class="product__title">МИНИМАЛИЗМ ХАЙТЕК МОДЕРН</h3>
 
               <div class="product__images-container product__images-container--top">
@@ -553,7 +551,7 @@
                   </div>
                 </form>
               </div>
-            </article>
+            </div>
           </div>
         </section>
 
