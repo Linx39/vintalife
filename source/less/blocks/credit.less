@@ -2,25 +2,28 @@
   position: relative;
 
   .wrapper-width();
-}
-
-.credit__wrapper {
   padding-top: 38px;
   padding-bottom: 50px;
 
   @media (min-width: @xl-width) {
-    display: grid;
-    grid-template-columns: 2fr 3fr;
-    grid-template-rows: 1fr min-content;
-
     padding-top: 50px;
     padding-bottom: 50px;
+  }
+}
+
+.credit__wrapper {
+
+  @media (min-width: @xl-width) {
+    display: grid;
+    // grid-template-columns: 2fr 3fr;
+    grid-template-columns: 460px 1fr;
+    grid-template-rows: 1fr min-content;
+    column-gap: 30px;
+    .wrapper-padding();
   }
 
   @media (min-width: @xxl-width) {
     grid-template-columns: 1fr auto;
-
-    .wrapper-padding();
   }
 }
 
@@ -33,13 +36,13 @@
     grid-row: 1 / 2;
     align-self: center;
 
-    margin-bottom: 0;
-    padding-right: 30px;
+    margin-bottom: auto;
+    padding: 0;
+    padding-top: 60px;
   }
 
   @media (min-width: @xxl-width) {
-    padding-left: 0;
-    padding-right: 30px;
+    padding-top: 60px;
   }
 }
 
@@ -64,25 +67,24 @@
 .credit__slogan-container {
   .wrapper-padding();
 
-  @media (min-width: @md-width) {
-    max-width: @md-width;
-    margin: 0 auto;
-  }
+  // @media (min-width: @xl-width) {
+  //   grid-column: 2 / 3;
+  //   grid-row: 2 / -1;
+
+  //   margin: 0;
+  // }
 
   @media (min-width: @xl-width) {
-    grid-column: 2 / 3;
-    grid-row: 2 / -1;
-
-    margin: 0;
+    padding: 0;
+    padding-bottom: 47px;
   }
 
   @media (min-width: @xxl-width) {
     grid-column: 1 / 2;
     grid-row: 2 / -1;
 
-    padding-left: 0;
+    margin: 0;
     padding-bottom: 47px;
-    padding-top: 26px;
   }
 }
 
@@ -95,22 +97,23 @@
   grid-template-columns: 34% 66%;
 
   @media (min-width: @md-width) {
-    max-width: @md-width;
-    margin: 0 auto;
+    // max-width: @md-width;
+    // margin: 0 auto;
   }
 
   @media (min-width: @xl-width) {
     grid-column: 2 / -1;
-    grid-row: 1 / 2;
+    grid-row: 1 / -1;
 
     grid-template-columns: minmax(34%, 310px) minmax(66%, 600px);
 
     max-width: unset;
-    height: 611px;
+    height: 100%;
   }
 
   @media (min-width: @xxl-width) {
     grid-row: 1 / -1;
+    height: 611px;
   }
 }
 
