@@ -81,10 +81,13 @@
   align-items: center;
 
   width: 100%;
-  max-width: @form-width;
   border: none;
 
   .font-small();
+
+  // @media (min-width: @sm-width) {
+  //   max-width: @form-width;
+  // }
 
   @media (min-width: @xl-width) {
     align-items: start;
@@ -109,7 +112,7 @@
 
 .feedback__group {
   width: 100%;
-  max-width: @form-width;
+  // max-width: @form-width;
 
   border: none;
 
@@ -123,6 +126,10 @@
 
   &--with-control:last-of-type {
     margin-bottom: 9px;
+  }
+
+  @media (min-width: @sm-width) {
+    max-width: @form-width;
   }
 
   @media (min-width: @xl-width) {
@@ -181,7 +188,10 @@
 
 .feedback__submit-group {
   width: 100%;
-  max-width: @form-width;
+
+  @media (min-width: @sm-width) {
+    max-width: @form-width;
+  }
 }
 
 .feedback--transform .feedback__submit-group {
@@ -227,8 +237,11 @@
 
 .feedback__submit-btn {
   width: 100%;
-  max-width: @form-width;
   margin-bottom: 6px;
+
+  @media (min-width: @sm-width) {
+    max-width: @form-width;
+  }
 }
 
 .feedback__submit-annotation {
