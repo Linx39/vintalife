@@ -30,7 +30,7 @@
   @media (min-width: @xl-width) {
     padding-top: 48px;
     padding-bottom: 27px;
-    
+
     background-image: image-set(
       url("../img/magnet/magnet-desktop.webp") type("image/webp") 1x,
       url("../img/magnet/magnet-desktop@2x.webp") type("image/webp") 2x,
@@ -47,6 +47,11 @@
 .lead-magnet__feedback {
   position: relative;
   z-index: 1;
+  text-align: left;
+
+  @media (min-width: @sm-width) {
+    text-align: center;
+  }
 }
 
 .lead-magnet__feedback-title span {

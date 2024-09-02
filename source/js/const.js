@@ -1,5 +1,4 @@
 export const Width = {
-  XS: 470,
   SM: 576,
   MD: 768,
   LG: 992,

@@ -29,23 +29,21 @@
 .brands__list {
   display: grid;
   grid-template-columns: 1fr;
+  width: 100%;
+  // max-width: @max-mobile-content;
+  // margin: 0 auto;
 
   border-left: @border;
   border-top: @border;
 
   @media (min-width: @sm-width) {
-    width: 460px;
-    margin: 0 auto;
-  }
-
-  @media (min-width: @md-width) {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto auto auto;
     grid-auto-flow: column;
-    width: 100%;
+    max-width: unset;
   }
 
-  @media (min-width: @lg-width) {
+  @media (min-width: @md-width) {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: unset;
     grid-auto-flow: unset;
