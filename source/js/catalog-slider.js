@@ -5,9 +5,11 @@ const CATALOG_SLIDER_CLASS = 'catalog__slider';
 const catalogSlider = new Swiper(`.${CATALOG_SLIDER_CLASS}`, {
   direction: 'horizontal',
   slidesPerView: 'auto',
+  loop: true,
+  centeredSlides: true,
   spaceBetween: 20,
-  slidesOffsetBefore: 20,
-  slidesOffsetAfter: 20,
+  // slidesOffsetBefore: 27.5,
+  // slidesOffsetAfter: 27.5,
 
   // autoplay: {
   //   delay: 3000,
@@ -22,22 +24,20 @@ const catalogSlider = new Swiper(`.${CATALOG_SLIDER_CLASS}`, {
 
   breakpoints: {
     [Width.LG]: {
-      slidesPerView: 'auto',
       spaceBetween: 20,
-      slidesOffsetBefore: 20,
-      slidesOffsetAfter: 20,
+      // slidesOffsetBefore: 27.5,
+      // slidesOffsetAfter: 27.5,
     },
     [Width.XL]: {
-      slidesPerView: 'auto',
+      centeredSlides: false,
       spaceBetween: 30,
-      slidesOffsetBefore: 0,
-      slidesOffsetAfter: 0,
+      // slidesOffsetBefore: 0,
+      // slidesOffsetAfter: 0,
     },
     [Width.XXL]: {
-      slidesPerView: 'auto',
       spaceBetween: 60,
-      slidesOffsetBefore: 0,
-      slidesOffsetAfter: 0,
+      // slidesOffsetBefore: 0,
+      // slidesOffsetAfter: 0,
     },
   },
 });

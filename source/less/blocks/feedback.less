@@ -1,8 +1,23 @@
 .feedback {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
+
+  @media (min-width: @sm-width) {
+    align-items: center;
+    text-align: center;
+  }
+
+  &--modal {
+    align-items: center;
+    text-align: center;
+  }
+
+  &--left {
+    @media (min-width: @xl-width) {
+      align-items: start;
+      text-align: left;
+    }
+  }
 
   &--dark {
     color: var(--color-font-light);
@@ -26,7 +41,7 @@
   .font-title();
 }
 
-.feedback-title span {
+.feedback__title span {
   display: none;
 
   @media (min-width: @xl-width) {
@@ -38,7 +53,7 @@
   .font-basic();
 }
 
-.feedback__head--maxi .feedback__description {
+.feedback--modal .feedback__description {
   @media (min-width: @xl-width) {
     .font-title();
   }
@@ -68,7 +83,7 @@
   text-wrap: nowrap;
 }
 
-.feedback__head--maxi .feedback__anotation{
+.feedback--modal .feedback__anotation{
   @media (min-width: @xl-width) {
     .font-basic();
   }
@@ -77,17 +92,11 @@
 .feedback__form {
   display: flex;
   flex-direction: column;
-  align-items: center;
   gap: 10px;
 
-  width: 100%;
   border: none;
 
   .font-small();
-
-  @media (min-width: @xl-width) {
-    align-items: start;
-  }
 }
 
 .feedback--transform .feedback__form {
@@ -96,9 +105,6 @@
     gap: 30px;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: start;
-
-    max-width: unset;
   }
 
   @media (min-width: @xxl-width) {
@@ -107,10 +113,8 @@
 }
 
 .feedback__label {
-  width: 100%;
-
   @media (min-width: @sm-width) {
-    max-width: 460px;
+    width: 460px;
   }
 }
 
@@ -144,11 +148,10 @@
 }
 
 .feedback__submit-group {
-  width: 100%;
   margin-top: 10px;
 
   @media (min-width: @sm-width) {
-    max-width: 460px;
+    width: 460px;
   }
 }
 
@@ -166,8 +169,13 @@
 .feedback__submit-annotation {
   display: block;
 
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 17.07px;
-  text-wrap: balance;
+  .font-mini();
+  text-align: center;
+}
+
+.feedback--left .feedback__submit-annotation {
+  @media (min-width: @xl-width) {
+      align-items: start;
+      text-align: left;
+  }
 }

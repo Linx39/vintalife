@@ -1,72 +1,77 @@
 import { isEscEvent } from "./utils.js";
+import { activateBlur, deactivateBlur } from "./blur.js";
 
 const MODAL_CLASS = 'modal';
 
+const MODAL_WRAPPER_CLASS ='modal__wrapper';
+const MODAL_OPENED_CLASS = 'modal--opened';
+const MODAL_CLOSE_BTN = 'modal__close-btn';
+
 const body = document.querySelector('.page__body');
 
-const getModalElementsCount = () => document.querySelectorAll(`.${MODAL_CLASS}`).length;
+const controlModal = (modal, onOpenModal, onCloseModal) => {
+  const modalWrapper = modal.querySelector(`.${MODAL_WRAPPER_CLASS}`);
+  const modalCloseBtns = modal.querySelectorAll(`.${MODAL_CLOSE_BTN}`);
 
-const controlModal = (element, closeBtns, onOpenModal, onCloseModal) => {
   const openModal = () => {
-    const documentWidth = document.documentElement.clientWidth;
-    const scrollYWidth = window.innerWidth - documentWidth;
+    const scrollYWidth = window.innerWidth - document.documentElement.clientWidth;
 
-    if (!element.classList.contains(MODAL_CLASS)) {
-      body.style.overflowY = 'hidden';
+    body.style.overflowY = 'hidden';
+    body.style.marginRight = `${scrollYWidth}px`;
 
-      if (getModalElementsCount() === 0) {
-        body.style.marginRight = `${scrollYWidth}px`;
-      }
+    modal.classList.add(MODAL_OPENED_CLASS);
+    modal.style.marginRight = `${scrollYWidth}px`;
 
-      element.classList.add(MODAL_CLASS);
+    activateBlur();
 
-      document.addEventListener(`keydown`, onEscKeyDown);
-      document.addEventListener('click', onDocumentClick);
-      if (onOpenModal) {
-        onOpenModal();
-      }
+    document.addEventListener(`keydown`, onEscKeyDown);
+    document.addEventListener('click', onDocumentClick);
+
+    if (onOpenModal) {
+      onOpenModal();
     }
   }
 
   const closeModal = () => {
-    if (element.classList.contains(MODAL_CLASS)) {
-      if (getModalElementsCount() === 1) {
-        body.removeAttribute('style');
-      }
+    body.removeAttribute('style');
 
-      element.removeAttribute('style');
-      element.classList.remove(MODAL_CLASS);
+    modal.classList.remove(MODAL_OPENED_CLASS);
 
-      document.removeEventListener('keydown', onEscKeyDown);
-      document.removeEventListener('click', onDocumentClick);
-      if (onCloseModal) {
-        onCloseModal();
-      }
+    deactivateBlur();
+
+    document.removeEventListener('keydown', onEscKeyDown);
+    document.removeEventListener('click', onDocumentClick);
+
+    if (onCloseModal) {
+      onCloseModal();
     }
   }
 
   const onEscKeyDown = (evt) => {
     if (isEscEvent(evt)) {
-      console.log(evt);
       evt.preventDefault();
       closeModal();
     }
   };
 
   const onDocumentClick = (evt) => {
-    const isOutModalClick = (evt, element) => evt.target === element && evt.target.classList.contains(MODAL_CLASS);
-
-    if (isOutModalClick(evt, element)) {
+    if (modal.contains(evt.target) && !modalWrapper.contains(evt.target)) {
       closeModal();
     }
-  };
+  }
+
+  modalCloseBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      closeModal();
+    })
+  })
 
   const handleModal = () => {
     openModal();
 
-    closeBtns.forEach(btn => {
+    modalCloseBtns.forEach(btn => {
       btn.addEventListener('click', () => {
-        closeModal();;
+        closeModal();
       })
     })
 

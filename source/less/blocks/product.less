@@ -1,10 +1,12 @@
-.product {
-  .wrapper-width();
+.product__wrapper {
+  min-width: 360px;
+  width: calc(100% - 30px);
 
-  display: none;
+  background-color: var(--color-back-basic);
 
-  &--active {
-    display: block;
+  @media (min-width: @xl-width) {
+    width: calc(100% - 60px);
+    max-width: 1500px;
   }
 }
 
@@ -71,20 +73,17 @@
 }
 
 .product__feedback {
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding: 20px 10px;
 
-  @media (min-width: @lg-width) {
-    padding-top: 48px;
-    padding-bottom: 27px;
+  @media (min-width: @xl-width) {
+    padding: 48px 30px 27px;
   }
 }
 
 .product__feedback-head {
-  padding-left: 10px;
-  padding-right: 10px;
+
 }
 
 .product__feedback-form {
-  .wrapper-padding();
+  margin: 0 10px;
 }
