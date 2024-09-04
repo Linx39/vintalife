@@ -1,5 +1,5 @@
-import { openResponseSuccess, openResponseError } from "./response.js";
-import { closeCall } from "./call-btn.js";
+import { openResponseSuccess, openResponseError } from "./response-modal.js";
+// import { closeCall } from "./call-modal.js";
 
 const PHONE_MASK = /^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/;
 const VALIDITY_MESSAGE_PHONE = `Введите корректный номер телефона.`;
@@ -33,7 +33,7 @@ feedbackForms.forEach(form => {
   form.addEventListener('submit', (evt) => {
     evt.preventDefault();
     openResponseSuccess();
-    closeCall();
+    // closeCall();
   })
 })
 

@@ -12,6 +12,10 @@ const body = document.querySelector('.page__body');
 const controlModal = (modal, onOpenModal, onCloseModal) => {
   const modalWrapper = modal.querySelector(`.${MODAL_WRAPPER_CLASS}`);
   const modalCloseBtns = modal.querySelectorAll(`.${MODAL_CLOSE_BTN}`);
+  const id = modal.getAttribute('id');
+  console.log(id);
+  const modalOpenBtn = document.querySelector(`#${id}`);
+  console.log(modalOpenBtn);
 
   const openModal = () => {
     const scrollYWidth = window.innerWidth - document.documentElement.clientWidth;

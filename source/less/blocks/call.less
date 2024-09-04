@@ -1,21 +1,19 @@
-.call {
-  display: none;
-  // background-color: var(--color-blur);
-}
-
 .call__wrapper {
-  position: relative;
-
-  display: flex;
-  flex-direction: column;
-}
-
-.call__feedback-form {
   padding-left: 10px;
   padding-right: 10px;
 
   @media (min-width: @xl-width) {
-    padding-left: 0;
-    padding-right: 0;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+.call__feedback-form {
+  margin-left: 10px;
+  margin-right: 10px;
+
+  @media (min-width: @xl-width) {
+    margin-left: 0;
+    margin-right: 0;
   }
 }

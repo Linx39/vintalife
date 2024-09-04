@@ -4,12 +4,10 @@ const responseSuccess = document.querySelector('#success').content.querySelector
 const responseError = document.querySelector('#error').content.querySelector('.response');
 
 const openResponse = (response) => {
-  const closeBtns = response.querySelectorAll('.response__close-btn, .response-btn');
-
   const handleOpenResponse = () => document.body.append(response);
   const handleCloseResponse = () => response.remove();
 
-  const {handleModal: handleResponse} = controlModal(response, closeBtns, handleOpenResponse, handleCloseResponse);
+  const {handleModal: handleResponse} = controlModal(response, handleOpenResponse, handleCloseResponse);
 
   handleResponse();
 }
