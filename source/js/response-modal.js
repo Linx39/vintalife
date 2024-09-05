@@ -1,23 +1,24 @@
 import { controlModal } from "./modal.js";
 
-const responseSuccess = document.querySelector('#success').content.querySelector('.response');
-const responseError = document.querySelector('#error').content.querySelector('.response');
+const RESPONSE_SUCCESS_CLASS = 'response--success';
+const RESPONSE_ERROR_CLASS = 'response--error';
 
-const openResponse = (response) => {
-  const handleOpenResponse = () => document.body.append(response);
-  const handleCloseResponse = () => response.remove();
+const response = document.querySelector('#response-template').content.querySelector('.response');
 
-  const {handleModal: handleResponse} = controlModal(response, handleOpenResponse, handleCloseResponse);
+const setResponseSuccess = () => {
+  response.classList.remove(RESPONSE_ERROR_CLASS);
+  response.classList.add(RESPONSE_SUCCESS_CLASS);
+};
 
-  handleResponse();
-}
+const setResponseError = () => {
+  response.classList.remove(RESPONSE_SUCCESS_CLASS);
+  response.classList.add(RESPONSE_ERROR_CLASS);
+};
 
-const openResponseSuccess = () => {
-  openResponse(responseSuccess);
-}
+const appendResponse = () => document.body.append(response);
+const removeResponse = () => response.remove();
 
-const openResponseError = () => {
-  openResponse(responseError);
-}
+const {handleModal} = controlModal(response, appendResponse, removeResponse);
+handleModal();
 
-export {openResponseError, openResponseSuccess};
+export {setResponseError, setResponseSuccess};

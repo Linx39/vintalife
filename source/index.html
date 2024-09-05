@@ -30,7 +30,7 @@
 
           <div class="main-nav__connection connection">
             <a class="main-nav__phone connection__phone phone" href="tel:+79628877751">+7 (962) 88-777-51</a>
-            <a class="main-nav__call-btn connection__call-btn app-btn app-btn--transparent call-btn" href="#call">Заказать обратный звонок</a>
+            <a class="main-nav__call-btn connection__call-btn app-btn app-btn--transparent call-btn" href="#call" data-modal="#call">Заказать обратный звонок</a>
           </div>
 
           <div class="main-nav__intro intro">
@@ -40,8 +40,8 @@
                 <span class="intro__title-span-2">КУХНИ</span>
                 <span class="intro__title-span-3">В СОЧИ</span>
               </h2>
-              <a class="intro__call-btn app-btn app-btn--contrast call-btn" href="#call">Бесплатный замер</a>
-              <a class="intro__call-btn app-btn app-btn--bright call-btn" href="#call">Расчет стоимости кухни</a>
+              <a class="intro__call-btn app-btn app-btn--contrast call-btn" href="#call" data-modal="#call">Бесплатный замер</a>
+              <a class="intro__call-btn app-btn app-btn--bright call-btn" href="#call" data-modal="#call">Расчет стоимости кухни</a>
             </div>
           </div>
 
@@ -148,7 +148,7 @@
             <div class="catalog__slider-container">
               <div class="catalog__slider swiper">
                 <div class="catalog__cards swiper-wrapper">
-                  <div class="card swiper-slide">
+                  <div class="card swiper-slide" data-modal="#product-01">
                     <h3 class="card__title">АРТ ДЕКО</h3>
                     <p class="card__description">
                       от 49 990 руб.
@@ -163,7 +163,7 @@
                       </picture>
                     </div>
                   </div>
-                  <div class="card swiper-slide">
+                  <div class="card swiper-slide" data-modal="#product-01">
                     <h3 class="card__title">МИНИМАЛИЗМ ХАЙТЕК МОДЕРН</h3>
                     <p class="card__description">
                       от 49 990 руб.
@@ -178,7 +178,7 @@
                       </picture>
                     </div>
                   </div>
-                  <div class="card swiper-slide">
+                  <div class="card swiper-slide" data-modal="#product-01">
                     <h3 class="card__title">ЛОФТ ИНДАСТРИАЛ</h3>
                     <p class="card__description">
                       от 49 990 руб.
@@ -193,7 +193,7 @@
                       </picture>
                     </div>
                   </div>
-                  <div class="card swiper-slide">
+                  <div class="card swiper-slide" data-modal="#product-01">
                     <h3 class="card__title">НЕОКЛАССИКА</h3>
                     <p class="card__description">
                       от 49 990 руб.
@@ -208,7 +208,7 @@
                       </picture>
                     </div>
                   </div>
-                  <div class="card swiper-slide">
+                  <div class="card swiper-slide" data-modal="#product-01">
                     <h3 class="card__title">ПРОВАНС ШЕБИ ШИК КАНТРИ</h3>
                     <p class="card__description">
                       от 49 990 руб.
@@ -223,7 +223,7 @@
                       </picture>
                     </div>
                   </div>
-                  <div class="card swiper-slide">
+                  <div class="card swiper-slide" data-modal="#product-01">
                     <h3 class="card__title">СКАНДИНАВСКИЙ</h3>
                     <p class="card__description">
                       от 49 990 руб.
@@ -320,7 +320,9 @@
                   </label>
 
                   <div class="feedback__submit-group">
-                    <button class="feedback__submit-btn app-btn app-btn--special" type="submit">Отправить заявку</button>
+                    <button class="feedback__submit-btn app-btn app-btn--special" type="submit" data-modal="#response">
+                      Отправить заявку
+                    </button>
                     <span class="feedback__submit-annotation">
                       Нажимая на кнопку вы даете согласие на обработку данных
                     </span>
@@ -380,7 +382,9 @@
                     <input class="feedback__input feedback__input--phone" type="tel" id="product-01-catalog-phone" name="phone" placeholder="Ваш телефон" required>
                   </label>
                   <div class="feedback__submit-group">
-                    <button class="feedback__submit-btn app-btn app-btn--special" type="submit">Отправить заявку</button>
+                    <button class="feedback__submit-btn app-btn app-btn--special" type="submit" data-modal="#response">
+                      Отправить заявку
+                    </button>
                     <span class="feedback__submit-annotation">
                       Нажимая на кнопку вы даете согласие на обработку данных
                     </span>
@@ -407,7 +411,9 @@
                   <input class="feedback__input feedback__input--phone" type="tel" id="lead-magnet-phone" name="phone" placeholder="Ваш телефон" required>
                 </label>
                 <div class="feedback__submit-group">
-                  <button class="feedback__submit-btn app-btn app-btn--special" type="submit">Отправить заявку</button>
+                  <button class="feedback__submit-btn app-btn app-btn--special" type="submit" data-modal="#response">
+                    Отправить заявку
+                  </button>
                   <span class="feedback__submit-annotation">
                     Нажимая на кнопку вы даете согласие на обработку данных
                   </span>
@@ -482,7 +488,9 @@
                   <input class="feedback__input feedback__input--phone" type="tel" id="credit-phone" name="phone" placeholder="Ваш телефон" required>
                 </label>
                 <div class="feedback__submit-group">
-                  <button class="feedback__submit-btn app-btn app-btn--special" type="submit">Отправить заявку</button>
+                  <button class="feedback__submit-btn app-btn app-btn--special" type="submit" data-modal="#response">
+                    Отправить заявку
+                  </button>
                   <span class="feedback__submit-annotation">
                     Нажимая на кнопку вы даете согласие на обработку данных
                   </span>
@@ -582,7 +590,9 @@
                   <input class="feedback__input feedback__input--phone" type="tel" id="call-phone" name="phone" placeholder="Ваш телефон" required>
                 </label>
                 <div class="feedback__submit-group">
-                  <button class="feedback__submit-btn app-btn app-btn--special" type="submit">Отправить заявку</button>
+                  <button class="feedback__submit-btn app-btn app-btn--special" type="submit" data-modal="#response">
+                    Отправить заявку
+                  </button>
                   <span class="feedback__submit-annotation">
                     Нажимая на кнопку вы даете согласие на обработку данных
                   </span>
@@ -645,7 +655,7 @@
 
             <div class="page-footer__connection connection">
               <a class="page-footer__phone connection__phone phone" href="tel:+79628877751">+7 (962) 88-777-51</a>
-              <a class="page-footer__call-btn connection__call-btn app-btn app-btn--transparent call-btn" href="#call">Заказать обратный звонок</a>
+              <a class="page-footer__call-btn connection__call-btn app-btn app-btn--transparent call-btn" href="#call" data-modal="#call">Заказать обратный звонок</a>
             </div>
           </div>
 
@@ -655,33 +665,23 @@
 
       <div class="blur"></div>
 
-      <template id="success">
-        <div class="response response--success modal">
+      <template id="response-template">
+        <div class="response modal" id="response">
           <div class="response__wrapper modal__wrapper popup">
             <button class="popup__close-btn modal__close-btn cross-btn cross-btn--adaptive"><span class="visually-hidden">Закрыть окно</span></button>
 
             <div class="response__content">
-              <p class="response-description">
+              <p class="response-description response-description--success">
                 Спасибо!<br>Ваша заявка была отправлена и в ближашее <br>время будет обработана
               </p>
-              <button class="modal__close-btn response-btn response-btn--success app-btn app-btn app-btn--special app-btn--small">Хорошо</button>
-            </div>
-          </div>
-        </div>
-      </template>
 
-      <template id="error">
-        <div class="response response--error modal">
-          <div class="response__wrapper modal__wrapper popup">
-            <button class="popup__close-btn modal__close-btn cross-btn cross-btn--adaptive"><span class="visually-hidden">Закрыть окно</span></button>
-
-            <div class="response__content">
-              <p class="response-description">
+              <p class="response-description response-description--error">
                 Неправильно заполнены поля!<br>
                 Поле «Имя» обязательно для заполнения!<br>
                 Поле «Телефон» обязательно для заполнения!
               </p>
-              <button class="modal__close-btn response-btn response-btn--error app-btn app-btn app-btn--special app-btn--small">Хорошо</button>
+
+              <button class="modal__close-btn response-btn response-btn--success app-btn app-btn app-btn--special app-btn--small">Хорошо</button>
             </div>
           </div>
         </div>

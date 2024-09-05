@@ -41,6 +41,7 @@
 }
 
 .response-description {
+  display: none;
   margin-bottom: 20px;
 
   .font-basic();
@@ -51,3 +52,10 @@
   }
 }
 
+.response--success .response-description--success {
+  display: block;
+}
+
+.response--error .response-description--error {
+  display: block;
+}

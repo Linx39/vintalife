@@ -1,4 +1,4 @@
-import { openResponseSuccess, openResponseError } from "./response-modal.js";
+import { setResponseSuccess, setResponseError } from "./response-modal.js";
 // import { closeCall } from "./call-modal.js";
 
 const PHONE_MASK = /^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/;
@@ -6,7 +6,7 @@ const VALIDITY_MESSAGE_PHONE = `Введите корректный номер �
 
 const feedbackForms = document.querySelectorAll('.feedback__form');
 
-const resetForm = (form) => form.reset();
+// const resetForm = (form) => form.reset();
 
 feedbackForms.forEach(form => {
   const inputName = form.querySelector('.feedback__input--name');
@@ -23,18 +23,19 @@ feedbackForms.forEach(form => {
     inputPhone.reportValidity();
   })
 
+  const resetForm = () => form.reset();
+
   submitBtn.addEventListener('click', (evt) => {
     if(inputName.value === '' && inputPhone.value === '') {
       evt.preventDefault();
-      openResponseError();
+      setResponseError();
     }
   })
 
   form.addEventListener('submit', (evt) => {
     evt.preventDefault();
-    openResponseSuccess();
+    setResponseSuccess();
+    resetForm();
     // closeCall();
   })
 })
-
-export {resetForm}

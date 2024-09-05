@@ -1,7 +1,7 @@
 import { isEscEvent } from "./utils.js";
 import { activateBlur, deactivateBlur } from "./blur.js";
 
-// const MODAL_CLASS = 'modal';
+const MODAL_CLASS = 'modal';
 
 const MODAL_WRAPPER_CLASS ='modal__wrapper';
 const MODAL_OPENED_CLASS = 'modal--opened';
@@ -9,9 +9,9 @@ const MODAL_CLOSE_BTN = 'modal__close-btn';
 
 const body = document.querySelector('.page__body');
 
-let prevModal = null;
+let openedModal = null;
 
-const controlModal = (modal, beforeOpen, afterClose) => {
+const controlModal = (modal, onOpenModal, onCloseModal) => {
   const modalWrapper = modal.querySelector(`.${MODAL_WRAPPER_CLASS}`);
   const modalCloseBtns = modal.querySelectorAll(`.${MODAL_CLOSE_BTN}`);
 
@@ -19,11 +19,23 @@ const controlModal = (modal, beforeOpen, afterClose) => {
   const modalOpenBtns = document.querySelectorAll(`[data-modal="#${id}"]`);
 
   const openModal = () => {
-    if (prevModal) {
-      closeModal(prevModal);
+
+    if (openedModal) {
+      body.removeAttribute('style');
+
+      openedModal.classList.remove(MODAL_OPENED_CLASS);
+
+      deactivateBlur();
+
+      document.removeEventListener('keydown', onEscKeyDown);
+      document.removeEventListener('click', onDocumentClick);
+
+      if (onCloseModal) {
+        onCloseModal();
+      }
     }
 
-    prevModal = modal;
+    openedModal = modal;
 
     const scrollYWidth = window.innerWidth - document.documentElement.clientWidth;
 
@@ -31,7 +43,6 @@ const controlModal = (modal, beforeOpen, afterClose) => {
     body.style.marginRight = `${scrollYWidth}px`;
 
     modal.classList.add(MODAL_OPENED_CLASS);
-    modal.setAttribute("aria-hidden", "false"),
     modal.style.marginRight = `${scrollYWidth}px`;
 
     activateBlur();
@@ -39,12 +50,12 @@ const controlModal = (modal, beforeOpen, afterClose) => {
     document.addEventListener(`keydown`, onEscKeyDown);
     document.addEventListener('click', onDocumentClick);
 
-    if (beforeOpen) {
-      beforeOpen();
+    if (onOpenModal) {
+      onOpenModal();
     }
   }
 
-  const closeModal = (modal) => {
+  const closeModal = () => {
     body.removeAttribute('style');
 
     modal.classList.remove(MODAL_OPENED_CLASS);
@@ -54,21 +65,21 @@ const controlModal = (modal, beforeOpen, afterClose) => {
     document.removeEventListener('keydown', onEscKeyDown);
     document.removeEventListener('click', onDocumentClick);
 
-    if (afterClose) {
-      afterClose();
+    if (onCloseModal) {
+      onCloseModal();
     }
   }
 
   const onEscKeyDown = (evt) => {
     if (isEscEvent(evt)) {
       evt.preventDefault();
-      closeModal(modal);
+      closeModal();
     }
   };
 
   const onDocumentClick = (evt) => {
     if (modal.contains(evt.target) && !modalWrapper.contains(evt.target)) {
-      closeModal(modal);
+      closeModal();
     }
   }
 
@@ -81,7 +92,7 @@ const controlModal = (modal, beforeOpen, afterClose) => {
 
     modalCloseBtns.forEach(btn => {
       btn.addEventListener('click', () => {
-        closeModal(modal);
+        closeModal();
       })
     })
 
