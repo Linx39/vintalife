@@ -16,9 +16,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-
   btnUp.addEventListener('click', (evt) => {
     evt.preventDefault();
     window.scrollTo({top: 0, behavior: 'smooth'});
   });
 })
+
+export {scrollUp};

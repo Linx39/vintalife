@@ -1,5 +1,6 @@
 import { isEscEvent } from "./utils.js";
 import { activateBlur, deactivateBlur } from "./blur.js";
+import { scrollUp } from "./scroll-up.js";
 
 // const MODAL_CLASS = 'modal';
 
@@ -8,6 +9,8 @@ const MODAL_OPENED_CLASS = 'modal--opened';
 const MODAL_CLOSE_BTN = 'modal__close-btn';
 
 const body = document.querySelector('.page__body');
+
+const fixedElements = [scrollUp];
 
 let prevModal = null;
 
@@ -30,8 +33,14 @@ const controlModal = (modal, beforeOpen, afterClose) => {
     body.style.overflowY = 'hidden';
     body.style.marginRight = `${scrollYWidth}px`;
 
+    if (fixedElements) {
+      fixedElements.forEach(element => {
+        element.style.marginRight = `${scrollYWidth}px`;
+      })
+    }
+
     modal.classList.add(MODAL_OPENED_CLASS);
-    modal.setAttribute("aria-hidden", "false"),
+    modal.setAttribute('aria-hidden', 'false');
     modal.style.marginRight = `${scrollYWidth}px`;
 
     activateBlur();
@@ -47,7 +56,14 @@ const controlModal = (modal, beforeOpen, afterClose) => {
   const closeModal = (modal) => {
     body.removeAttribute('style');
 
+    if (fixedElements) {
+      fixedElements.forEach(element => {
+        element.style.marginRight = ``;
+      })
+    }
+
     modal.classList.remove(MODAL_OPENED_CLASS);
+    modal.setAttribute('aria-hidden', 'true'),
 
     deactivateBlur();
 
