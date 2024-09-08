@@ -18,7 +18,7 @@ const setResponseError = () => {
 const appendResponse = () => document.body.append(response);
 const removeResponse = () => response.remove();
 
-const {handleModal} = controlModal(response, appendResponse, removeResponse);
-handleModal();
+const {initModal} = controlModal(response, appendResponse, removeResponse);
+initModal();
 
 export {setResponseError, setResponseSuccess};

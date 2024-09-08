@@ -86,7 +86,9 @@
           </ul>
 
           <div class="main-nav__site-menu" role="dialog" aria-modal="true" aria-hidden="true">
-            <button class="main-nav__site-menu-close-btn cross-btn"><span class="visually-hidden">Закрыть меню</span></button>
+            <button class="main-nav__site-menu-close-btn cross-btn">
+              <span class="visually-hidden">Закрыть меню</span>
+            </button>
             <ul class="main-nav__site-list site-list">
               <li class="site-list__item">
                 <a class="site-list__link" href="#advantages">Преимущества</a>
@@ -560,7 +562,7 @@
                   <span class="contacts-list__item-value">Пн-Вс с 9:00 до 21:00</span>
                 </li>
               </ul>
-              <a class="contacts__btn contacts__btn--froze app-btn app-btn--contrast" href="#">Бесплатный замер</a>
+              <a class="contacts__btn contacts__btn--froze app-btn app-btn--contrast" href="#call" data-modal="#call">Бесплатный замер</a>
               <p class="contacts__anotation">Звонки и заявки с сайта принимаются без выходных</p>
               <p class="contacts__slogan">Скажите, что пришли с&nbsp;сайта и получите скидку 20%</p>
             </div>
@@ -664,8 +666,8 @@
       <div class="blur"></div>
 
       <template id="response-template">
-        <div class="response modal" id="response">
-          <div class="response__wrapper modal__wrapper popup">
+        <div class="response modal" id="response" aria-hidden="true">
+          <div class="response__wrapper modal__wrapper popup" role="dialog" aria-modal="true">
             <button class="popup__close-btn modal__close-btn cross-btn cross-btn--adaptive"><span class="visually-hidden">Закрыть окно</span></button>
 
             <div class="response__content">
