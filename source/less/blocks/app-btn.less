@@ -12,6 +12,8 @@
 
   transition: background-color .5s;
 
+  .focus-styles();
+
   &--transparent {
     font-size: 14px;
     line-height: 122%;
@@ -19,12 +21,10 @@
     background-color: transparent;
     border: 2px solid currentColor;
 
-    &:hover,
-    &:focus-within {
+    &:hover {
       color: var(--color-font-light);
       background-color: var(--color-bright);
       border-color: var(--color-bright);
-      outline: none;
     }
 
     &:active {
@@ -41,10 +41,8 @@
     color: var(--color-font-light);
     background-color: var(--color-back-dark);
 
-    &:hover,
-    &:focus-within {
+    &:hover {
       background-color: var(--color-special);
-      outline: none;
     }
 
     &:active {
@@ -60,10 +58,8 @@
     color: var(--color-font-light);
     background-color: var(--color-bright);
 
-    &:hover,
-    &:focus-within {
+    &:hover {
       background-color: var(--color-back-dark);
-      outline: none;
     }
 
     &:active {
@@ -82,10 +78,8 @@
     color: var(--color-font-light);
     background-color: var(--color-special);
 
-    &:hover,
-    &:focus-within {
+    &:hover {
       background-color: var(--color-ultra-back);
-      outline: none;
     }
 
     &:active {

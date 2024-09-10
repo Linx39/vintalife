@@ -3,7 +3,7 @@ import { controlModal } from "./modal.js";
 const RESPONSE_SUCCESS_CLASS = 'response--success';
 const RESPONSE_ERROR_CLASS = 'response--error';
 
-const response = document.querySelector('#response-template').content.querySelector('.response');
+const response = document.querySelector('.response');
 
 const setResponseSuccess = () => {
   response.classList.remove(RESPONSE_ERROR_CLASS);
@@ -15,10 +15,12 @@ const setResponseError = () => {
   response.classList.add(RESPONSE_ERROR_CLASS);
 };
 
-const appendResponse = () => document.body.append(response);
-const removeResponse = () => response.remove();
+const setResponseDefault = () => {
+  response.classList.remove(RESPONSE_ERROR_CLASS);
+  response.classList.remove(RESPONSE_SUCCESS_CLASS);
+}
 
-const {initModal} = controlModal(response, appendResponse, removeResponse);
+const {initModal} = controlModal(response, null, setResponseDefault);
 initModal();
 
 export {setResponseError, setResponseSuccess};

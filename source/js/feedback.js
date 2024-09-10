@@ -1,4 +1,4 @@
-import { setResponseSuccess, setResponseError } from "./response-modal.js";
+import { setResponseSuccess, setResponseError, setResponseDefault } from "./response-modal.js";
 // import { closeCall } from "./call-modal.js";
 
 const PHONE_MASK = /^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/;
@@ -25,10 +25,10 @@ feedbackForms.forEach(form => {
     inputPhone.reportValidity();
   })
 
-  const isFormValid = inputName.value === '' && inputPhone.value === '';
-
   submitBtn.addEventListener('click', (evt) => {
-    if(isFormValid) {
+    const isFormValid = inputName.value !== '' && inputPhone.value !== '';
+
+    if(!isFormValid) {
       evt.preventDefault();
       setResponseError();
     }
@@ -38,6 +38,7 @@ feedbackForms.forEach(form => {
     evt.preventDefault();
     setResponseSuccess();
     resetAllForms();
+
     // closeCall();
   })
 })

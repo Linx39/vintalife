@@ -4,29 +4,30 @@ import { scrollUp } from "./scroll-up.js";
 
 // const MODAL_CLASS = 'modal';
 
-  const FOCUS_ELEMENTS = [
-    'a[href]',
-    'area[href]',
-    'input:not([disabled]):not([type="hidden"]):not([aria-hidden])',
-    'select:not([disabled]):not([aria-hidden])',
-    'textarea:not([disabled]):not([aria-hidden])',
-    'button:not([disabled]):not([aria-hidden])',
-    'iframe',
-    'object',
-    'embed',
-    '[contenteditable]',
-    '[tabindex]:not([tabindex^="-"])'
-  ];
-
+const FOCUS_ELEMENTS = [
+  'a[href]',
+  'area[href]',
+  'input:not([disabled]):not([type="hidden"]):not([aria-hidden])',
+  'select:not([disabled]):not([aria-hidden])',
+  'textarea:not([disabled]):not([aria-hidden])',
+  'button:not([disabled]):not([aria-hidden])',
+  'iframe',
+  'object',
+  'embed',
+  '[contenteditable]',
+  '[tabindex]:not([tabindex^="-"])'
+];
 const MODAL_WRAPPER_CLASS ='modal__wrapper';
 const MODAL_OPENED_CLASS = 'modal--opened';
 const MODAL_CLOSE_BTN = 'modal__close-btn';
 
 const body = document.querySelector('.page__body');
-
 const fixedElements = [scrollUp];
-
-let prevModal = null;
+let prevModal;
+let lastFocusElement;
+// let onDocumentClick;
+// let onEscKeyDown;
+// let onTabKeyDown;
 
 const controlModal = (modal, beforeOpen, afterClose) => {
   const modalWrapper = modal.querySelector(`.${MODAL_WRAPPER_CLASS}`);
@@ -37,15 +38,19 @@ const controlModal = (modal, beforeOpen, afterClose) => {
 
   const nodes = modal.querySelectorAll(FOCUS_ELEMENTS);
 
-  let lastFocusElement;
   let isModalOpened = false;
 
-  const openModal = (btn) => {
+  const openModal = () => {
     if (prevModal) {
       closeModal(prevModal);
     }
 
+    if (!prevModal) {
+      lastFocusElement = document.activeElement;
+    }
+
     prevModal = modal;
+    isModalOpened = true;
 
     const scrollYWidth = window.innerWidth - document.documentElement.clientWidth;
 
@@ -71,12 +76,6 @@ const controlModal = (modal, beforeOpen, afterClose) => {
     if (beforeOpen) {
       beforeOpen();
     }
-
-    // lastFocusElement = document.activeElement;
-    lastFocusElement = btn;
-    console.log(document.activeElement);
-    isModalOpened = true;
-    nodes[0].focus();
   }
 
   const closeModal = (modal) => {
@@ -101,46 +100,35 @@ const controlModal = (modal, beforeOpen, afterClose) => {
       afterClose();
     }
 
-    isModalOpened = false;
     lastFocusElement.focus();
-    // lastFocusElement = null;
+
+    prevModal = null;
+    isModalOpened = false;
   }
 
-  // const focusRestrict = (evt) => {
-  //   if ( isModalOpened && !modalWrapper.contains(evt.target) ) {
-  //     evt.stopPropagation();
-  //     modalWrapper.focus();
-  //   }
-  // }
+  const loopFocus = (evt) => {
+    const nodesArray = [...nodes];
 
-  const focusCatcher = (evt) => {
-    // const nodes = modal.querySelectorAll(FOCUS_ELEMENTS);
-    const nodesArray = Array.prototype.slice.call(nodes);
-
-    //если фокуса нет в окне, то вставляем фокус на первый элемент
     if (!modal.contains(document.activeElement)) {
-      console.log(document.activeElement);
-        nodesArray[0].focus();
-        evt.preventDefault();
+      evt.preventDefault();
+      nodesArray[0].focus();
     } else {
-        const focusedItemIndex = nodesArray.indexOf(document.activeElement)
-        if (evt.shiftKey && focusedItemIndex === 0) {
-            //перенос фокуса на последний элемент
-            nodesArray[nodesArray.length - 1].focus();
-            evt.preventDefault();
-        }
-        if (!evt.shiftKey && focusedItemIndex === nodesArray.length - 1) {
-            //перерос фокуса на первый элемент
-            nodesArray[0].focus();
-            evt.preventDefault();
-        }
+      const focusedItemIndex = nodesArray.indexOf(document.activeElement)
+
+      if (evt.shiftKey && focusedItemIndex === 0) {
+        evt.preventDefault();
+        nodesArray[nodesArray.length - 1].focus();
+      }
+      if (!evt.shiftKey && focusedItemIndex === nodesArray.length - 1) {
+        evt.preventDefault();
+        nodesArray[0].focus();
+      }
     }
   }
 
   const onTabKeyDown = (evt) => {
     if (isTabEvent(evt) && isModalOpened) {
-      evt.preventDefault();
-      focusCatcher(evt);
+      loopFocus(evt);
     }
   };
 
@@ -160,7 +148,7 @@ const controlModal = (modal, beforeOpen, afterClose) => {
   const initModal = () => {
     modalOpenBtns.forEach(btn => {
       btn.addEventListener('click', () => {
-        openModal(btn);
+        openModal();
       });
     })
 
@@ -169,7 +157,6 @@ const controlModal = (modal, beforeOpen, afterClose) => {
         closeModal(modal);
       })
     })
-
   }
 
   return {initModal, openModal, closeModal}

@@ -569,7 +569,7 @@
           </div>
         </section>
 
-        <section class="call modal" id="call" aria-hidden="true">
+        <div class="call modal" id="call" aria-hidden="true">
           <div class="call__wrapper modal__wrapper popup" role="dialog" aria-modal="true">
             <h2 class="visually-hidden">Заказ звонка</h2>
             <button class="popup__close-btn modal__close-btn cross-btn cross-btn--adaptive"><span class="visually-hidden">Закрыть окно</span></button>
@@ -600,7 +600,27 @@
               </form>
             </div>
           </div>
-        </section>
+        </div>
+
+        <div class="response modal" id="response" aria-hidden="true">
+          <div class="response__wrapper modal__wrapper popup" role="dialog" aria-modal="true">
+            <button class="popup__close-btn modal__close-btn cross-btn cross-btn--adaptive"><span class="visually-hidden">Закрыть окно</span></button>
+
+            <div class="response__content">
+              <p class="response-description response-description--success">
+                Спасибо!<br>Ваша заявка была отправлена и в ближашее <br>время будет обработана
+              </p>
+
+              <p class="response-description response-description--error">
+                Неправильно заполнены поля!<br>
+                Поле «Имя» обязательно для заполнения!<br>
+                Поле «Телефон» обязательно для заполнения!
+              </p>
+
+              <button class="modal__close-btn response-btn response-btn--success app-btn app-btn app-btn--special app-btn--small">Хорошо</button>
+            </div>
+          </div>
+        </div>
       </main>
 
       <footer class="page__footer page-footer">
@@ -664,28 +684,6 @@
       </footer>
 
       <div class="blur"></div>
-
-      <template id="response-template">
-        <div class="response modal" id="response" aria-hidden="true">
-          <div class="response__wrapper modal__wrapper popup" role="dialog" aria-modal="true">
-            <button class="popup__close-btn modal__close-btn cross-btn cross-btn--adaptive"><span class="visually-hidden">Закрыть окно</span></button>
-
-            <div class="response__content">
-              <p class="response-description response-description--success">
-                Спасибо!<br>Ваша заявка была отправлена и в ближашее <br>время будет обработана
-              </p>
-
-              <p class="response-description response-description--error">
-                Неправильно заполнены поля!<br>
-                Поле «Имя» обязательно для заполнения!<br>
-                Поле «Телефон» обязательно для заполнения!
-              </p>
-
-              <button class="modal__close-btn response-btn response-btn--success app-btn app-btn app-btn--special app-btn--small">Хорошо</button>
-            </div>
-          </div>
-        </div>
-      </template>
 
       <template id="scroll-up">
         <div class="scroll-up">

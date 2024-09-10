@@ -73,19 +73,19 @@
   }
 }
 
-.interactive-styles {
-  &:hover,
+.focus-styles {
   &:focus-visible {
-    color: var(--color-bright);
-    outline: none;
+    outline: 1px solid var(--color-bright);
+    outline-offset: 3px;
   }
 }
 
-.interactive-styles-custom {
-  &:focus-visible {
-    outline: 1px solid currentColor;
-    outline-offset: 2px;
+.interactive-styles {
+  &:hover {
+    color: var(--color-bright);
   }
+
+  .focus-styles();
 }
 
 .cross-icon(@size) {
