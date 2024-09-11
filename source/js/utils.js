@@ -1,10 +1,6 @@
-export const isEscEvent = (evt) => evt.key === 'Escape' || evt.key === 'Esc';
+const ESC_KEY_CODE = 27;
+const TAB_KEY_CODE = 9;
 
-export const isTabEvent = (evt) => evt.which  === 9;
+export const isEscEvent = (evt) => evt.which === ESC_KEY_CODE;
 
-export const handleEscKeyDown = (evt, cb) => {
-  if (isEscEvent(evt)) {
-    evt.preventDefault();
-    cb();
-  }
-}
+export const isTabEvent = (evt) => evt.which  === TAB_KEY_CODE;

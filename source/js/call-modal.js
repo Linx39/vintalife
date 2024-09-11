@@ -1,6 +1,5 @@
-import { controlModal } from "./modal.js";
+import { initModal } from "./modal.js";
 
-const callModal = document.querySelector('.call');
+const call = document.querySelector('.call');
 
-const {initModal} = controlModal(callModal);
-initModal();
+const callModal = initModal(call);

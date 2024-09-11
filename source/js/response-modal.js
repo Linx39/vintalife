@@ -1,4 +1,4 @@
-import { controlModal } from "./modal.js";
+import { initModal } from "./modal.js";
 
 const RESPONSE_SUCCESS_CLASS = 'response--success';
 const RESPONSE_ERROR_CLASS = 'response--error';
@@ -20,7 +20,6 @@ const setResponseDefault = () => {
   response.classList.remove(RESPONSE_SUCCESS_CLASS);
 }
 
-const {initModal} = controlModal(response, null, setResponseDefault);
-initModal();
+const responseModal = initModal(response, null, setResponseDefault);
 
 export {setResponseError, setResponseSuccess};

@@ -1,8 +1,7 @@
-import { controlModal } from "./modal.js";
+import { initModal } from "./modal.js";
 
-const productsModal = document.querySelectorAll('.product');
+const products = document.querySelectorAll('.product');
 
-productsModal.forEach(modal => {
-  const {initModal} = controlModal(modal);
-  initModal();
+products.forEach(element => {
+  const productModal = initModal(element);
 })

@@ -25,32 +25,32 @@ const body = document.querySelector('.page__body');
 const fixedElements = [scrollUp];
 let prevModal;
 let lastFocusElement;
-// let onDocumentClick;
-// let onEscKeyDown;
-// let onTabKeyDown;
 
-const controlModal = (modal, beforeOpen, afterClose) => {
-  const modalWrapper = modal.querySelector(`.${MODAL_WRAPPER_CLASS}`);
-  const modalCloseBtns = modal.querySelectorAll(`.${MODAL_CLOSE_BTN}`);
+const initModal = (modalClass, beforeOpen, afterClose) => {
+  const modal = {
+    close: null,
+    open: null,
+  }
 
-  const id = modal.getAttribute('id');
+  const modalWrapper = modalClass.querySelector(`.${MODAL_WRAPPER_CLASS}`);
+  const modalCloseBtns = modalClass.querySelectorAll(`.${MODAL_CLOSE_BTN}`);
+  const id = modalClass.getAttribute('id');
   const modalOpenBtns = document.querySelectorAll(`[data-modal="#${id}"]`);
-
-  const nodes = modal.querySelectorAll(FOCUS_ELEMENTS);
-
-  let isModalOpened = false;
+  const nodes = modalClass.querySelectorAll(FOCUS_ELEMENTS);
+  // let isModalOpened = false;
+  const nodesArray = [...nodes];
 
   const openModal = () => {
     if (prevModal) {
-      closeModal(prevModal);
+      prevModal.close();
     }
 
-    if (!prevModal) {
-      lastFocusElement = document.activeElement;
+    if (beforeOpen) {
+      beforeOpen();
     }
 
-    prevModal = modal;
-    isModalOpened = true;
+    lastFocusElement = document.activeElement;
+    // isModalOpened = true;
 
     const scrollYWidth = window.innerWidth - document.documentElement.clientWidth;
 
@@ -63,9 +63,9 @@ const controlModal = (modal, beforeOpen, afterClose) => {
       })
     }
 
-    modal.classList.add(MODAL_OPENED_CLASS);
-    modal.setAttribute('aria-hidden', 'false');
-    modal.style.marginRight = `${scrollYWidth}px`;
+    modalClass.classList.add(MODAL_OPENED_CLASS);
+    modalClass.setAttribute('aria-hidden', 'false');
+    modalClass.style.marginRight = `${scrollYWidth}px`;
 
     activateBlur();
 
@@ -73,12 +73,13 @@ const controlModal = (modal, beforeOpen, afterClose) => {
     document.addEventListener(`keydown`, onTabKeyDown);
     document.addEventListener('click', onDocumentClick);
 
-    if (beforeOpen) {
-      beforeOpen();
-    }
+    prevModal = modal;
+
+    nodesArray[0].focus();
+    console.log(document.activeElement);
   }
 
-  const closeModal = (modal) => {
+  const closeModal = () => {
     body.removeAttribute('style');
 
     if (fixedElements) {
@@ -87,8 +88,8 @@ const controlModal = (modal, beforeOpen, afterClose) => {
       })
     }
 
-    modal.classList.remove(MODAL_OPENED_CLASS);
-    modal.setAttribute('aria-hidden', 'true');
+    modalClass.classList.remove(MODAL_OPENED_CLASS);
+    modalClass.setAttribute('aria-hidden', 'true');
 
     deactivateBlur();
 
@@ -96,20 +97,18 @@ const controlModal = (modal, beforeOpen, afterClose) => {
     document.removeEventListener('keydown', onTabKeyDown);
     document.removeEventListener('click', onDocumentClick);
 
+    prevModal = null;
+    // isModalOpened = false;
+
     if (afterClose) {
       afterClose();
     }
 
     lastFocusElement.focus();
-
-    prevModal = null;
-    isModalOpened = false;
   }
 
   const loopFocus = (evt) => {
-    const nodesArray = [...nodes];
-
-    if (!modal.contains(document.activeElement)) {
+    if (!modalClass.contains(document.activeElement)) {
       evt.preventDefault();
       nodesArray[0].focus();
     } else {
@@ -127,7 +126,7 @@ const controlModal = (modal, beforeOpen, afterClose) => {
   }
 
   const onTabKeyDown = (evt) => {
-    if (isTabEvent(evt) && isModalOpened) {
+    if (isTabEvent(evt)) {
       loopFocus(evt);
     }
   };
@@ -135,31 +134,37 @@ const controlModal = (modal, beforeOpen, afterClose) => {
   const onEscKeyDown = (evt) => {
     if (isEscEvent(evt)) {
       evt.preventDefault();
-      closeModal(modal);
+      closeModal();
     }
   };
 
   const onDocumentClick = (evt) => {
-    if (modal.contains(evt.target) && !modalWrapper.contains(evt.target)) {
-      closeModal(modal);
+    if (modalClass.contains(evt.target) && !modalWrapper.contains(evt.target)) {
+      closeModal();
     }
   }
 
-  const initModal = () => {
-    modalOpenBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        openModal();
-      });
-    })
+  modal.close = closeModal;
+  modal.open = openModal;
 
-    modalCloseBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        closeModal(modal);
-      })
-    })
-  }
+  modalOpenBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      // openModal();
+      modal.open();
+    });
+  })
 
-  return {initModal, openModal, closeModal}
+  modalCloseBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      // closeModal();
+      modal.close();
+    })
+  })
+
+  // modal.close = closeModal;
+  // modal.open = openModal;
+
+  return {modal}
 }
 
-export {controlModal};
+export {initModal};
