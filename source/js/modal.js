@@ -26,17 +26,18 @@ const fixedElements = [scrollUp];
 let prevModal;
 let lastFocusElement;
 
-const initModal = (modalClass, beforeOpen, afterClose) => {
+const initModal = (modalElement, beforeOpen, afterClose) => {
   const modal = {
-    close: null,
-    open: null,
+    element: modalElement,
+    // close: null,
+    // open: null,
   }
 
-  const modalWrapper = modalClass.querySelector(`.${MODAL_WRAPPER_CLASS}`);
-  const modalCloseBtns = modalClass.querySelectorAll(`.${MODAL_CLOSE_BTN}`);
-  const id = modalClass.getAttribute('id');
+  const modalWrapper = modalElement.querySelector(`.${MODAL_WRAPPER_CLASS}`);
+  const modalCloseBtns = modalElement.querySelectorAll(`.${MODAL_CLOSE_BTN}`);
+  const id = modalElement.getAttribute('id');
   const modalOpenBtns = document.querySelectorAll(`[data-modal="#${id}"]`);
-  const nodes = modalClass.querySelectorAll(FOCUS_ELEMENTS);
+  const nodes = modalElement.querySelectorAll(FOCUS_ELEMENTS);
   // let isModalOpened = false;
   const nodesArray = [...nodes];
 
@@ -44,6 +45,8 @@ const initModal = (modalClass, beforeOpen, afterClose) => {
     if (prevModal) {
       prevModal.close();
     }
+
+    prevModal = modal;
 
     if (beforeOpen) {
       beforeOpen();
@@ -63,9 +66,9 @@ const initModal = (modalClass, beforeOpen, afterClose) => {
       })
     }
 
-    modalClass.classList.add(MODAL_OPENED_CLASS);
-    modalClass.setAttribute('aria-hidden', 'false');
-    modalClass.style.marginRight = `${scrollYWidth}px`;
+    modalElement.classList.add(MODAL_OPENED_CLASS);
+    modalElement.setAttribute('aria-hidden', 'false');
+    modalElement.style.marginRight = `${scrollYWidth}px`;
 
     activateBlur();
 
@@ -73,10 +76,9 @@ const initModal = (modalClass, beforeOpen, afterClose) => {
     document.addEventListener(`keydown`, onTabKeyDown);
     document.addEventListener('click', onDocumentClick);
 
-    prevModal = modal;
+    // nodesArray[0].focus();
 
-    nodesArray[0].focus();
-    console.log(document.activeElement);
+    // prevModal = modal;
   }
 
   const closeModal = () => {
@@ -88,8 +90,8 @@ const initModal = (modalClass, beforeOpen, afterClose) => {
       })
     }
 
-    modalClass.classList.remove(MODAL_OPENED_CLASS);
-    modalClass.setAttribute('aria-hidden', 'true');
+    modalElement.classList.remove(MODAL_OPENED_CLASS);
+    modalElement.setAttribute('aria-hidden', 'true');
 
     deactivateBlur();
 
@@ -97,18 +99,19 @@ const initModal = (modalClass, beforeOpen, afterClose) => {
     document.removeEventListener('keydown', onTabKeyDown);
     document.removeEventListener('click', onDocumentClick);
 
-    prevModal = null;
     // isModalOpened = false;
 
     if (afterClose) {
       afterClose();
     }
 
+    prevModal = null;
+
     lastFocusElement.focus();
   }
 
   const loopFocus = (evt) => {
-    if (!modalClass.contains(document.activeElement)) {
+    if (!modalElement.contains(document.activeElement)) {
       evt.preventDefault();
       nodesArray[0].focus();
     } else {
@@ -139,7 +142,7 @@ const initModal = (modalClass, beforeOpen, afterClose) => {
   };
 
   const onDocumentClick = (evt) => {
-    if (modalClass.contains(evt.target) && !modalWrapper.contains(evt.target)) {
+    if (modalElement.contains(evt.target) && !modalWrapper.contains(evt.target)) {
       closeModal();
     }
   }
@@ -164,7 +167,7 @@ const initModal = (modalClass, beforeOpen, afterClose) => {
   // modal.close = closeModal;
   // modal.open = openModal;
 
-  return {modal}
+  return modal;
 }
 
 export {initModal};
