@@ -124,18 +124,31 @@
   right: 0;
   z-index: 10;
 
-  width: auto;
-  padding: 80px 38px 60px;
-  background-color: var(--color-special);
+  // width: auto;
+  // padding: 80px 38px 60px;
+  // background-color: var(--color-special);
 
   transition:  transform .5s ease, opacity .5s ease;
   opacity: 0;
   transform: translateY(-110%);
 
+  pointer-events: none;
+  visibility: hidden;
+
   &--opened {
     opacity: 1;
     transform: translateY(0);
+    
+    pointer-events: auto;
+    visibility: visible;
+    -webkit-overflow-scrolling: touch;
   }
+}
+
+.main-nav__site-menu-wrapper {
+  width: auto;
+  padding: 80px 38px 60px;
+  background-color: var(--color-special);
 }
 
 .main-nav__site-menu-close-btn {
