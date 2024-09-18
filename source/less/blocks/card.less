@@ -1,5 +1,7 @@
 .card {
   position: relative;
+  width: 100%;
+
   color: var(--color-font-light);
   background-color: var(--color-back-img);
 
@@ -18,13 +20,9 @@
 
 .card:hover {
   cursor: pointer;
-
-  &::before {
-    background-color: var(--color-card-blur-hover);
-    opacity: 1;
-  }
 }
 
+.card:hover,
 .card:focus-visible {
   &::before {
     background-color: var(--color-card-blur-hover);
@@ -55,7 +53,8 @@
   }
 }
 
-.card:hover .card__title {
+.card:hover .card__title,
+.card:focus-visible .card__title {
   top: 40px;
   margin-top: 0;
 
@@ -87,7 +86,8 @@
   transition: opacity .5s;
 }
 
-.card:hover .card__description {
+.card:hover .card__description,
+.card:focus-visible .card__description {
   opacity: 1;
 
   transition: opacity .5s;
@@ -98,8 +98,6 @@
   line-height: 115%;
   font-weight: 700;
   text-align: center;
-
-  .interactive-styles();
 }
 
 .card__img img {
