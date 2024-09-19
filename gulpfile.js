@@ -7,7 +7,7 @@ import autoprefixer from 'autoprefixer';
 import csso from 'postcss-csso';
 import rename from 'gulp-rename';
 import htmlmin from 'gulp-htmlmin';
-// import imagemin from 'gulp-imagemin';
+import imagemin from 'gulp-imagemin';
 import webp from 'gulp-webp';
 import svgstore from 'gulp-svgstore';
 import {deleteAsync} from 'del';
@@ -20,7 +20,7 @@ const PUBLIC_FOLDER = 'docs';
 // HTML
 export const html = () => {
   return gulp.src(`${SOURCE_FOLDER}/*.html`)
-  // .pipe(htmlmin({ collapseWhitespace: true }))
+  .pipe(htmlmin({ collapseWhitespace: true }))
   .pipe(gulp.dest(PUBLIC_FOLDER))
   .pipe(browser.stream());
 }
@@ -56,14 +56,14 @@ export const scripts = () => {
 }
 
 // Images
-// export const optimizeImages = () => {
-//   return gulp.src([
-//     `${SOURCE_FOLDER}/img/**/*.{png,jpg,svg}`,
-//     `!${SOURCE_FOLDER}/img/sprite/*`
-//   ])
-//     .pipe(imagemin())
-//     .pipe(gulp.dest(`${PUBLIC_FOLDER}/img`));
-// }
+export const optimizeImages = () => {
+  return gulp.src([
+    `${SOURCE_FOLDER}/img/**/*.{png,jpg,svg}`,
+    `!${SOURCE_FOLDER}/img/sprite/*`
+  ])
+    .pipe(imagemin())
+    .pipe(gulp.dest(`${PUBLIC_FOLDER}/img`));
+}
 
 export const copyImages = () => {
   return gulp.src([
@@ -121,12 +121,6 @@ export const server = (done) => {
   done();
 }
 
-// // Reload
-// const reload = (done) => {
-//   browser.reload();
-//   done();
-// }
-
 // Watcher
 const watcher = () => {
   gulp.watch(`${SOURCE_FOLDER}/less/**/*.less`, gulp.series(styles));
@@ -138,7 +132,7 @@ const watcher = () => {
 export const build = gulp.series(
   clean,
   copy,
-  // optimizeImages,
+  optimizeImages,
 
   gulp.parallel(
     styles,
