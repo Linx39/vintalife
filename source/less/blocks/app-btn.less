@@ -7,7 +7,6 @@
   min-height: 54px;
   padding: 10px;
 
-  font-weight: 700;
   text-align: center;
 
   transition: background-color .5s;
@@ -15,8 +14,7 @@
   .focus-styles();
 
   &--transparent {
-    font-size: 14px;
-    line-height: 122%;
+    .font-basic-xs-bold();
 
     background-color: transparent;
     border: 2px solid currentColor;
@@ -35,8 +33,7 @@
   }
 
   &--contrast {
-    font-size: 14px;
-    line-height: 122%;
+    .font-basic-xs-bold();
 
     color: var(--color-font-light);
     background-color: var(--color-back-dark);
@@ -52,8 +49,7 @@
   }
 
   &--bright {
-    font-size: 16px;
-    line-height: 122%;
+    .font-basic-sm-bold();
 
     color: var(--color-font-light);
     background-color: var(--color-bright);
@@ -72,8 +68,7 @@
     width: 100%;
     min-height: 60px;
 
-    font-size: 16px;
-    line-height: 105%;
+    .font-basic-sm-bold();
 
     color: var(--color-font-light);
     background-color: var(--color-special);

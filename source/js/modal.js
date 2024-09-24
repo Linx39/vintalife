@@ -59,8 +59,6 @@ const initModal = (modalElement, beforeOpen, afterClose) => {
     document.addEventListener(`keydown`, onEscKeyDown);
     document.addEventListener(`keydown`, onTabKeyDown);
     document.addEventListener('click', onDocumentClick);
-
-    // nodesArray[0].focus();
   }
 
   const closeModal = () => {
@@ -155,7 +153,7 @@ const initModal = (modalElement, beforeOpen, afterClose) => {
     })
   })
 
-  // return modal;
+  return modal;
 }
 
 export {initModal};

@@ -100,8 +100,12 @@
 
 .main-nav__catalog-btn {
   grid-row: 3 / 4;
-  grid-column: 2 / 4;
+  grid-column: 2 / 3;
   justify-self: start;
+
+  @media (min-width: @lg-width) {
+    grid-column: 2 / 4;
+  }
 
   @media (min-width: @xl-width) {
     color: var(--color-font-basic);
@@ -138,7 +142,7 @@
   &--opened {
     opacity: 1;
     transform: translateY(0);
-    
+
     pointer-events: auto;
     visibility: visible;
     -webkit-overflow-scrolling: touch;

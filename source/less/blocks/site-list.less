@@ -4,12 +4,6 @@
   gap: 46px;
   align-items: center;
 
-  font-size: 16px;
-  line-height: 115%;
-  font-weight: 400;
-  text-align: center;
-  color: var(--color-font-light);
-
   &--transform {
     @media (min-width: @lg-width) {
       flex-direction: row;
@@ -25,5 +19,9 @@
 }
 
 .site-list__link {
+  .font-basic-sm();
+  text-align: center;
+  color: var(--color-font-light);
+
   .interactive-styles();
 }

@@ -1,21 +1,23 @@
 .catalog-btn {
   position: relative;
+  
   padding-right: 58px;
 
-  font-size: 16px;
-  line-height: 105%;
-  font-weight: 700;
+  .font-basic-sm-bold();
   color: var(--color-font-light);
 
   &::after {
     position: absolute;
     content: "";
-    top: 9px;
+    top: 50%;
     right: 0;
 
+    display: block;
     width: 45px;
     height: 2px;
     background-color: currentColor;
+
+    transform: translateY(-50%);
   }
 
   &:hover,
