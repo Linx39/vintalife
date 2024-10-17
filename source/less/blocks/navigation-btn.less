@@ -6,12 +6,14 @@
   border-radius: 50%;
   background-color: var(--color-btn-basic);
 
-  opacity: 1;
-  transition: opacity .5s;
+  &--up {
+    opacity: .6;
+    transition: opacity .5s;
+  }
 
-  @media (min-width: @lg-width) {
-    width: 60px;
-    height: 60px;
+  &--up:hover,
+  &--up:focus-visible {
+    opacity: 1;
   }
 
   &::before {
@@ -45,9 +47,9 @@
     top: 15%;
     left: 50%;
 
-    transform: translateX(-50%);
-
     border-bottom-color: var(--color-back-basic);
+
+    transform: translateX(-50%);
   }
 
   &--disabled {
@@ -56,4 +58,9 @@
   }
 
   .focus-styles();
+
+  @media (min-width: @lg-width) {
+    width: 60px;
+    height: 60px;
+  }
 }

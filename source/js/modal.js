@@ -52,6 +52,7 @@ const initModal = (modalElement, beforeOpen, afterClose) => {
 
     modalElement.classList.add(MODAL_OPENED_CLASS);
     modalElement.setAttribute('aria-hidden', 'false');
+    modalElement.setAttribute('tabindex', '0');
     modalElement.style.marginRight = `${scrollYWidth}px`;
 
     activateBlur();
@@ -59,6 +60,8 @@ const initModal = (modalElement, beforeOpen, afterClose) => {
     document.addEventListener(`keydown`, onEscKeyDown);
     document.addEventListener(`keydown`, onTabKeyDown);
     document.addEventListener('click', onDocumentClick);
+
+    modalElement.focus();
   }
 
   const closeModal = () => {
@@ -72,12 +75,20 @@ const initModal = (modalElement, beforeOpen, afterClose) => {
 
     modalElement.classList.remove(MODAL_OPENED_CLASS);
     modalElement.setAttribute('aria-hidden', 'true');
+    modalElement.setAttribute('tabindex', '-1');
+    modalElement.style.marginRight = ``;
 
     deactivateBlur();
 
     document.removeEventListener('keydown', onEscKeyDown);
     document.removeEventListener('keydown', onTabKeyDown);
     document.removeEventListener('click', onDocumentClick);
+
+    if (lastFocusElement) {
+      lastFocusElement.focus();
+    }
+
+    prevModal = null;
 
     if (afterClose) {
       afterClose();
@@ -128,9 +139,11 @@ const initModal = (modalElement, beforeOpen, afterClose) => {
   }
 
   modalOpenBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
+    btn.addEventListener('click', (evt) => {
+      evt.preventDefault();
+
       if(!prevModal) {
-        lastFocusElement = btn;
+        lastFocusElement = evt.target;
       }
 
       if (prevModal) {
@@ -144,12 +157,9 @@ const initModal = (modalElement, beforeOpen, afterClose) => {
   })
 
   modalCloseBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
+    btn.addEventListener('click', (evt) => {
+      evt.preventDefault();
       modal.close();
-
-      prevModal = null;
-
-      lastFocusElement.focus();
     })
   })
 
