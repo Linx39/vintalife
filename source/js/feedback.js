@@ -27,15 +27,18 @@ feedbackForms.forEach(form => {
   submitBtn.addEventListener('click', (evt) => {
     const isFormValid = inputName.value !== '' && inputPhone.value !== '';
 
+    evt.preventDefault();
+
     if(!isFormValid) {
-      evt.preventDefault();
       setResponseError();
+      return;
     }
+
+    setResponseSuccess();
+    resetAllForms();
   })
 
   form.addEventListener('submit', (evt) => {
     evt.preventDefault();
-    setResponseSuccess();
-    resetAllForms();
   })
 })
