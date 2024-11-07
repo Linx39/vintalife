@@ -64,7 +64,7 @@
   display: block;
 }
 
-.intro__title-span-1 {
+.intro__title span:first-of-type {
   margin-bottom: -6px;
 
   color: var(--color-font-dark);
@@ -88,7 +88,7 @@
   }
 }
 
-.intro__title-span-2 {
+.intro__title span:nth-of-type(2n) {
   margin-left: 88px;
 
   @media (min-width: @xl-width) {
@@ -96,7 +96,7 @@
   }
 }
 
-.intro__title-span-3 {
+.intro__title span:nth-of-type(2n + 3) {
   margin-left: 24px;
 
   @media (min-width: @xl-width) {

@@ -5,13 +5,10 @@
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <meta name="description" content="Сайт по заказу кухонь">
         <title>Авторские кухни Vintalife</title>
-        <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"> -->
         <link rel="stylesheet" href="./swiper/swiper-bundle.min.css">
         <link rel="stylesheet" href="./css/style.min.css">
         <link rel="preload" href="./fonts/Montserrat-Regular.woff" as="font" type="font/woff2" crossorigin>
         <link rel="preload" href="./fonts/SovMod.ttf" as="font" type="font/ttf" crossorigin>
-        <link rel="preload" as="image" type="image/webp" media="(max-width: 576px)" imagesrcset="img/header/header-mobile.webp 1x, img/header/header-mobile@2x.webp 2x">
-        <link rel="preload" as="image" type="image/webp" media="(min-width: 577px)" imagesrcset="img/header/header-desktop.webp 1x, img/header/header-desktop@2x.webp 2x">
     </head>
     <body class="page__body">
       <header class="page__header page-header">
@@ -60,16 +57,16 @@
           </div>
 
           <div class="main-nav__connection connection">
-            <a class="main-nav__phone connection__phone phone" href="tel:+79628877751">+7 (962) 88-777-51</a>
+            <a class="main-nav__phone connection__phone phone" href="tel:+79628877751">+7 (900) 000-00-00</a>
             <a class="main-nav__call-btn connection__call-btn app-btn app-btn--transparent call-btn" href="#call" data-modal="#call">Заказать обратный звонок</a>
           </div>
 
           <div class="main-nav__intro intro">
             <div class="intro__wrapper">
               <h2 class="intro__title">
-                <span class="intro__title-span-1">АВТОРСКИЕ</span>
-                <span class="intro__title-span-2">КУХНИ</span>
-                <span class="intro__title-span-3">В СОЧИ</span>
+                <span>АВТОРСКИЕ</span>
+                <span>КУХНИ</span>
+                <span>В СОЧИ</span>
               </h2>
               <a class="intro__call-btn app-btn app-btn--contrast call-btn" href="#call" data-modal="#call">Бесплатный замер</a>
               <a class="intro__call-btn app-btn app-btn--bright call-btn" href="#call" data-modal="#call">Расчет стоимости кухни</a>
@@ -78,10 +75,8 @@
 
           <div class="main-nav__img">
             <picture>
-              <source type="image/webp" media="(min-width: 576px)" srcset="img/header/header-desktop.webp 1x, img/header/header-desktop@2x.webp 2x">
-              <source type="image/webp" srcset="img/header/header-mobile.webp 1x, img/header/header-mobile@2x.webp 2x">
-              <source media="(min-width: 576px)" srcset="img/header/header-desktop.png 1x, img/header/header-desktop@2x.png 2x">
-              <img src="img/header/header-mobile.png" srcset="img/header/header-mobile@2x.png 2x" alt="Изображение кухни.">
+              <source media="(min-width: 576px)" srcset="img/header/header-desktop.webp 1x, img/header/header-desktop@2x.webp 2x">
+              <img src="img/header/header-mobile.webp" srcset="img/header/header-mobile@2x.webp 2x" alt="Изображение кухни.">
             </picture>
           </div>
 
@@ -156,8 +151,8 @@
             <div class="catalog__slider-container">
               <div class="catalog__slider swiper">
                 <div class="catalog__list swiper-wrapper">
-                  <div class="catalog__item swiper-slide">
-                    <a class="card" href="#product-01" data-modal="#product-01">
+                  <div class="catalog__item card swiper-slide">
+                    <a class="card__link" href="#product-01" data-modal="#product-01">
                       <h3 class="card__title">АРТ ДЕКО</h3>
                       <p class="card__description">
                         от 49 990 руб.
@@ -165,16 +160,14 @@
                       </p>
                       <div class="card__img">
                         <picture>
-                          <source type="image/webp" media="(min-width: 1400px)" srcset="img/catalog/catalog-01-desktop.webp 1x, img/catalog/catalog-01-desktop@2x.webp 2x">
-                          <source type="image/webp" srcset="img/catalog/catalog-01-mobile.webp 1x, img/catalog/catalog-01-mobile@2x.webp 2x">
-                          <source media="(min-width: 1400px)" srcset="img/catalog/catalog-01-desktop.png 1x, img/catalog/catalog-01-desktop@2x.png 2x">
-                          <img src="img/catalog/catalog-01-mobile.png" srcset="img/catalog/catalog-01-mobile@2x.png 2x" width="320" height="414" alt="Изображение кухни в стиле АРТ ДЕКО.">
+                          <source media="(min-width: 1400px)" srcset="img/catalog/catalog-01-desktop.webp 1x, img/catalog/catalog-01-desktop@2x.webp 2x">
+                          <img src="img/catalog/catalog-01-mobile.webp" srcset="img/catalog/catalog-01-mobile@2x.webp 2x" width="320" height="414" alt="Изображение кухни в стиле АРТ ДЕКО.">
                         </picture>
                       </div>
                     </a>
                   </div>
-                  <div class="catalog__item swiper-slide">
-                    <a class="card" href="#product-01" data-modal="#product-01">
+                  <div class="catalog__item card swiper-slide">
+                    <a class="card__link" href="#product-01" data-modal="#product-01">
                       <h3 class="card__title">МИНИМАЛИЗМ ХАЙТЕК МОДЕРН</h3>
                       <p class="card__description">
                         от 49 990 руб.
@@ -182,16 +175,14 @@
                       </p>
                       <div class="card__img">
                         <picture>
-                          <source type="image/webp" media="(min-width: 1400px)" srcset="img/catalog/catalog-02-desktop.webp 1x, img/catalog/catalog-02-desktop@2x.webp 2x">
-                          <source type="image/webp" srcset="img/catalog/catalog-02-mobile.webp 1x, img/catalog/catalog-02-mobile@2x.webp 2x">
-                          <source media="(min-width: 1400px)" srcset="img/catalog/catalog-02-desktop.png 1x, img/catalog/catalog-02-desktop@2x.png 2x">
-                          <img src="img/catalog/catalog-02-mobile.png" srcset="img/catalog/catalog-02-mobile@2x.png 2x" width="320" height="414" alt="Изображение кухни в стиле МИНИМАЛИЗМ ХАЙТЕК МОДЕРН.">
+                          <source media="(min-width: 1400px)" srcset="img/catalog/catalog-02-desktop.webp 1x, img/catalog/catalog-02-desktop@2x.webp 2x">
+                          <img src="img/catalog/catalog-02-mobile.webp" srcset="img/catalog/catalog-02-mobile@2x.webp 2x" width="320" height="414" alt="Изображение кухни в стиле МИНИМАЛИЗМ ХАЙТЕК МОДЕРН.">
                         </picture>
                       </div>
                     </a>
                   </div>
-                  <div class="catalog__item swiper-slide">
-                    <a class="card" href="#product-01" data-modal="#product-01">
+                  <div class="catalog__item card swiper-slide">
+                    <a class="card__link" href="#product-01" data-modal="#product-01">
                       <h3 class="card__title">ЛОФТ ИНДАСТРИАЛ</h3>
                       <p class="card__description">
                         от 49 990 руб.
@@ -199,16 +190,14 @@
                       </p>
                       <div class="card__img">
                         <picture>
-                          <source type="image/webp" media="(min-width: 1400px)" srcset="img/catalog/catalog-03-desktop.webp 1x, img/catalog/catalog-03-desktop@2x.webp 2x">
-                          <source type="image/webp" srcset="img/catalog/catalog-03-mobile.webp 1x, img/catalog/catalog-03-mobile@2x.webp 2x">
-                          <source media="(min-width: 1400px)" srcset="img/catalog/catalog-03-desktop.png 1x, img/catalog/catalog-03-desktop@2x.png 2x">
-                          <img src="img/catalog/catalog-03-mobile.png" srcset="img/catalog/catalog-03-mobile@2x.png 2x" width="320" height="414" alt="Изображение кухни в стиле ЛОФТ ИНДАСТРИАЛ." loading="lazy">
+                          <source media="(min-width: 1400px)" srcset="img/catalog/catalog-03-desktop.webp 1x, img/catalog/catalog-03-desktop@2x.webp 2x">
+                          <img src="img/catalog/catalog-03-mobile.webp" srcset="img/catalog/catalog-03-mobile@2x.webp 2x" width="320" height="414" alt="Изображение кухни в стиле ЛОФТ ИНДАСТРИАЛ." loading="lazy">
                         </picture>
                       </div>
                     </a>
                   </div>
-                  <div class="catalog__item swiper-slide">
-                    <a class="card" href="#product-01" data-modal="#product-01">
+                  <div class="catalog__item card swiper-slide">
+                    <a class="card__link" href="#product-01" data-modal="#product-01">
                       <h3 class="card__title">НЕОКЛАССИКА</h3>
                       <p class="card__description">
                         от 49 990 руб.
@@ -216,16 +205,14 @@
                       </p>
                       <div class="card__img">
                         <picture>
-                          <source type="image/webp" media="(min-width: 1400px)" srcset="img/catalog/catalog-04-desktop.webp 1x, img/catalog/catalog-04-desktop@2x.webp 2x">
-                          <source type="image/webp" srcset="img/catalog/catalog-04-mobile.webp 1x, img/catalog/catalog-04-mobile@2x.webp 2x">
-                          <source media="(min-width: 1400px)" srcset="img/catalog/catalog-04-desktop.png 1x, img/catalog/catalog-04-desktop@2x.png 2x">
-                          <img src="img/catalog/catalog-04-mobile.png" srcset="img/catalog/catalog-04-mobile@2x.png 2x" width="320" height="414" alt="Изображение кухни в стиле НЕОКЛАССИКА." loading="lazy">
+                          <source media="(min-width: 1400px)" srcset="img/catalog/catalog-04-desktop.webp 1x, img/catalog/catalog-04-desktop@2x.webp 2x">
+                          <img src="img/catalog/catalog-04-mobile.webp" srcset="img/catalog/catalog-04-mobile@2x.webp 2x" width="320" height="414" alt="Изображение кухни в стиле НЕОКЛАССИКА." loading="lazy">
                         </picture>
                       </div>
                     </a>
                   </div>
-                  <div class="catalog__item swiper-slide">
-                    <a class="card" href="#product-01" data-modal="#product-01">
+                  <div class="catalog__item card swiper-slide">
+                    <a class="card__link" href="#product-01" data-modal="#product-01">
                       <h3 class="card__title">ПРОВАНС ШЕБИ ШИК КАНТРИ</h3>
                       <p class="card__description">
                         от 49 990 руб.
@@ -233,16 +220,14 @@
                       </p>
                       <div class="card__img">
                         <picture>
-                          <source type="image/webp" media="(min-width: 1400px)" srcset="img/catalog/catalog-05-desktop.webp 1x, img/catalog/catalog-05-desktop@2x.webp 2x">
-                          <source type="image/webp" srcset="img/catalog/catalog-05-mobile.webp 1x, img/catalog/catalog-05-mobile@2x.webp 2x">
-                          <source media="(min-width: 1400px)" srcset="img/catalog/catalog-05-desktop.png 1x, img/catalog/catalog-05-desktop@2x.png 2x">
-                          <img src="img/catalog/catalog-05-mobile.png" srcset="img/catalog/catalog-05-mobile@2x.png 2x" width="320" height="414" alt="Изображение кухни в стиле ПРОВАНС ШЕБИ ШИК КАНТРИ." loading="lazy">
+                          <source media="(min-width: 1400px)" srcset="img/catalog/catalog-05-desktop.webp 1x, img/catalog/catalog-05-desktop@2x.webp 2x">
+                          <img src="img/catalog/catalog-05-mobile.webp" srcset="img/catalog/catalog-05-mobile@2x.webp 2x" width="320" height="414" alt="Изображение кухни в стиле ПРОВАНС ШЕБИ ШИК КАНТРИ." loading="lazy">
                         </picture>
                       </div>
                     </a>
                   </div>
-                  <div class="catalog__item swiper-slide">
-                    <a class="card" href="#product-01" data-modal="#product-01">
+                  <div class="catalog__item card swiper-slide">
+                    <a class="card__link" href="#product-01" data-modal="#product-01">
                       <h3 class="card__title">СКАНДИНАВСКИЙ</h3>
                       <p class="card__description">
                         от 49 990 руб.
@@ -250,10 +235,8 @@
                       </p>
                       <div class="card__img">
                         <picture>
-                          <source type="image/webp" media="(min-width: 1400px)" srcset="img/catalog/catalog-06-desktop.webp 1x, img/catalog/catalog-06-desktop@2x.webp 2x">
-                          <source type="image/webp" srcset="img/catalog/catalog-06-mobile.webp 1x, img/catalog/catalog-06-mobile@2x.webp 2x">
-                          <source media="(min-width: 1400px)" srcset="img/catalog/catalog-06-desktop.png 1x, img/catalog/catalog-06-desktop@2x.png 2x">
-                          <img src="img/catalog/catalog-06-mobile.png" srcset="img/catalog/catalog-06-mobile@2x.png 2x" width="320" height="414" alt="Изображение кухни в стиле СКАНДИНАВСКИЙ." loading="lazy">
+                          <source media="(min-width: 1400px)" srcset="img/catalog/catalog-06-desktop.webp 1x, img/catalog/catalog-06-desktop@2x.webp 2x">
+                          <img src="img/catalog/catalog-06-mobile.webp" srcset="img/catalog/catalog-06-mobile@2x.webp 2x" width="320" height="414" alt="Изображение кухни в стиле СКАНДИНАВСКИЙ." loading="lazy">
                         </picture>
                       </div>
                     </a>
@@ -271,7 +254,7 @@
         </section>
 
         <section class="gallery">
-          <h2 class="visually-hidden">Галлерея</h2>
+          <h2 class="visually-hidden">Галерея</h2>
 
           <div class="product modal" id="product-01" aria-hidden="true" tabindex="-1">
             <div class="product__wrapper modal__wrapper popup" role="dialog" aria-modal="true">
@@ -282,42 +265,32 @@
               <div class="product__images-container product__images-container--top">
                 <div class="product__img">
                   <picture>
-                    <source type="image/webp" media="(min-width: 992px)" srcset="img/product/product-01-desktop.webp 1x, img/product/product-01-desktop@2x.webp 2x">
-                    <source type="image/webp" srcset="img/product/product-01-mobile.webp 1x, img/product/product-01-mobile@2x.webp 2x">
-                    <source media="(min-width: 992px)" srcset="img/product/product-01-desktop.png 1x, img/product/product-01-desktop@2x.png 2x">
-                    <img src="img/product/product-01-mobile.png" srcset="img/product/product-01-mobile@2x.png 2x" width="360" height="360" alt="Изображение кухни в стиле АРТ ДЕКО." loading="lazy">
+                    <source media="(min-width: 992px)" srcset="img/product/product-01-desktop.webp 1x, img/product/product-01-desktop@2x.webp 2x">
+                    <img src="img/product/product-01-mobile.webp" srcset="img/product/product-01-mobile@2x.webp 2x" width="360" height="360" alt="Изображение кухни в стиле АРТ ДЕКО." loading="lazy">
                   </picture>
                 </div>
                 <div class="product__img">
                   <picture>
-                    <source type="image/webp" media="(min-width: 992px)" srcset="img/product/product-02-desktop.webp 1x, img/product/product-02-desktop@2x.webp 2x">
-                    <source type="image/webp" srcset="img/product/product-02-mobile.webp 1x, img/product/product-02-mobile@2x.webp 2x">
-                    <source media="(min-width: 992px)" srcset="img/product/product-02-desktop.png 1x, img/product/product-02-desktop@2x.png 2x">
-                    <img src="img/product/product-02-mobile.png" srcset="img/product/product-02-mobile@2x.png 2x" width="360" height="360" alt="Изображение кухни в стиле АРТ ДЕКО." loading="lazy">
+                    <source media="(min-width: 992px)" srcset="img/product/product-02-desktop.webp 1x, img/product/product-02-desktop@2x.webp 2x">
+                    <img src="img/product/product-02-mobile.webp" srcset="img/product/product-02-mobile@2x.webp 2x" width="360" height="360" alt="Изображение кухни в стиле АРТ ДЕКО." loading="lazy">
                   </picture>
                 </div>
                 <div class="product__img">
                   <picture>
-                    <source type="image/webp" media="(min-width: 992px)" srcset="img/product/product-03-desktop.webp 1x, img/product/product-03-desktop@2x.webp 2x">
-                    <source type="image/webp" srcset="img/product/product-03-mobile.webp 1x, img/product/product-03-mobile@2x.webp 2x">
-                    <source media="(min-width: 992px)" srcset="img/product/product-03-desktop.png 1x, img/product/product-03-desktop@2x.png 2x">
-                    <img src="img/product/product-03-mobile.png" srcset="img/product/product-03-mobile@2x.png 2x" width="360" height="360" alt="Изображение кухни в стиле АРТ ДЕКО." loading="lazy">
+                    <source media="(min-width: 992px)" srcset="img/product/product-03-desktop.webp 1x, img/product/product-03-desktop@2x.webp 2x">
+                    <img src="img/product/product-03-mobile.webp" srcset="img/product/product-03-mobile@2x.webp 2x" width="360" height="360" alt="Изображение кухни в стиле АРТ ДЕКО." loading="lazy">
                   </picture>
                 </div>
                 <div class="product__img">
                   <picture>
-                    <source type="image/webp" media="(min-width: 992px)" srcset="img/product/product-04-desktop.webp 1x, img/product/product-04-desktop@2x.webp 2x">
-                    <source type="image/webp" srcset="img/product/product-04-mobile.webp 1x, img/product/product-04-mobile@2x.webp 2x">
-                    <source media="(min-width: 992px)" srcset="img/product/product-04-desktop.png 1x, img/product/product-04-desktop@2x.png 2x">
-                    <img src="img/product/product-04-mobile.png" srcset="img/product/product-04-mobile@2x.png 2x" width="360" height="360" alt="Изображение кухни в стиле АРТ ДЕКО." loading="lazy">
+                    <source media="(min-width: 992px)" srcset="img/product/product-04-desktop.webp 1x, img/product/product-04-desktop@2x.webp 2x">
+                    <img src="img/product/product-04-mobile.webp" srcset="img/product/product-04-mobile@2x.webp 2x" width="360" height="360" alt="Изображение кухни в стиле АРТ ДЕКО." loading="lazy">
                   </picture>
                 </div>
                 <div class="product__img">
                   <picture>
-                    <source type="image/webp" media="(min-width: 992px)" srcset="img/product/product-05-desktop.webp 1x, img/product/product-05-desktop@2x.webp 2x">
-                    <source type="image/webp" srcset="img/product/product-05-mobile.webp 1x, img/product/product-05-mobile@2x.webp 2x">
-                    <source media="(min-width: 992px)" srcset="img/product/product-05-desktop.png 1x, img/product/product-05-desktop@2x.png 2x">
-                    <img src="img/product/product-05-mobile.png" srcset="img/product/product-05-mobile@2x.png 2x" width="360" height="360" alt="Изображение кухни в стиле АРТ ДЕКО." loading="lazy">
+                    <source media="(min-width: 992px)" srcset="img/product/product-05-desktop.webp 1x, img/product/product-05-desktop@2x.webp 2x">
+                    <img src="img/product/product-05-mobile.webp" srcset="img/product/product-05-mobile@2x.webp 2x" width="360" height="360" alt="Изображение кухни в стиле АРТ ДЕКО." loading="lazy">
                   </picture>
                 </div>
               </div>
@@ -328,7 +301,7 @@
                     Как правило наш расчет кухни дешевле на 15-40% чем в других компаниях по такому же проекту
                   </p>
                   <p class="feedback__anotation">
-                    Позвоните:   <b>+7 (962) 887-77-51</b> или&nbsp;оставьте заявку на расчёт и мы удивим Вас ценой
+                    Позвоните:   <b>+7 (900) 000-00-00</b> или&nbsp;оставьте заявку на расчёт и мы удивим Вас ценой
                   </p>
                 </div>
                 <form class="feedback__form" method="post" action="https://echo.htmlacademy.ru/">
@@ -353,34 +326,26 @@
               <div class="product__images-container product__images-container--bottom">
                 <div class="product__img">
                   <picture>
-                    <source type="image/webp" media="(min-width: 992px)" srcset="img/product/product-05-desktop.webp 1x, img/product/product-05-desktop@2x.webp 2x">
-                    <source type="image/webp" srcset="img/product/product-05-mobile.webp 1x, img/product/product-05-mobile@2x.webp 2x">
-                    <source media="(min-width: 992px)" srcset="img/product/product-05-desktop.png 1x, img/product/product-05-desktop@2x.png 2x">
-                    <img src="img/product/product-05-mobile.png" srcset="img/product/product-05-mobile@2x.png 2x" width="360" height="360" alt="Изображение кухни в стиле АРТ ДЕКО." loading="lazy">
+                    <source media="(min-width: 992px)" srcset="img/product/product-05-desktop.webp 1x, img/product/product-05-desktop@2x.webp 2x">
+                    <img src="img/product/product-05-mobile.webp" srcset="img/product/product-05-mobile@2x.webp 2x" width="360" height="360" alt="Изображение кухни в стиле АРТ ДЕКО." loading="lazy">
                   </picture>
                 </div>
                 <div class="product__img">
                   <picture>
-                    <source type="image/webp" media="(min-width: 992px)" srcset="img/product/product-06-desktop.webp 1x, img/product/product-06-desktop@2x.webp 2x">
-                    <source type="image/webp" srcset="img/product/product-06-mobile.webp 1x, img/product/product-06-mobile@2x.webp 2x">
-                    <source media="(min-width: 992px)" srcset="img/product/product-06-desktop.png 1x, img/product/product-06-desktop@2x.png 2x">
-                    <img src="img/product/product-06-mobile.png" srcset="img/product/product-06-mobile@2x.png 2x" width="360" height="360" alt="Изображение кухни в стиле АРТ ДЕКО." loading="lazy">
+                    <source media="(min-width: 992px)" srcset="img/product/product-06-desktop.webp 1x, img/product/product-06-desktop@2x.webp 2x">
+                    <img src="img/product/product-06-mobile.webp" srcset="img/product/product-06-mobile@2x.webp 2x" width="360" height="360" alt="Изображение кухни в стиле АРТ ДЕКО." loading="lazy">
                   </picture>
                 </div>
                 <div class="product__img">
                   <picture>
-                    <source type="image/webp" media="(min-width: 992px)" srcset="img/product/product-07-desktop.webp 1x, img/product/product-07-desktop@2x.webp 2x">
-                    <source type="image/webp" srcset="img/product/product-07-mobile.webp 1x, img/product/product-07-mobile@2x.webp 2x">
-                    <source media="(min-width: 992px)" srcset="img/product/product-07-desktop.png 1x, img/product/product-07-desktop@2x.png 2x">
-                    <img src="img/product/product-07-mobile.png" srcset="img/product/product-07-mobile@2x.png 2x" width="360" height="360" alt="Изображение кухни в стиле АРТ ДЕКО." loading="lazy">
+                    <source media="(min-width: 992px)" srcset="img/product/product-07-desktop.webp 1x, img/product/product-07-desktop@2x.webp 2x">
+                    <img src="img/product/product-07-mobile.webp" srcset="img/product/product-07-mobile@2x.webp 2x" width="360" height="360" alt="Изображение кухни в стиле АРТ ДЕКО." loading="lazy">
                   </picture>
                 </div>
                 <div class="product__img">
                   <picture>
-                    <source type="image/webp" media="(min-width: 992px)" srcset="img/product/product-08-desktop.webp 1x, img/product/product-08-desktop@2x.webp 2x">
-                    <source type="image/webp" srcset="img/product/product-08-mobile.webp 1x, img/product/product-08-mobile@2x.webp 2x">
-                    <source media="(min-width: 992px)" srcset="img/product/product-08-desktop.png 1x, img/product/product-08-desktop@2x.png 2x">
-                    <img src="img/product/product-08-mobile.png" srcset="img/product/product-08-mobile@2x.png 2x" width="360" height="360" alt="Изображение кухни в стиле АРТ ДЕКО." loading="lazy">
+                    <source media="(min-width: 992px)" srcset="img/product/product-08-desktop.webp 1x, img/product/product-08-desktop@2x.webp 2x">
+                    <img src="img/product/product-08-mobile.webp" srcset="img/product/product-08-mobile@2x.webp 2x" width="360" height="360" alt="Изображение кухни в стиле АРТ ДЕКО." loading="lazy">
                   </picture>
                 </div>
               </div>
@@ -449,38 +414,32 @@
             <ul class="brands__list">
               <li class="brands__list-item">
                 <picture>
-                  <source type="image/webp" srcset="img/brands/hettich.webp 1x, img/brands/hettich@2x.webp 2x">
-                  <img src="img/brands/hettich.png" srcset="img/brands/hettich@2x.png 2x" width="150" height="150" alt="Логотип hettich.">
+                  <img src="img/brands/hettich.webp" srcset="img/brands/hettich@2x.webp 2x" width="150" height="150" alt="Логотип hettich.">
                 </picture>
               </li>
               <li class="brands__list-item">
                 <picture>
-                  <source type="image/webp" srcset="img/brands/blum.webp 1x, img/brands/blum@2x.webp 2x">
-                  <img src="img/brands/blum.png" srcset="img/brands/blum@2x.png 2x" width="186" height="93" alt="Логотип blum.">
+                  <img src="img/brands/blum.webp" srcset="img/brands/blum@2x.webp 2x" width="186" height="93" alt="Логотип blum.">
                 </picture>
               </li>
               <li class="brands__list-item">
                 <picture>
-                  <source type="image/webp" srcset="img/brands/boyard.webp 1x, img/brands/boyard@2x.webp 2x">
-                  <img src="img/brands/boyard.png" srcset="img/brands/boyard@2x.png 2x" width="184" height="66" alt="Логотип boyard.">
+                  <img src="img/brands/boyard.webp" srcset="img/brands/boyard@2x.webp 2x" width="184" height="66" alt="Логотип boyard.">
                 </picture>
               </li>
               <li class="brands__list-item">
                 <picture>
-                  <source type="image/webp" srcset="img/brands/egger.webp 1x, img/brands/egger@2x.webp 2x">
-                  <img src="img/brands/egger.png" srcset="img/brands/egger@2x.png 2x" width="190" height="50" alt="Логотип egger.">
+                  <img src="img/brands/egger.webp" srcset="img/brands/egger@2x.webp 2x" width="190" height="50" alt="Логотип egger.">
                 </picture>
               </li>
               <li class="brands__list-item">
                 <picture>
-                  <source type="image/webp" srcset="img/brands/makmart.webp 1x, img/brands/makmart@2x.webp 2x">
-                  <img src="img/brands/makmart.png" srcset="img/brands/makmart@2x.png 2x" width="171" height="46" alt="Логотип makmart.">
+                  <img src="img/brands/makmart.webp" srcset="img/brands/makmart@2x.webp 2x" width="171" height="46" alt="Логотип makmart.">
                 </picture>
               </li>
               <li class="brands__list-item">
                 <picture>
-                  <source type="image/webp" srcset="img/brands/kessebohmer.webp 1x, img/brands/kessebohmer@2x.webp 2x">
-                  <img src="img/brands/kessebohmer.png" srcset="img/brands/kessebohmer@2x.png 2x" width="220" height="105" alt="Логотип kessebohmer.">
+                  <img src="img/brands/kessebohmer.webp" srcset="img/brands/kessebohmer@2x.webp 2x" width="220" height="105" alt="Логотип kessebohmer.">
                 </picture>
               </li>
             </ul>
@@ -495,7 +454,7 @@
                 <p class="feedback__description">
                   <span class="feedback__description-short">Оставьте заявку и&nbsp;мы вам перезвоним</span>
                   <span class="feedback__description-long">
-                    Узнайте сейчас, как преобрести кухню
+                    Узнайте сейчас, как приобрести кухню
                     своей мечты в кредит, заполнив форму:
                   </span>
                 </p>
@@ -521,26 +480,20 @@
             <div class="credit__images">
               <div class="credit__img credit__img--left-top">
                 <picture>
-                  <source type="image/webp" media="(min-width: 576px)" srcset="img/credit/credit-01-desktop.webp 1x, img/credit/credit-01-desktop@2x.webp 2x">
-                  <source type="image/webp" srcset="img/credit/credit-01-mobile.webp 1x, img/credit/credit-01-mobile@2x.webp 2x">
-                  <source media="(min-width: 576px)" srcset="img/credit/credit-01-desktop.png 1x, img/credit/credit-01-desktop@2x.png 2x">
-                  <img src="img/credit/credit-01-mobile.png" srcset="img/credit/credit-01-mobile@2x.png 2x" alt="Изображение кухни.">
+                  <source media="(min-width: 576px)" srcset="img/credit/credit-01-desktop.webp 1x, img/credit/credit-01-desktop@2x.webp 2x">
+                  <img src="img/credit/credit-01-mobile.webp" srcset="img/credit/credit-01-mobile@2x.webp 2x" alt="Изображение кухни.">
                 </picture>
               </div>
               <div class="credit__img credit__img--left-bottom">
                 <picture>
-                  <source type="image/webp" media="(min-width: 576px)" srcset="img/credit/credit-02-desktop.webp 1x, img/credit/credit-02-desktop@2x.webp 2x">
-                  <source type="image/webp" srcset="img/credit/credit-02-mobile.webp 1x, img/credit/credit-02-mobile@2x.webp 2x">
-                  <source media="(min-width: 576px)" srcset="img/credit/credit-02-desktop.png 1x, img/credit/credit-02-desktop@2x.png 2x">
-                  <img src="img/credit/credit-02-mobile.png" srcset="img/credit/credit-02-mobile@2x.png 2x" alt="Изображение кухни.">
+                  <source media="(min-width: 576px)" srcset="img/credit/credit-02-desktop.webp 1x, img/credit/credit-02-desktop@2x.webp 2x">
+                  <img src="img/credit/credit-02-mobile.webp" srcset="img/credit/credit-02-mobile@2x.webp 2x" alt="Изображение кухни.">
                 </picture>
               </div>
               <div class="credit__img credit__img--right">
                 <picture>
-                  <source type="image/webp" media="(min-width: 576px)" srcset="img/credit/credit-03-desktop.webp 1x, img/credit/credit-03-desktop@2x.webp 2x">
-                  <source type="image/webp" srcset="img/credit/credit-03-mobile.webp 1x, img/credit/credit-03-mobile@2x.webp 2x">
-                  <source media="(min-width: 576px)" srcset="img/credit/credit-03-desktop.png 1x, img/credit/credit-03-desktop@2x.png 2x">
-                  <img src="img/credit/credit-03-mobile.png" srcset="img/credit/credit-03-mobile@2x.png 2x" alt="Изображение кухни.">
+                  <source media="(min-width: 576px)" srcset="img/credit/credit-03-desktop.webp 1x, img/credit/credit-03-desktop@2x.webp 2x">
+                  <img src="img/credit/credit-03-mobile.webp" srcset="img/credit/credit-03-mobile@2x.webp 2x" alt="Изображение кухни.">
                 </picture>
               </div>
             </div>
@@ -560,10 +513,8 @@
 
             <div class="contacts__map">
               <picture>
-                <source type="image/webp" media="(min-width: 576px)" srcset="img/map/map-desktop.webp 1x, img/map/map-desktop@2x.webp 2x">
-                <source type="image/webp" srcset="img/map/map-mobile.webp 1x, img/map/map-mobile@2x.webp 2x">
-                <source media="(min-width: 576px)" srcset="img/map/map-desktop.png 1x, img/map/map-desktop@2x.png 2x">
-                <img src="img/map/map-mobile.png" srcset="img/map/map-mobile@2x.png 2x" alt="Карта.">
+                <source media="(min-width: 576px)" srcset="img/map/map-desktop.webp 1x, img/map/map-desktop@2x.webp 2x">
+                <img src="img/map/map-mobile.webp" srcset="img/map/map-mobile@2x.webp 2x" alt="Карта.">
               </picture>
 
               <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A1e7770d6d7f869baecdf1399c75b2d8d1ed214c17647e2f888e133c81c6f4a96&amp;width=100%&amp;height=100%&amp;lang=ru_RU&amp;scroll=true"></script>
@@ -699,7 +650,7 @@
             </ul>
 
             <div class="page-footer__connection connection">
-              <a class="page-footer__phone connection__phone phone" href="tel:+79628877751">+7 (962) 88-777-51</a>
+              <a class="page-footer__phone connection__phone phone" href="tel:+70000000">+7 (900) 000-00-00</a>
               <a class="page-footer__call-btn connection__call-btn app-btn app-btn--transparent call-btn" href="#call" data-modal="#call">Заказать обратный звонок</a>
             </div>
           </div>
@@ -718,7 +669,6 @@
         </div>
       </template>
 
-      <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script> -->
       <script src="./swiper/swiper-bundle.min.js"></script>
       <script type="module" src="./js/app.min.js"></script>
     </body>

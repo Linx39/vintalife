@@ -56,9 +56,18 @@ export const scripts = () => {
 }
 
 // Images
+// export const optimizeImages = () => {
+//   return gulp.src([
+//     `${SOURCE_FOLDER}/img/**/*.{png,jpg,svg}`,
+//     `!${SOURCE_FOLDER}/img/sprite/*`
+//   ])
+//     .pipe(imagemin())
+//     .pipe(gulp.dest(`${PUBLIC_FOLDER}/img`));
+// }
+
 export const optimizeImages = () => {
   return gulp.src([
-    `${SOURCE_FOLDER}/img/**/*.{png,jpg,svg}`,
+    `${SOURCE_FOLDER}/img/**/*.svg`,
     `!${SOURCE_FOLDER}/img/sprite/*`
   ])
     .pipe(imagemin())
@@ -67,11 +76,19 @@ export const optimizeImages = () => {
 
 export const copyImages = () => {
   return gulp.src([
-    `${SOURCE_FOLDER}/img/**/*.{png,jpg,svg}`,
+    `${SOURCE_FOLDER}/img/**/*.svg`,
     `!${SOURCE_FOLDER}/img/sprite/*`
   ])
     .pipe(gulp.dest(`${PUBLIC_FOLDER}/img`));
 }
+
+// export const copyImages = () => {
+//   return gulp.src([
+//     `${SOURCE_FOLDER}/img/**/*.{png,jpg,svg}`,
+//     `!${SOURCE_FOLDER}/img/sprite/*`
+//   ])
+//     .pipe(gulp.dest(`${PUBLIC_FOLDER}/img`));
+// }
 
 export const createWebp = () => {
   return gulp.src([
