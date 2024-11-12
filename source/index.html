@@ -561,7 +561,7 @@
                   <input class="feedback__input feedback__input--name" type="text" id="call-name" name="name" placeholder="Имя" required>
                 </label>
                 <label class="feedback__label" for="call-phone">
-                  <input class="feedback__input feedback__input--phone" type="tel" id="call-phone" name="phone" placeholder="Ваш телефон" required>
+                  <input class="feedback__input feedback__input--phone" type="tel" id="call-phone" name="phone" pattern="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$" placeholder="Ваш телефон" required>
                 </label>
                 <div class="feedback__submit-group">
                   <button class="feedback__submit-btn app-btn app-btn--special" type="submit" data-modal="#response">
