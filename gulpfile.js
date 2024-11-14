@@ -15,7 +15,7 @@ import browser from 'browser-sync';
 import webpack from 'webpack-stream'
 
 const SOURCE_FOLDER = 'source';
-const PUBLIC_FOLDER = 'public';
+const PUBLIC_FOLDER = 'docs';
 
 // HTML
 export const html = () => {
