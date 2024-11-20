@@ -1,7 +1,9 @@
 import { setResponseSuccess, setResponseError } from "./response-modal.js";
 
-const PHONE_MASK = /^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/;
-const VALIDITY_MESSAGE_PHONE = `Введите корректный номер телефона.`;
+const PHONE_MASK = /^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{10}$/;
+const MASK_OPTIONS = {
+  mask: '+{7} (000) 000-00-00',
+};
 
 const feedbackForms = document.querySelectorAll('.feedback__form');
 
@@ -14,18 +16,10 @@ feedbackForms.forEach(form => {
   const inputPhone = form.querySelector('.feedback__input--phone');
   const submitBtn = form.querySelector('.feedback__submit-btn')
 
-  inputPhone.addEventListener(`input`, () => {
-    if (PHONE_MASK.test(inputPhone.value) || inputPhone.value === "") {
-      inputPhone.setCustomValidity(``);
-    } else {
-      inputPhone.setCustomValidity(VALIDITY_MESSAGE_PHONE);
-    }
-
-    inputPhone.reportValidity();
-  })
+  const mask = IMask(inputPhone, MASK_OPTIONS);
 
   submitBtn.addEventListener('click', (evt) => {
-    const isFormValid = inputName.value !== '' && inputPhone.value !== '';
+    const isFormValid = inputName.value !== '' && PHONE_MASK.test(inputPhone.value);
 
     evt.preventDefault();
 

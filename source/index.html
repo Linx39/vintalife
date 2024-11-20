@@ -7,7 +7,6 @@
         <title>Авторские кухни Vintalife</title>
         <link rel="stylesheet" href="./swiper/swiper-bundle.min.css">
         <link rel="stylesheet" href="./css/style.min.css">
-        <link rel="preload" href="./fonts/Montserrat-Regular.woff2" as="font" type="font/woff2" crossorigin>
         <link rel="preload" href="./fonts/SovMod.woff2" as="font" type="font/woff2" crossorigin>
     </head>
     <body class="page__body">
@@ -561,7 +560,7 @@
                   <input class="feedback__input feedback__input--name" type="text" id="call-name" name="name" placeholder="Имя" required>
                 </label>
                 <label class="feedback__label" for="call-phone">
-                  <input class="feedback__input feedback__input--phone" type="tel" id="call-phone" name="phone" pattern="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$" placeholder="Ваш телефон" required>
+                  <input class="feedback__input feedback__input--phone" type="tel" id="call-phone" name="phone" placeholder="Ваш телефон" required>
                 </label>
                 <div class="feedback__submit-group">
                   <button class="feedback__submit-btn app-btn app-btn--special" type="submit" data-modal="#response">
@@ -669,6 +668,7 @@
         </div>
       </template>
 
+      <script src="https://unpkg.com/imask"></script>
       <script src="./swiper/swiper-bundle.min.js"></script>
       <script type="module" src="./js/app.min.js"></script>
     </body>
