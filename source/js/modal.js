@@ -140,7 +140,7 @@ const initModal = (modalElement, beforeOpen, afterClose) => {
 
   modalOpenBtns.forEach(btn => {
     btn.addEventListener('click', (evt) => {
-      evt.preventDefault();
+      // evt.preventDefault();
 
       if(!prevModal) {
         lastFocusElement = evt.target;

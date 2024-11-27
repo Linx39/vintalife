@@ -112,7 +112,8 @@ export const createSprite = () => {
 export const copy = (done) => {
   gulp.src([
     `${SOURCE_FOLDER}/fonts/*.*`,
-    `${SOURCE_FOLDER}/swiper/*.min.*`
+    `${SOURCE_FOLDER}/swiper/*.min.*`,
+    `${SOURCE_FOLDER}/pristine/*.min.*`
   ], {
     base: `${SOURCE_FOLDER}`
   })
@@ -163,7 +164,8 @@ export const build = gulp.series(
 export default gulp.series(
   clean,
   copy,
-  copyImages,
+  // copyImages,
+  optimizeImages,
 
   gulp.parallel(
     styles,

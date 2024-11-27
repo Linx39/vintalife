@@ -113,6 +113,8 @@
 }
 
 .feedback__label {
+  position: relative;
+
   @media (min-width: @sm-width) {
     width: 460px;
   }
@@ -146,6 +148,19 @@
 .feedback__input:hover::placeholder,
 .feedback__input:focus-visible::placeholder {
   opacity: .5;
+}
+
+.feedback__warning {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  padding: 0 10px;
+
+  font-size: 12px;
+  text-align: left;
+  color: var(--color-error);
 }
 
 .feedback__submit-group {

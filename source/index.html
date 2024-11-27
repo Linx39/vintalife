@@ -305,10 +305,10 @@
                 </div>
                 <form class="feedback__form" method="post" action="https://echo.htmlacademy.ru/">
                   <label class="feedback__label" for="product-01-calculation-name">
-                    <input class="feedback__input feedback__input--name" type="text" id="product-01-calculation-name" name="name" placeholder="Имя" required>
+                    <input class="feedback__input feedback__input--name" type="text" id="product-01-calculation-name" name="name" placeholder="Имя" pattern="/^[a-zA-Zа-яА-ЯЁё \-]+$/" required>
                   </label>
                   <label class="feedback__label" for="product-01-calculation-phone">
-                    <input class="feedback__input feedback__input--phone" type="tel" id="product-01-calculation-phone" name="phone" placeholder="Ваш телефон" required>
+                    <input class="feedback__input feedback__input--phone" type="tel" id="product-01-calculation-phone" name="phone" placeholder="Ваш телефон" pattern="/^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{10}$/" required>
                   </label>
 
                   <div class="feedback__submit-group">
@@ -360,10 +360,10 @@
                 </div>
                 <form class="feedback__form" method="post" action="https://echo.htmlacademy.ru/">
                   <label class="feedback__label" for="product-01-catalog-name">
-                    <input class="feedback__input feedback__input--name" type="text" id="product-01-catalog-name" name="name" placeholder="Имя" required>
+                    <input class="feedback__input feedback__input--name" type="text" id="product-01-catalog-name" name="name" placeholder="Имя" pattern="/^[a-zA-Zа-яА-ЯЁё \-]+$/" required>
                   </label>
                   <label class="feedback__label" for="product-01-catalog-phone">
-                    <input class="feedback__input feedback__input--phone" type="tel" id="product-01-catalog-phone" name="phone" placeholder="Ваш телефон" required>
+                    <input class="feedback__input feedback__input--phone" type="tel" id="product-01-catalog-phone" name="phone" placeholder="Ваш телефон" pattern="/^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{10}$/" required>
                   </label>
                   <div class="feedback__submit-group">
                     <button class="feedback__submit-btn app-btn app-btn--special" type="submit" data-modal="#response">
@@ -389,10 +389,10 @@
               </div>
               <form class="feedback__form" method="post" action="https://echo.htmlacademy.ru/">
                 <label class="feedback__label" for="lead-magnet-name">
-                  <input class="feedback__input feedback__input--name" type="text" id="lead-magnet-name" name="name" placeholder="Имя" required>
+                  <input class="feedback__input feedback__input--name" type="text" id="lead-magnet-name" name="name" placeholder="Имя" pattern="/^[a-zA-Zа-яА-ЯЁё \-]+$/" required>
                 </label>
                 <label class="feedback__label" for="lead-magnet-phone">
-                  <input class="feedback__input feedback__input--phone" type="tel" id="lead-magnet-phone" name="phone" placeholder="Ваш телефон" required>
+                  <input class="feedback__input feedback__input--phone" type="tel" id="lead-magnet-phone" name="phone" placeholder="Ваш телефон" pattern="/^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{10}$/" required>
                 </label>
                 <div class="feedback__submit-group">
                   <button class="feedback__submit-btn app-btn app-btn--special" type="submit" data-modal="#response">
@@ -460,10 +460,10 @@
               </div>
               <form class="credit__feedback-form feedback__form" method="post" action="https://echo.htmlacademy.ru/">
                 <label class="feedback__label" for="credit-name">
-                  <input class="feedback__input feedback__input--name" type="text" id="credit-name" name="name" placeholder="Имя" required>
+                  <input class="feedback__input feedback__input--name" type="text" id="credit-name" name="name" placeholder="Имя" pattern="/^[a-zA-Zа-яА-ЯЁё \-]+$/" required>
                 </label>
                 <label class="feedback__label" for="credit-phone">
-                  <input class="feedback__input feedback__input--phone" type="tel" id="credit-phone" name="phone" placeholder="Ваш телефон" required>
+                  <input class="feedback__input feedback__input--phone" type="tel" id="credit-phone" name="phone" placeholder="Ваш телефон" pattern="/^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{10}$/" required>
                 </label>
                 <div class="feedback__submit-group">
                   <button class="feedback__submit-btn app-btn app-btn--special" type="submit" data-modal="#response">
@@ -543,7 +543,7 @@
         </section>
 
         <div class="call modal" id="call" aria-hidden="true" tabindex="-1">
-          <div class="call__wrapper modal__wrapper popup" role="dialog" aria-modal="true">
+          <div class="call__wrapper modal__wrapper popup popup--desktop" role="dialog" aria-modal="true">
             <h2 class="visually-hidden">Заказ звонка</h2>
             <button class="popup__close-btn modal__close-btn cross-btn cross-btn--adaptive" type="button"><span class="visually-hidden">Закрыть окно</span></button>
             <div class="call__feedback feedback feedback--modal">
@@ -555,12 +555,12 @@
                   Заполните поля ниже
                 </p>
               </div>
-              <form class="call__feedback-form feedback__form" method="post" action="https://echo.htmlacademy.ru/">
+              <form class="call__feedback-form feedback__form" method="post" action="">
                 <label class="feedback__label" for="call-name">
-                  <input class="feedback__input feedback__input--name" type="text" id="call-name" name="name" placeholder="Имя" required>
+                  <input class="feedback__input feedback__input--name" type="text" id="call-name" name="name" placeholder="Имя" pattern="/^[a-zA-Zа-яА-ЯЁё \-]+$/" required>
                 </label>
                 <label class="feedback__label" for="call-phone">
-                  <input class="feedback__input feedback__input--phone" type="tel" id="call-phone" name="phone" placeholder="Ваш телефон" required>
+                  <input class="feedback__input feedback__input--phone" type="tel" id="call-phone" name="phone" placeholder="Ваш телефон" pattern="/^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{10}$/" required>
                 </label>
                 <div class="feedback__submit-group">
                   <button class="feedback__submit-btn app-btn app-btn--special" type="submit" data-modal="#response">
@@ -581,13 +581,11 @@
 
             <div class="response__content">
               <p class="response__description response__description--success">
-                Спасибо!<br>Ваша заявка была отправлена и в ближашее <br>время будет обработана
+                Спасибо!<br>Ваша заявка была отправлена и в&nbsp;ближашее время будет обработана
               </p>
 
               <p class="response__description response__description--error">
-                Неправильно заполнены поля!<br>
-                Поле «Имя» обязательно для заполнения!<br>
-                Поле «Телефон» обязательно для заполнения!
+                Неправильно заполнены поля!
               </p>
 
               <button class="modal__close-btn response-btn response-btn--success app-btn app-btn app-btn--special app-btn--small">Хорошо</button>
@@ -669,6 +667,7 @@
       </template>
 
       <script src="https://unpkg.com/imask"></script>
+      <script src="./pristine/pristine.min.js"  type="text/javascript"></script>
       <script src="./swiper/swiper-bundle.min.js"></script>
       <script type="module" src="./js/app.min.js"></script>
     </body>
