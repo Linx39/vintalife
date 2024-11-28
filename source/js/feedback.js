@@ -56,5 +56,3 @@ feedbackForms.forEach(form => {
     resetForms();
   })
 })
-
-export {resetForms};

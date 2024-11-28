@@ -35,6 +35,16 @@ const initModal = (modalElement, beforeOpen, afterClose) => {
   const nodesArray = [...nodes];
 
   const openModal = () => {
+    if(!prevModal) {
+      lastFocusElement = document.activeElement;
+    }
+
+    if (prevModal) {
+      prevModal.close();
+    }
+
+    prevModal = modal;
+
     if (beforeOpen) {
       beforeOpen();
     }
@@ -141,25 +151,14 @@ const initModal = (modalElement, beforeOpen, afterClose) => {
   modalOpenBtns.forEach(btn => {
     btn.addEventListener('click', (evt) => {
       // evt.preventDefault();
-
-      if(!prevModal) {
-        lastFocusElement = evt.target;
-      }
-
-      if (prevModal) {
-        prevModal.close();
-      }
-
-      modal.open();
-
-      prevModal = modal;
-    });
+      openModal();
+    })
   })
 
   modalCloseBtns.forEach(btn => {
     btn.addEventListener('click', (evt) => {
       evt.preventDefault();
-      modal.close();
+      closeModal();
     })
   })
 
