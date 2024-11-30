@@ -62,6 +62,9 @@
 
 .intro__title span {
   display: block;
+
+  animation: fadeInLeft;
+  animation-duration: 1s;
 }
 
 .intro__title span:first-of-type {
@@ -91,6 +94,8 @@
 .intro__title span:nth-of-type(2n) {
   margin-left: 88px;
 
+  animation-delay: .5s;
+
   @media (min-width: @xl-width) {
     margin-left: 144px;
   }
@@ -98,6 +103,8 @@
 
 .intro__title span:nth-of-type(2n + 3) {
   margin-left: 24px;
+
+  animation-delay: 1s;
 
   @media (min-width: @xl-width) {
     margin-left: 48px;

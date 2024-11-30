@@ -9,7 +9,7 @@
 
   text-align: center;
 
-  transition: background-color .5s;
+  transition: background-color .5s, border-color .5s, color .5s;
 
   .focus-styles();
 
@@ -17,7 +17,8 @@
     .font-basic-xs-bold();
 
     background-color: transparent;
-    border: 2px solid currentColor;
+    border: 2px solid;
+    border-color: currentColor;
 
     &:hover {
       color: var(--color-font-light);

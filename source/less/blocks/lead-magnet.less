@@ -13,6 +13,11 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  background-attachment: fixed;
+
+  @supports (-webkit-touch-callout: none) {
+    background-attachment: initial !important;
+  }
 
   &::before {
     position: absolute;
