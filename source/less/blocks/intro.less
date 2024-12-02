@@ -63,7 +63,7 @@
 .intro__title span {
   display: block;
 
-  animation: fadeInLeft;
+  animation-name: fadeInLeft;
   animation-duration: 1s;
 }
 
@@ -94,6 +94,7 @@
 .intro__title span:nth-of-type(2n) {
   margin-left: 88px;
 
+  animation-name: fadeInRight;
   animation-delay: .5s;
 
   @media (min-width: @xl-width) {
@@ -118,5 +119,27 @@
 
   @media (min-width: @xl-width) {
     margin-left: 59px;
+  }
+}
+
+@keyframes fadeInLeft {
+  0% {
+    transform: translate3D(-100%, 0, 0);
+    opacity: 0;
+  }
+  100% {
+    transform: translateZ(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInRight {
+  0% {
+    transform: translate3D(100%, 0, 0);
+    opacity: 0;
+  }
+  100% {
+    transform: translateZ(0);
+    opacity: 1;
   }
 }

@@ -34,9 +34,9 @@ const initModal = (modalElement, beforeOpen, afterClose) => {
   const nodes = modalElement.querySelectorAll(FOCUS_ELEMENTS);
   const nodesArray = [...nodes];
 
-  const openModal = () => {
+  const openModal = (evt) => {
     if(!prevModal) {
-      lastFocusElement = document.activeElement;
+      lastFocusElement = evt.target;
     }
 
     if (prevModal) {
@@ -145,13 +145,13 @@ const initModal = (modalElement, beforeOpen, afterClose) => {
   const modal = {
     element: modalElement,
     close() {closeModal()},
-    open() {openModal()},
+    open() {evt => openModal(evt)},
   }
 
   modalOpenBtns.forEach(btn => {
     btn.addEventListener('click', (evt) => {
       // evt.preventDefault();
-      openModal();
+      openModal(evt);
     })
   })
 

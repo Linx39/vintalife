@@ -12,7 +12,7 @@ const PHONE_REQUIRED_VALIDATE_MESAGE = 'Пожалуйста, заполните
 const feedbackForms = document.querySelectorAll('.feedback__form');
 let pristineArray = [];
 
-const resetForms = () => {
+const resetAllForms = () => {
   feedbackForms.forEach(form => form.reset());
   pristineArray.forEach(pristine => pristine.reset());
 }
@@ -45,14 +45,13 @@ feedbackForms.forEach(form => {
 
     const isFormValid = pristine.validate();
 
-    if(isFormValid) {
-      setResponseSuccess();
-    }
-
     if(!isFormValid) {
       setResponseError();
     }
 
-    resetForms();
+    if(isFormValid) {
+      setResponseSuccess();
+      resetAllForms();
+    }
   })
 })
