@@ -97,6 +97,9 @@ export const copy = (done) => {
     `${SOURCE_FOLDER}/swiper/*.*`,
     `${SOURCE_FOLDER}/pristine/*.*`,
     `${SOURCE_FOLDER}/imask/*.*`,
+    `${SOURCE_FOLDER}/favicons/*.*`,
+    `${SOURCE_FOLDER}/*.ico`,
+    `${SOURCE_FOLDER}/manifest.json`,
   ], {
     base: `${SOURCE_FOLDER}`
   })
