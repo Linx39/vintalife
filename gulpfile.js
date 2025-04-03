@@ -55,16 +55,6 @@ export const scripts = () => {
     .pipe(browser.stream());
 }
 
-// Images
-// export const optimizeImages = () => {
-//   return gulp.src([
-//     `${SOURCE_FOLDER}/img/**/*.{png,jpg,svg}`,
-//     `!${SOURCE_FOLDER}/img/sprite/*`
-//   ])
-//     .pipe(imagemin())
-//     .pipe(gulp.dest(`${PUBLIC_FOLDER}/img`));
-// }
-
 export const optimizeImages = () => {
   return gulp.src([
     `${SOURCE_FOLDER}/img/**/*.svg`,
@@ -81,14 +71,6 @@ export const copyImages = () => {
   ])
     .pipe(gulp.dest(`${PUBLIC_FOLDER}/img`));
 }
-
-// export const copyImages = () => {
-//   return gulp.src([
-//     `${SOURCE_FOLDER}/img/**/*.{png,jpg,svg}`,
-//     `!${SOURCE_FOLDER}/img/sprite/*`
-//   ])
-//     .pipe(gulp.dest(`${PUBLIC_FOLDER}/img`));
-// }
 
 export const createWebp = () => {
   return gulp.src([
@@ -112,8 +94,9 @@ export const createSprite = () => {
 export const copy = (done) => {
   gulp.src([
     `${SOURCE_FOLDER}/fonts/*.*`,
-    `${SOURCE_FOLDER}/swiper/*.min.*`,
-    `${SOURCE_FOLDER}/pristine/*.min.*`
+    `${SOURCE_FOLDER}/swiper/*.*`,
+    `${SOURCE_FOLDER}/pristine/*.*`,
+    `${SOURCE_FOLDER}/imask/*.*`,
   ], {
     base: `${SOURCE_FOLDER}`
   })
